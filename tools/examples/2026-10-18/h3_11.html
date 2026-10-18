@@ -1,0 +1,39 @@
+<html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;font-family:'Noto Sans CJK KR',sans-serif}
+#card{width:1080px;background:#fff}
+.win{background:#0c0c0c;border:1px solid #333;border-radius:10px;overflow:hidden}
+.bar{background:#1f1f1f;height:44px;display:flex;align-items:center;padding:0 16px;font-size:18px;color:#ccc;gap:12px}
+.bar .tab{background:#0c0c0c;padding:8px 18px;border-radius:6px 6px 0 0;margin-top:12px;height:38px}
+.bar .ctl{margin-left:auto;letter-spacing:14px;color:#aaa;font-size:16px}
+.body{padding:22px 26px 28px;font-family:'DejaVu Sans Mono',monospace;font-size:21px;line-height:1.6;color:#cccccc;white-space:pre}
+.p{color:#16c60c}.k{color:#f9f1a5}.s{color:#e9a86a}.n{color:#b5cea8}.w{color:#f2f2f2}.d{color:#767676}.c{color:#3b78ff}
+.hl{outline:4px solid #e03131;outline-offset:4px;border-radius:4px}
+</style></head><body><div id="card">
+<div class="win"><div class="bar"><div class="tab">mongosh — reading_notes</div><div class="ctl">—☐✕</div></div>
+<div class="body"><span class="p">reading_notes&gt;</span> <span class="w">db.getCollectionNames()</span>
+[ <span class="s">'notes'</span>, <span class="s">'users'</span> ]
+
+<span class="p">reading_notes&gt;</span> <span class="w">db.notes.findOne()</span>
+{
+  <span class="hl"><span class="k">_id</span></span>: ObjectId(<span class="s">'68f2c1a0e4b0a1c2d3e4f501'</span>),
+  <span class="hl"><span class="k">note_id</span></span>: <span class="s">'n-01'</span>,
+  <span class="hl"><span class="k">user_id</span></span>: <span class="s">'u-7'</span>,
+  <span class="hl"><span class="k">messages</span></span>: [
+    {
+      role: <span class="s">'user'</span>,
+      content: <span class="s">'3장까지 읽었는데 번역이 딱딱해'</span>,
+      ts: ISODate(<span class="s">'2026-10-14T20:11:03.000Z'</span>)
+    },
+    {
+      role: <span class="s">'assistant'</span>,
+      content: <span class="s">'원서 전환을 고려해 볼 수 있어요. …'</span>,
+      ts: ISODate(<span class="s">'2026-10-14T20:11:09.000Z'</span>)
+    }
+  ],
+  <span class="hl"><span class="k">cover_key</span></span>: <span class="s">'covers/2026/book-07.png'</span>,
+  <span class="hl"><span class="k">cover_status</span></span>: <span class="s">'uploaded'</span>,
+  <span class="hl"><span class="k">updated_at</span></span>: ISODate(<span class="s">'2026-10-14T20:11:09.000Z'</span>)
+}
+<span class="d">(messages 배열이 그대로 읽힌다 → 직접 설계한 JSON 문서. 필드 조건으로 검색 가능)</span></div></div>
+</div></body></html>

@@ -1,0 +1,22 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0b1a1f;--fg:#eefbf9;--ac:#2dd4bf}
+.row{display:flex;gap:28px}
+.col{flex:1;background:#102830;border:2px solid #1d4650;border-radius:24px;padding:30px 28px}
+.t{font-size:38px;font-weight:900;margin-bottom:22px}.t span{color:var(--ac)}
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:6px;margin:10px 0}
+.bx{background:#163a44;border:2px solid #2a6a78;border-radius:16px;padding:14px 18px;font-size:26px;font-weight:700;text-align:center;line-height:1.35}
+.bx.ac{background:var(--ac);color:#06241f;border-color:var(--ac)}
+.ar{color:var(--ac);font-size:30px;font-weight:900;text-align:center}
+.d{font-size:24px;color:#9fd9d0;line-height:1.5;margin-top:16px}
+.q{font-size:26px;color:#9fd9d0;margin-top:30px;text-align:center}
+</style></head><body><div id="card">
+<div class="k">축 1 · 서버</div><h1>정적은 복사, 동적은 조립</h1>
+<div class="row">
+<div class="col"><div class="t"><span>정적</span> static</div>
+<div class="flow"><div class="bx">디스크의 index.html</div><div class="ar">▼</div><div class="bx ac">서버: 그대로 복사</div><div class="ar">▼</div><div class="bx">브라우저</div></div>
+<div class="d">누가 언제 요청해도 같은 파일. 서버는 HTML을 만들지 않는다.</div></div>
+<div class="col"><div class="t"><span>동적</span> dynamic</div>
+<div class="flow"><div class="bx">템플릿 + DB 데이터</div><div class="ar">▼</div><div class="bx ac">서버: 요청마다 조립</div><div class="ar">▼</div><div class="bx">브라우저</div></div>
+<div class="d">요청이 올 때 응답 일부를 새로 만든다. 디스크의 파일을 고치는 게 아니다.</div></div>
+</div>
+<div class="q">이 정의 어디에도 "화면이 바뀌는가"는 없다</div>
+</div></body></html>

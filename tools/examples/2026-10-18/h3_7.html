@@ -1,0 +1,15 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#07111f;--fg:#eaf4ff;--ac:#4dabf7}
+.ly{display:flex;align-items:center;gap:24px;background:#0f2036;border:2px solid #1e3a5c;border-radius:20px;padding:20px 28px;margin-bottom:14px}
+.ly.top{border-color:var(--ac);box-shadow:0 0 36px rgba(77,171,247,.2)}
+.nm{flex:none;width:250px;font-size:30px;font-weight:900}.nm small{display:block;font-size:20px;color:#9cc7ee;font-weight:700}
+.d{font-size:24px;line-height:1.45}.d b{color:var(--ac)}
+.ar{text-align:center;color:#9cc7ee;font-size:24px;margin:-4px 0 10px}
+</style></head><body><div id="card">
+<div class="k">층 내려가기</div><h1>"객체"의 실체는 어디 있나</h1>
+<div class="ly top"><div class="nm">객체 스토리지<small>S3 · MinIO</small></div><div class="d">폴더 트리를 버리고 <b>key 문자열 하나</b>로만 찾는다<br>여러 서버에 걸쳐 key → 위치 목록 관리. HTTP로 PUT / GET</div></div>
+<div class="ar">▲ 위에 얹힘</div>
+<div class="ly"><div class="nm">파일 시스템<small>NTFS · ext4</small></div><div class="d">어느 블록에 적혔는지 기록(inode). <b>폴더 트리</b>로 찾게 해 줌</div></div>
+<div class="ar">▲ 위에 얹힘</div>
+<div class="ly"><div class="nm">디스크<small>SSD · HDD</small></div><div class="d"><b>실제 바이트</b>가 적히는 곳. 실체는 언제나 여기</div></div>
+<div style="margin-top:22px;text-align:center;font-size:25px;color:#9cc7ee">"내용을 모른다" = 없다가 아니라 <span style="color:var(--ac);font-weight:900">해석하지 않는다</span></div>
+</div></body></html>

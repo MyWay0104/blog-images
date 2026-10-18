@@ -1,0 +1,20 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a1006;--fg:#fff4e6;--ac:#ff922b}
+.row{display:flex;gap:28px}
+.c{flex:1;background:#2a1a0a;border:2px solid #4a2f12;border-radius:24px;padding:28px 26px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(255,146,43,.22)}
+.t{font-size:34px;font-weight:900;margin-bottom:6px}.s{font-size:23px;color:var(--ac);font-weight:700;margin-bottom:18px}
+.tree{background:#3a2410;border-radius:14px;padding:16px 20px;font-size:24px;line-height:1.6;margin-bottom:14px}
+.tree b{color:var(--ac)}
+.d{font-size:23px;color:#e3c3a0;line-height:1.5}
+</style></head><body><div id="card">
+<div class="k">진입점</div><h1>파일 하나에서 폴더 규칙으로</h1>
+<div class="row">
+<div class="c"><div class="t">Streamlit · FastAPI</div><div class="s">내가 명령에 파일을 적는다</div>
+<div class="tree mono">$ streamlit run <b>app.py</b><br>$ uvicorn <b>main:app</b></div>
+<div class="d">"여기서 시작해라"를 사람이 지정한다. 파일 이름은 자유.</div></div>
+<div class="c hot"><div class="t">Next.js (App Router)</div><div class="s">정해진 위치를 프레임워크가 찾는다</div>
+<div class="tree mono">app/<br>├ <b>layout.tsx</b>  ← 공통 뼈대<br>├ <b>page.tsx</b>    ← 주소 /<br>└ notes/<br>&nbsp;&nbsp;&nbsp;└ <b>page.tsx</b>  ← 주소 /notes</div>
+<div class="d">이름과 위치가 정해져 있다. 폴더가 곧 주소. 명령에는 파일을 적지 않는다.</div></div>
+</div>
+<div style="margin-top:30px;text-align:center;font-size:28px;font-weight:700;color:#e3c3a0">진입점이 없는 게 아니라 <span style="color:var(--ac)">app/page.tsx</span> 가 첫 화면</div>
+</div></body></html>

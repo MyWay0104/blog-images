@@ -1,0 +1,27 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0a12;--fg:#fff0f6;--ac:#f783ac}
+.row{display:flex;gap:26px}
+.c{flex:1;background:#2a1020;border:2px solid #4a1c36;border-radius:24px;padding:26px 24px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(247,131,172,.22)}
+.t{font-size:32px;font-weight:900;margin-bottom:16px}.t span{color:var(--ac)}
+.ln{background:#3a1526;border-radius:12px;padding:12px 16px;font-size:22px;margin:8px 0;display:flex;gap:12px;align-items:center}
+.ln .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--ac);color:#2a0a18;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center}
+.req{margin-top:18px;font-size:24px;line-height:1.5;color:#e8b4c8}
+.req b{color:#fff0f6}
+.res{margin-top:12px;font-size:28px;font-weight:900;text-align:center}
+.bad{color:#ff8787}.good{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">등록 순서</div><h1>라우터 먼저, 마운트 나중</h1>
+<div class="row">
+<div class="c"><div class="t"><span>X</span> 마운트를 먼저</div>
+<div class="ln"><div class="n">1</div><span class="mono">mount("/", StaticFiles(...))</span></div>
+<div class="ln"><div class="n">2</div><span class="mono">include_router(prefix="/api")</span></div>
+<div class="req"><b>GET /api/notes</b> 가 들어오면<br>1번 "/" 이 먼저 대조되어 가로챔<br>→ 정적 파일에서 notes 를 찾음</div>
+<div class="res bad">404 Not Found</div></div>
+<div class="c hot"><div class="t"><span>O</span> 라우터를 먼저</div>
+<div class="ln"><div class="n">1</div><span class="mono">include_router(prefix="/api")</span></div>
+<div class="ln"><div class="n">2</div><span class="mono">mount("/", StaticFiles(...))</span></div>
+<div class="req"><b>GET /api/notes</b> 가 들어오면<br>1번 /api 라우터가 먼저 대조됨<br>→ JSON 응답. 나머지만 2번으로</div>
+<div class="res good">정상 동작</div></div>
+</div>
+<div style="margin-top:26px;text-align:center;font-size:25px;color:#e8b4c8">"들어온 경로는 각 Route에 순서대로 대조된다" — Starlette 라우팅 문서</div>
+</div></body></html>

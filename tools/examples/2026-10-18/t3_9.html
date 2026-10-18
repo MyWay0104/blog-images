@@ -1,0 +1,14 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a1006;--fg:#fff4e6;--ac:#ff922b}
+.st{display:flex;align-items:center;gap:22px;background:#2a1a0a;border:2px solid #4a2f12;border-radius:22px;padding:22px 28px;margin-bottom:14px}
+.n{flex:none;width:64px;height:64px;border-radius:50%;background:var(--ac);color:#1a1006;font-size:32px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.cmd{flex:none;width:260px;font-size:29px;font-weight:900;color:var(--ac)}
+.d{font-size:24px;line-height:1.45;color:#fff4e6}.d small{display:block;font-size:21px;color:#e3c3a0}
+.fail{margin-top:22px;background:#3a2410;border-radius:18px;padding:20px 26px;font-size:24px;line-height:1.5;color:#e3c3a0;text-align:center}
+.fail b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">확인 순서</div><h1>세 번 치면서 무엇이 뜨는지 본다</h1>
+<div class="st"><div class="n">1</div><div class="cmd mono">npm run dev</div><div class="d">localhost:3000 이 뜨는가<small>app/page.tsx 글자를 바꾸면 바로 반영되는가</small></div></div>
+<div class="st"><div class="n">2</div><div class="cmd mono">npm run build</div><div class="d">라우트 목록이 찍히고 .next/ 가 생기는가<small>화면이 안 뜨는 게 정상</small></div></div>
+<div class="st"><div class="n">3</div><div class="cmd mono">npm run start</div><div class="d">다시 localhost:3000 이 뜨는가<small>글자를 바꿔도 반영되지 않는 게 정상</small></div></div>
+<div class="fail">문제가 생기면 <b>마지막으로 정상이었던 지점</b>을 찾는다<br>dev는 되는데 build가 실패 → 첫 실패 지점은 빌드</div>
+</div></body></html>

@@ -1,0 +1,6 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans CJK KR',sans-serif;background:#fff}
+#card{width:1080px;padding:64px 60px;background:var(--bg);color:var(--fg)}
+.k{font-size:26px;font-weight:700;color:var(--ac);letter-spacing:1px;margin-bottom:14px}
+h1{font-size:52px;font-weight:900;line-height:1.25;margin-bottom:44px}
+.mono{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace}

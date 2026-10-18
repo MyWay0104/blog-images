@@ -1,0 +1,29 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0a12;--fg:#fff0f6;--ac:#f783ac}
+.orig{display:flex;justify-content:center;gap:12px;align-items:center;margin-bottom:34px}
+.p{background:#3a1526;border:2px solid #6b2a48;border-radius:14px;padding:12px 22px;font-size:28px;font-weight:900}
+.plus{font-size:30px;color:var(--ac);font-weight:900}
+.row{display:flex;gap:26px}
+.c{flex:1;background:#2a1020;border:2px solid #4a1c36;border-radius:24px;padding:26px 24px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(247,131,172,.22)}
+.t{font-size:32px;font-weight:900;margin-bottom:14px}.t span{color:var(--ac)}
+.bar{display:flex;align-items:center;gap:12px;margin:10px 0}
+.url{flex:1;background:#3a1526;border-radius:12px;padding:12px 16px;font-size:24px;font-weight:700}
+.url.ac{background:var(--ac);color:#2a0a18}
+.tag{flex:none;width:170px;font-size:22px;color:#e8b4c8}
+.d{font-size:23px;color:#e8b4c8;line-height:1.5;margin-top:14px}
+.big{font-size:36px;font-weight:900;color:var(--ac);text-align:center;margin-top:10px}
+</style></head><body><div id="card">
+<div class="k">CORS 발생 조건</div><h1>폴더가 아니라 주소의 개수</h1>
+<div class="orig"><div class="p">프로토콜</div><div class="plus">+</div><div class="p">호스트</div><div class="plus">+</div><div class="p">포트</div><div class="plus">=</div><div class="p" style="background:var(--ac);color:#2a0a18">origin</div></div>
+<div class="row">
+<div class="c"><div class="t">프로세스 2개 → <span>origin 2개</span></div>
+<div class="bar"><div class="tag">화면 받은 곳</div><div class="url mono">localhost:3000</div></div>
+<div class="bar"><div class="tag">API 부르는 곳</div><div class="url mono">localhost:8000</div></div>
+<div class="d">포트만 달라도 다른 origin. 백엔드가 허용 목록을 보내야 통과.</div><div class="big">CORS 발생</div></div>
+<div class="c hot"><div class="t">프로세스 1개 → <span>origin 1개</span></div>
+<div class="bar"><div class="tag">화면 받은 곳</div><div class="url mono ac">localhost:8000</div></div>
+<div class="bar"><div class="tag">API 부르는 곳</div><div class="url mono ac">localhost:8000/api</div></div>
+<div class="d">같은 주소. 쿠키도 자동으로 붙는다.</div><div class="big">발생 자체가 없음</div></div>
+</div>
+<div style="margin-top:28px;text-align:center;font-size:26px;color:#e8b4c8">frontend/ 와 backend/ 폴더가 몇 개인지는 상관없다</div>
+</div></body></html>

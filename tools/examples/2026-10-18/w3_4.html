@@ -1,0 +1,22 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0a12;--fg:#fff0f6;--ac:#f783ac}
+.wrap{display:flex;gap:30px;align-items:center}
+.br{flex:none;width:300px;background:#2a1020;border:2px solid #4a1c36;border-radius:22px;padding:22px;text-align:center}
+.br .t{font-size:28px;font-weight:900;margin-bottom:10px}.br .u{font-size:24px;color:var(--ac);font-weight:700}
+.ar{flex:none;width:90px;text-align:center;color:var(--ac);font-size:40px;font-weight:900}
+.box{flex:1;border:4px dashed var(--ac);border-radius:26px;padding:22px;position:relative}
+.box .lbl{position:absolute;top:-20px;left:30px;background:var(--bg);padding:0 14px;font-size:24px;font-weight:900;color:var(--ac)}
+.in{background:#2a1020;border:2px solid #4a1c36;border-radius:16px;padding:16px 20px;margin:10px 0;display:flex;align-items:center;gap:16px}
+.in .p{flex:none;background:#3a1526;border-radius:10px;padding:8px 14px;font-size:24px;font-weight:900;color:var(--ac)}
+.in .d{font-size:23px;line-height:1.4}.in .d small{display:block;color:#e8b4c8;font-size:21px}
+.ct{margin-top:24px;text-align:center;font-size:26px;color:#e8b4c8}
+</style></head><body><div id="card">
+<div class="k">단일 컨테이너 구조</div><h1>uvicorn 하나가 둘 다 내준다</h1>
+<div class="wrap">
+<div class="br"><div class="t">브라우저</div><div class="u mono">localhost:8000</div><div style="font-size:21px;color:#e8b4c8;margin-top:8px">주소 하나만 본다</div></div>
+<div class="ar">⇄</div>
+<div class="box"><div class="lbl">컨테이너 1개 · 프로세스 1개 (uvicorn)</div>
+<div class="in"><div class="p mono">/api/…</div><div class="d">FastAPI 라우터 → JSON<small>include_router(prefix="/api")</small></div></div>
+<div class="in"><div class="p mono">/</div><div class="d">frontend/dist 정적 파일<small>mount("/", StaticFiles(html=True))</small></div></div>
+</div></div>
+<div class="ct">origin이 하나 → CORS 설정도, 쿠키 공유 문제도 생기지 않는다</div>
+</div></body></html>

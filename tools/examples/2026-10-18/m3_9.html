@@ -1,0 +1,27 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0b1a1f;--fg:#eefbf9;--ac:#2dd4bf}
+.row{display:flex;gap:28px}
+.col{flex:1;background:#102830;border:2px solid #1d4650;border-radius:24px;padding:28px 26px}
+.col.hot{border-color:var(--ac);box-shadow:0 0 40px rgba(45,212,191,.22)}
+.t{font-size:36px;font-weight:900;margin-bottom:18px}.t small{font-size:22px;color:#9fd9d0;font-weight:700;display:block;margin-top:6px}
+.proc{border:3px dashed #2a6a78;border-radius:18px;padding:14px;margin-bottom:14px}
+.proc .n{font-size:22px;color:var(--ac);font-weight:900;margin-bottom:8px}
+.bx{background:#163a44;border-radius:12px;padding:12px 14px;font-size:23px;font-weight:700;text-align:center;margin:8px 0;line-height:1.35}
+.bx.f{background:#1f5a63}
+.d{font-size:23px;color:#9fd9d0;line-height:1.5;margin-top:10px}
+.cnt{font-size:30px;font-weight:900;text-align:center;margin-top:16px}.cnt span{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">구조 비교 · 백엔드가 FastAPI일 때</div><h1>서버 쪽 일을 누가 이미 하고 있나</h1>
+<div class="row">
+<div class="col hot"><div class="t">Vite + React<small>결과물 = 정적 폴더 frontend/dist</small></div>
+<div class="proc"><div class="n">프로세스 1 · uvicorn</div>
+<div class="bx f">FastAPI /api/notes/… → JSON</div>
+<div class="bx">frontend/dist 정적 파일 서빙<br>index.html · assets/*.js</div></div>
+<div class="d">브라우저가 보는 주소 하나. 화면은 React가 브라우저 안에서 바꾼다.</div>
+<div class="cnt">프로세스 <span>1개</span></div></div>
+<div class="col"><div class="t">Next.js<small>결과물 = Node.js 서버 애플리케이션</small></div>
+<div class="proc"><div class="n">프로세스 1 · uvicorn</div><div class="bx f">FastAPI /api/notes/… → JSON</div></div>
+<div class="proc"><div class="n">프로세스 2 · next start</div><div class="bx">서버 렌더링 · 라우팅<br>API 라우트 · 데이터 가져오기</div></div>
+<div class="d">두 번째 프로세스가 하는 일이 FastAPI와 겹친다. (제 판단)</div>
+<div class="cnt">프로세스 <span>2개</span></div></div>
+</div>
+</div></body></html>

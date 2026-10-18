@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#14110a;--fg:#fff9e6;--ac:#ffd43b}
+.path{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.nd{flex:1;background:#241e0e;border:2px solid #4a3d1a;border-radius:20px;padding:18px 14px;text-align:center;font-size:27px;font-weight:900}
+.nd small{display:block;font-size:19px;color:#d9c98a;font-weight:700;margin-top:4px}
+.ar{color:var(--ac);font-size:34px;font-weight:900}
+.cut{display:flex;gap:16px}
+.c{flex:1;background:#241e0e;border:2px dashed var(--ac);border-radius:18px;padding:18px 16px}
+.c .n{font-size:26px;font-weight:900;color:var(--ac);margin-bottom:8px}
+.c .d{font-size:21px;line-height:1.45;color:#fff9e6}
+</style></head><body><div id="card">
+<div class="k">요청 경로</div><h1>끊길 수 있는 지점은 세 군데</h1>
+<div class="path">
+<div class="nd">Claude Code<small>모델 ID 패턴으로 기능 판단</small></div><div class="ar">▶</div>
+<div class="nd">게이트웨이<small>ANTHROPIC_BASE_URL</small></div><div class="ar">▶</div>
+<div class="nd">모델 서버<small>glm-5.3</small></div>
+</div>
+<div class="cut">
+<div class="c"><div class="n">① Claude Code</div><div class="d">ID가 알려진 패턴에 안 맞으면 thinking·effort 를 아예 안 보낸다 (공식 문서)</div></div>
+<div class="c"><div class="n">② 게이트웨이</div><div class="d">파라미터를 모델 규격으로 바꾸며 버리거나, 응답의 사고 내용을 버릴 수 있다</div></div>
+<div class="c"><div class="n">③ 모델</div><div class="d">지시문 한 줄을 읽고 Claude만큼 반응한다는 보장이 없다 (추론)</div></div>
+</div>
+<div style="margin-top:24px;text-align:center;font-size:24px;color:#d9c98a">공식 문서: Claude가 아닌 모델로의 라우팅은 지원 대상이 아니다</div>
+</div></body></html>

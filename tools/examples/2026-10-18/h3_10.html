@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#07111f;--fg:#eaf4ff;--ac:#4dabf7}
+.cmd{background:#0f2036;border:2px solid var(--ac);border-radius:18px;padding:20px 26px;font-size:27px;font-family:'DejaVu Sans Mono';color:#cfe4fb;line-height:1.6;margin-bottom:26px}
+.cmd b{color:var(--ac)}
+.row{display:flex;gap:24px}
+.c{flex:1;background:#0f2036;border:2px solid #1e3a5c;border-radius:22px;padding:22px}
+.see{font-size:22px;font-family:'DejaVu Sans Mono';color:#cfe4fb;background:#07111f;border-radius:12px;padding:14px;margin-bottom:14px;line-height:1.5}
+.r{font-size:26px;font-weight:900;margin-bottom:6px}.r span{color:var(--ac)}
+.d{font-size:22px;color:#9cc7ee;line-height:1.45}
+</style></head><body><div id="card">
+<div class="k">확인 방법</div><h1>추측하지 말고 두 줄로 열어 본다</h1>
+<div class="cmd"><b>db.getCollectionNames()</b>&nbsp;&nbsp;// 컬렉션 이름 목록<br><b>db.&lt;컬렉션&gt;.findOne()</b>&nbsp;&nbsp;&nbsp;&nbsp;// 문서 하나의 실제 모양</div>
+<div class="row">
+<div class="c"><div class="see">{ user_id: "u-7",<br>&nbsp;&nbsp;messages: [ { role: "user", content: "…" } ] }</div><div class="r"><span>messages</span> 배열이 읽힌다</div><div class="d">직접 설계한 JSON 문서. 필드 조건으로 검색 가능</div></div>
+<div class="c"><div class="see">{ thread_id: "u-7",<br>&nbsp;&nbsp;checkpoint: Binary(…) }</div><div class="r"><span>Binary</span> 값이 보인다</div><div class="d">LangGraph checkpointer가 직렬화해 넣은 것. 메시지 내용으로는 검색 안 됨</div></div>
+</div>
+</div></body></html>

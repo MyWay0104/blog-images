@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a1006;--fg:#fff4e6;--ac:#ff922b}
+table{width:100%;border-collapse:separate;border-spacing:10px}
+td,th{background:#2a1a0a;border:2px solid #4a2f12;border-radius:14px;padding:18px 10px;font-size:22px;text-align:center;line-height:1.4}
+th{background:#3a2410;font-size:26px;font-weight:900}
+td.h{font-weight:900;color:var(--ac);font-size:24px;white-space:nowrap;width:190px}
+td.no{color:#8a6a4a;font-style:italic}
+td.hot{border-color:var(--ac);color:var(--ac);font-weight:900}
+</style></head><body><div id="card">
+<div class="k">명령 대응표</div><h1>비어 있는 칸이 낯설었던 이유</h1>
+<table>
+<tr><th>하는 일</th><th>Streamlit</th><th>FastAPI</th><th>Next.js</th></tr>
+<tr><td class="h">개발 중 실행</td><td class="mono">uv run streamlit run app.py</td><td class="mono">uv run uvicorn main:app --reload</td><td class="mono hot">npm run dev</td></tr>
+<tr><td class="h">배포용 결과물 생성</td><td class="no">없음</td><td class="no">없음</td><td class="mono hot">npm run build</td></tr>
+<tr><td class="h">운영 실행</td><td class="mono">streamlit run app.py</td><td class="mono">uvicorn main:app</td><td class="mono hot">npm run start</td></tr>
+</table>
+<div style="margin-top:26px;text-align:center;font-size:27px;font-weight:700;color:#e3c3a0">Python 쪽에는 "변환" 단계가 없다 → 브라우저로 가는 코드를 내가 쓰지 않기 때문</div>
+</div></body></html>

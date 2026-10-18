@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#14110a;--fg:#fff9e6;--ac:#ffd43b}
+.st{display:flex;align-items:center;gap:22px;background:#241e0e;border:2px solid #4a3d1a;border-radius:22px;padding:22px 28px;margin-bottom:14px}
+.n{flex:none;width:64px;height:64px;border-radius:50%;background:var(--ac);color:#14110a;font-size:32px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.t{flex:none;width:300px;font-size:29px;font-weight:900}
+.d{font-size:23px;line-height:1.45}.d small{display:block;font-size:21px;color:#d9c98a}
+.x{text-align:center;color:#d9c98a;font-size:22px;margin:-4px 0 10px}
+.no{margin-top:20px;background:#3a2f12;border-radius:16px;padding:16px 24px;font-size:24px;text-align:center;color:#fff9e6}
+.no b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">확인 순서</div><h1>품질 비교는 맨 마지막</h1>
+<div class="st"><div class="n">1</div><div class="t">Ctrl+O 로 본다</div><div class="d">사고 블록이 보이는가<small>보이면 응답 경로 통과. 안 보이면 어디서 끊겼는지 아직 모름</small></div></div>
+<div class="x">▼</div>
+<div class="st"><div class="n">2</div><div class="t">프록시 로그를 본다</div><div class="d">요청의 thinking·output_config, 응답의 사고 글자 수, usage<small>①②를 가려낸다. 인증 헤더는 기록하지 않는다</small></div></div>
+<div class="x">▼</div>
+<div class="st"><div class="n">3</div><div class="t">A/B 로 잰다</div><div class="d">자동 채점 과제 5~8개 × ultrathink 유무 × 각 5회<small>통과율 · output_tokens · 시간 비교</small></div></div>
+<div class="no">사고가 흐르지 않는 상태에서 <b>품질 비교는 의미가 없다</b> → 그래서 3번이 마지막</div>
+</div></body></html>

@@ -1,0 +1,22 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a1006;--fg:#fff4e6;--ac:#ff922b}
+.row{display:flex;gap:22px}
+.c{flex:1;background:#2a1a0a;border:2px solid #4a2f12;border-radius:24px;padding:26px 24px;text-align:center}
+.c.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(255,146,43,.22)}
+.cmd{font-size:27px;font-weight:900;color:var(--ac);margin-bottom:6px;white-space:nowrap}.role{font-size:40px;font-weight:900;margin-bottom:18px}
+.pic{height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.scr{width:150px;height:110px;border:5px solid var(--ac);border-radius:14px;position:relative;background:#3a2410}
+.scr:after{content:"";position:absolute;left:18px;top:18px;width:70%;height:12px;background:var(--ac);border-radius:6px;box-shadow:0 26px 0 var(--ac),0 52px 0 rgba(255,146,43,.5)}
+.fold{width:150px;height:110px;border:5px dashed #8a5a2a;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:#d9a46b}
+.d{font-size:23px;color:#e3c3a0;line-height:1.5}
+.ar{display:flex;align-items:center;color:var(--ac);font-size:40px;font-weight:900}
+</style></head><body><div id="card">
+<div class="k">next dev · next build · next start</div><h1>실행, 변환, 운영 실행</h1>
+<div class="row">
+<div class="c hot"><div class="cmd">npm run dev</div><div class="role">실행</div><div class="pic"><div class="scr"></div></div><div class="d">개발 서버가 뜬다<br>localhost:3000<br>저장하면 바로 반영</div></div>
+<div class="ar">▶</div>
+<div class="c"><div class="cmd">npm run build</div><div class="role">변환</div><div class="pic"><div class="fold">.next/</div></div><div class="d">아무것도 안 뜬다<br>결과물 폴더만 생김<br>라우트 목록 출력</div></div>
+<div class="ar">▶</div>
+<div class="c"><div class="cmd">npm run start</div><div class="role">운영 실행</div><div class="pic"><div class="scr"></div></div><div class="d">변환된 결과물로 서버<br>localhost:3000<br>코드 수정 반영 안 됨</div></div>
+</div>
+<div style="margin-top:30px;text-align:center;font-size:28px;font-weight:700;color:#e3c3a0">streamlit run 의 짝은 <span style="color:var(--ac)">npm run dev</span> 다</div>
+</div></body></html>

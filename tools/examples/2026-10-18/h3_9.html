@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#07111f;--fg:#eaf4ff;--ac:#4dabf7}
+.row{display:flex;gap:26px;align-items:stretch}
+.c{flex:1;background:#0f2036;border:2px solid #1e3a5c;border-radius:24px;padding:24px}
+.c.db{border-color:var(--ac)}
+.t{font-size:30px;font-weight:900;margin-bottom:4px}.s{font-size:22px;color:var(--ac);font-weight:700;margin-bottom:16px}
+.doc{background:#07111f;border-radius:14px;padding:16px 14px;font-size:18px;line-height:1.55;font-family:'DejaVu Sans Mono';color:#cfe4fb}
+.doc b{color:var(--ac);font-weight:900}
+.img{height:150px;border-radius:14px;background:linear-gradient(135deg,#1e3a5c,#4dabf7 60%,#9cc7ee);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#07111f}
+.key{margin-top:12px;background:#07111f;border-radius:10px;padding:10px 14px;font-size:21px;font-family:'DejaVu Sans Mono';color:#cfe4fb;text-align:center}
+.mid{flex:none;width:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ac);font-size:22px;font-weight:900;text-align:center;line-height:1.3}
+.cap{margin-top:24px;text-align:center;font-size:26px;font-weight:900}.cap span{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">역할 분담</div><h1>주소록은 DB에, 물건은 스토리지에</h1>
+<div class="row">
+<div class="c db"><div class="t">MongoDB</div><div class="s">주소록 · 작은 JSON · 필드로 검색</div>
+<div class="doc">{ note_id: "n-01",<br>&nbsp;&nbsp;user_id: "u-7",<br>&nbsp;&nbsp;messages: [ {role, content}, … ],<br>&nbsp;&nbsp;<b>cover_key:<br>&nbsp;&nbsp;&nbsp;&nbsp;"covers/2026/book-07.png"</b>,<br>&nbsp;&nbsp;cover_status: "uploaded" }</div></div>
+<div class="mid">key로<br>가리킴<br>▶</div>
+<div class="c"><div class="t">객체 스토리지</div><div class="s">물건 · 수 MB 바이트 · key로 통째로</div>
+<div class="img">표지 스캔 이미지 (bytes)</div>
+<div class="key">covers/2026/book-07.png</div></div>
+</div>
+<div class="cap">둘 다 디스크에 적힌다 → <span>실체</span>의 차이가 아니라 <span>역할</span>의 차이</div>
+</div></body></html>

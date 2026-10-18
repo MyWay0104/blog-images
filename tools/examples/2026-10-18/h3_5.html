@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#07111f;--fg:#eaf4ff;--ac:#4dabf7}
+.g{display:grid;grid-template-columns:1fr 90px 1fr;gap:14px 10px;align-items:center}
+.h{font-size:28px;font-weight:900;text-align:center;color:#9cc7ee;padding-bottom:6px}
+.b{background:#0f2036;border:2px solid #1e3a5c;border-radius:16px;padding:18px 20px;font-size:28px;font-weight:900;text-align:center}
+.b.m{border-color:var(--ac);color:var(--ac)}
+.eq{text-align:center;font-size:30px;color:var(--ac);font-weight:900}
+.note{margin-top:28px;display:flex;gap:22px}
+.n{flex:1;background:#0f2036;border:2px solid #1e3a5c;border-radius:18px;padding:18px 20px;font-size:21px;line-height:1.45;color:#9cc7ee;font-family:'DejaVu Sans Mono'}
+.n b{display:block;font-family:'Noto Sans CJK KR';font-size:23px;color:#eaf4ff;margin-bottom:8px}
+.n.m{border-color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">자리 대응</div><h1>같은 자리, 다른 모양</h1>
+<div class="g">
+<div class="h">RDBMS</div><div></div><div class="h">MongoDB</div>
+<div class="b">Database</div><div class="eq">=</div><div class="b m">Database</div>
+<div class="b">Table</div><div class="eq">≈</div><div class="b m">Collection</div>
+<div class="b">Row</div><div class="eq">≈</div><div class="b m">Document</div>
+</div>
+<div class="note">
+<div class="n"><b>Row — 평평한 열 묶음</b>note_id | user_id | updated_at<br>messages 는 별도 테이블 → JOIN</div>
+<div class="n m"><b>Document — 중첩 JSON</b>{ note_id, user_id,<br>&nbsp;&nbsp;messages: [ {role, content}, … ] }<br>한 문서 안에 품는다</div>
+</div>
+</div></body></html>

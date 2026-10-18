@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#14110a;--fg:#fff9e6;--ac:#ffd43b}
+.ly{display:flex;align-items:center;gap:22px;background:#241e0e;border:2px solid #4a3d1a;border-radius:20px;padding:20px 26px;margin-bottom:14px}
+.ly.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(255,212,59,.18)}
+.nm{flex:none;width:260px;font-size:29px;font-weight:900}.nm small{display:block;font-size:20px;color:#d9c98a;font-weight:700}
+.d{flex:1;font-size:23px;line-height:1.45;color:#fff9e6}
+.api{flex:none;width:190px;text-align:center;font-size:24px;font-weight:900;border-radius:14px;padding:12px 8px}
+.y{background:var(--ac);color:#14110a}.n{background:#4a3d1a;color:#d9c98a}
+.hd{display:flex;justify-content:flex-end;font-size:22px;color:#d9c98a;margin-bottom:8px;padding-right:40px}
+</style></head><body><div id="card">
+<div class="k">세 층</div><h1>ultrathink는 어느 층에 있나</h1>
+<div class="hd">API 요청에 실리는가 →</div>
+<div class="ly"><div class="nm">thinking 파라미터<small>API 필드</small></div><div class="d">사고 블록을 켜고 끈다. MAX_THINKING_TOKENS=0 으로 끔. 서드파티 제공자에서는 생략됨</div><div class="api y">예</div></div>
+<div class="ly"><div class="nm">effort<small>/effort · --effort</small></div><div class="d">사고량을 정하는 수준. 모델이 지원할 때만 의미가 있다</div><div class="api y">예 (지원 시)</div></div>
+<div class="ly hot"><div class="nm">ultrathink<small>프롬프트 키워드</small></div><div class="d">Claude Code가 인식해 문맥에 지시문 한 줄을 추가. effort 값은 그대로</div><div class="api n">아니오<br><span style="font-size:19px">텍스트로만</span></div></div>
+<div style="margin-top:22px;text-align:center;font-size:25px;color:#d9c98a">"켜졌는가"가 아니라 <span style="color:var(--ac);font-weight:900">"이 모델이 그 한 줄에 반응하는가"</span></div>
+</div></body></html>
