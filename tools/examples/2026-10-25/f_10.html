@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0d02;--fg:#fff4e6;--ac:#ff922b}
+.g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.c{background:#2a1a0a;border:3px solid #5a3a1a;border-radius:20px;padding:24px 20px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(255,146,43,.22)}
+.h{font-size:40px;font-weight:900;color:var(--ac)}.t{font-size:28px;font-weight:900;color:#fff;margin:6px 0 10px}
+.d{font-size:20px;color:#f3d9bd;line-height:1.55}
+.foot{margin-top:26px;text-align:center;font-size:24px;color:#f3d9bd}.foot b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">Claude Code에 코드 추적을 시킬 때</div><h1>쪼개기 · 근거 강제 · 모르는 것 목록</h1>
+<div class="g">
+<div class="c hot"><div class="h">1</div><div class="t">쪼개기</div><div class="d">"설명해줘" 한 문장 대신<br>흐름의 단계마다 따로 묻는다.<br>문서도 "넓게 묻고 좁혀 가라"</div></div>
+<div class="c hot"><div class="h">2</div><div class="t">근거 강제</div><div class="d">답마다 "파일경로:함수명"을<br>붙이게 한다.<br>"읽은 코드만, 추측 금지"<br>를 명시</div></div>
+<div class="c hot"><div class="h">3</div><div class="t">모르는 것 목록</div><div class="d">끝에 "코드에 없어서<br>모르는 것"을 따로 받는다.<br>빈칸을 그럴듯하게<br>채우는 것을 막는다</div></div>
+</div>
+<div class="foot">시작은 <b>Plan 모드</b>로. 읽기만 하고 고치지 않는다는 것이 보장된다.</div>
+</div></body></html>

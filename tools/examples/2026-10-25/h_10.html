@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#041a1f;--fg:#e6fbff;--ac:#22b8cf}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.s{flex:1 1 0;min-width:0;background:#0a2a33;border:3px solid #175a68;border-radius:20px;padding:22px 18px}
+.s.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(34,184,207,.22)}
+.n{font-size:40px;font-weight:900;color:var(--ac)}.t{font-size:27px;font-weight:900;color:#fff;margin:6px 0 10px;line-height:1.3}
+.d{font-size:20px;color:#9fe3ee;line-height:1.5}
+.foot{margin-top:26px;text-align:center;font-size:24px;color:#9fe3ee}.foot b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">적용 순서</div><h1>확인 → 설정 → 다시 확인</h1>
+<div class="row">
+<div class="s"><div class="n">1</div><div class="t">이미 있는 설정부터 본다</div><div class="d">관리자가 배포한 managed 설정과 ~/.claude/settings.json의 env 항목에 이 변수들이 이미 있는지</div></div>
+<div class="s hot"><div class="n">2</div><div class="t">없으면 넣는다</div><div class="d">통신 변수 두 개는 env 항목에, skipWebFetchPreflight는 설정 항목에 넣는다</div></div>
+<div class="s hot"><div class="n">3</div><div class="t">WebFetch 도메인을 좁힌다</div><div class="d">검사를 끄면 차단 목록도 사라지므로 permissions의 WebFetch 규칙으로 도메인을 좁힌다</div></div>
+<div class="s"><div class="n">4</div><div class="t">실제 통신을 본다</div><div class="d">연습용 저장소에서 세션 하나를 돌리고 프록시 로그에 어떤 호스트가 찍히는지 확인</div></div>
+</div>
+<div class="foot">설정이 "꺼졌다"는 문서의 말이고, <b>실제로 안 나간다</b>는 로그로 확인한다.</div>
+</div></body></html>

@@ -1,0 +1,45 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>
+#card{background:#061a0d;border-radius:0;padding:40px 36px}
+.two{display:flex;gap:22px}
+.pane{flex:1;background:#1e1e1e;border-radius:14px;overflow:hidden}
+.pane .bar{font-size:17px}
+.body{font-size:17px;line-height:1.55;padding:20px 18px}
+.h{font-family:'Noto Sans CJK KR';font-size:30px;font-weight:900;color:#eafbef;margin-bottom:18px}
+.h span{color:#51cf66}
+.foot{font-family:'Noto Sans CJK KR';font-size:23px;color:#cfeeda;margin-top:22px;line-height:1.6}
+.foot b{color:#51cf66}
+.k2{color:#569cd6}.a{color:#9cdcfe}.s{color:#ce9178}.t{color:#d4d4d4}
+</style></head><body><div id="card">
+<div class="h">같은 페이지, <span>HTML</span>과 <span>접근성 스냅샷</span></div>
+<div class="two">
+<div class="pane"><div class="bar">lib.html — DOM 요소 17개</div><div class="body"><span class="k2">&lt;div</span> <span class="a">class</span>=<span class="s">"header"</span><span class="k2">&gt;</span>
+  <span class="k2">&lt;h1&gt;</span>도서관 장서 검색<span class="k2">&lt;/h1&gt;</span>
+<span class="k2">&lt;/div&gt;</span>
+<span class="k2">&lt;div</span> <span class="a">class</span>=<span class="s">"box"</span><span class="k2">&gt;</span>
+  <span class="k2">&lt;label</span> <span class="a">for</span>=<span class="s">"q"</span><span class="k2">&gt;</span>도서 검색<span class="k2">&lt;/label&gt;</span>
+  <span class="k2">&lt;input</span> <span class="a">id</span>=<span class="s">"q"</span> <span class="a">type</span>=<span class="s">"text"</span><span class="k2">&gt;</span>
+  <span class="k2">&lt;button</span> <span class="a">type</span>=<span class="s">"submit"</span><span class="k2">&gt;</span>검색<span class="k2">&lt;/button&gt;</span>
+<span class="k2">&lt;/div&gt;</span>
+<span class="k2">&lt;div</span> <span class="a">class</span>=<span class="s">"list"</span><span class="k2">&gt;</span>
+  <span class="k2">&lt;ul&gt;</span>
+    <span class="k2">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="s">"/book/1"</span><span class="k2">&gt;</span>습관의 힘<span class="k2">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="k2">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="s">"/book/2"</span><span class="k2">&gt;</span>클린 코드<span class="k2">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="k2">&lt;/ul&gt;</span>
+<span class="k2">&lt;/div&gt;</span></div></div>
+<div class="pane"><div class="bar">aria_snapshot() 결과</div><div class="body"><span class="t">- heading <span class="s">"도서관 장서 검색"</span> [level=1]
+- text: 도서 검색
+- textbox <span class="s">"도서 검색"</span>
+- button <span class="s">"검색"</span>
+- list:
+  - listitem:
+    - link <span class="s">"습관의 힘"</span>:
+      - /url: /book/1
+  - listitem:
+    - link <span class="s">"클린 코드"</span>:
+      - /url: /book/2</span>
+
+
+</div></div>
+</div>
+<div class="foot">왼쪽의 <b>div · class · id · type</b>은 오른쪽에 없다. 남은 것은 <b>역할(role)과 이름(name)</b>뿐이다.<br>실제 MCP 스냅샷에는 여기에 <b>[ref=e5]</b> 같은 번호가 붙는다.</div>
+</div></body></html>

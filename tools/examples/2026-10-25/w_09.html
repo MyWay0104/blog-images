@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; 터미널 — evaluate로 원본 값 꺼내기 (Playwright Python)</div>
+<div class="body"><span class="g"># 스냅샷 대신 DOM에서 직접 꺼낸다</span>
+<span class="p">&gt;&gt;&gt;</span> <span class="c">page.evaluate</span>(<span class="y">"document.body.innerText"</span>)
+신착 도서
+제목	저자	상태
+습관의 힘	찰스 두히그	대출 가능
+클린 코드	로버트 마틴	대출 중
+도서관 이용 안내
+ 상세 보기
+
+<span class="p">&gt;&gt;&gt;</span> <span class="c">page.evaluate</span>(<span class="y">"[...document.querySelectorAll('tr[data-book-id]')]</span>
+<span class="y">        .map(r => r.dataset.bookId + ' ' + r.dataset.isbn)"</span>)
+['1001 9780000000001', '1002 9780000000002']
+
+<span class="p">&gt;&gt;&gt;</span> <span class="c">len</span>(<span class="c">page.content</span>())
+719   <span class="g"># HTML 원본 전체 (글자 수)</span></div></div></body></html>

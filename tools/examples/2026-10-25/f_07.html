@@ -1,0 +1,21 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0d02;--fg:#fff4e6;--ac:#ff922b}
+.row{display:flex;align-items:stretch;gap:10px}
+.s{flex:1 1 0;min-width:0;background:#2a1a0a;border:3px solid #5a3a1a;border-radius:20px;padding:20px 14px;text-align:center}
+.n{font-size:36px;font-weight:900;color:var(--ac)}.t{font-size:25px;font-weight:900;color:#fff;margin:6px 0 10px;line-height:1.3}
+.d{font-size:18px;color:#f3d9bd;line-height:1.5}
+.ar{display:flex;align-items:center;color:var(--ac);font-size:34px;font-weight:900}
+.foot{margin-top:28px;background:#3a2410;border-radius:16px;padding:18px 22px;font-size:23px;line-height:1.6;color:#fff;text-align:center}
+.foot b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">한 문장으로 묻지 않고</div><h1>네 단계로 쪼개서 묻는다</h1>
+<div class="row">
+<div class="s"><div class="n">①</div><div class="t">스키마 수집</div><div class="d">테이블·컬럼 목록을<br>어디서 어떻게 읽나</div></div>
+<div class="ar">▶</div>
+<div class="s"><div class="n">②</div><div class="t">후보 선택</div><div class="d">질문에 맞는 테이블을<br>어떤 기준으로<br>고르나</div></div>
+<div class="ar">▶</div>
+<div class="s"><div class="n">③</div><div class="t">프롬프트 주입</div><div class="d">고른 스키마를<br>프롬프트에<br>어떻게 넣나</div></div>
+<div class="ar">▶</div>
+<div class="s"><div class="n">④</div><div class="t">SQL 생성</div><div class="d">모델 출력을 어떻게<br>검증하고 실행하나</div></div>
+</div>
+<div class="foot">단계마다 <b>"파일경로:함수명"</b> 근거를 요구하고, 끝에 <b>"코드에 없어서 모르는 것"</b> 목록을 받는다.</div>
+</div></body></html>

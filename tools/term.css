@@ -1,0 +1,8 @@
+/* 터미널 재구성 공통 */
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace}
+#card{width:1080px;background:#1e1e1e;color:#d4d4d4;border-radius:14px;overflow:hidden}
+.bar{height:44px;background:#2d2d2d;display:flex;align-items:center;padding:0 18px;gap:10px;font-family:'Noto Sans CJK KR';font-size:17px;color:#9a9a9a}
+.bar i{width:14px;height:14px;border-radius:50%;display:inline-block}
+.body{padding:26px 30px;font-size:21px;line-height:1.65;white-space:pre}
+.p{color:#4ec9b0}.c{color:#dcdcaa}.g{color:#808080}.y{color:#ce9178}.v{color:#c586c0}

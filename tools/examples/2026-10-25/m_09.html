@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0f0a1e;--fg:#f3f0ff;--ac:#9775fa}
+.row{display:flex;gap:24px;margin-bottom:28px}
+.c{flex:1;background:#1c1238;border:3px solid #4b3a86;border-radius:24px;padding:28px 26px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 40px rgba(151,117,250,.25)}
+.h{font-size:44px;font-weight:900;color:var(--ac);font-family:'DejaVu Sans Mono';margin-bottom:14px}
+.l{font-size:24px;line-height:1.7;color:#e8e2ff}.l b{color:#fff}
+.foot{background:#2a1d55;border-radius:18px;padding:22px 26px;font-size:26px;line-height:1.6;text-align:center}
+.foot b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">요약</div><h1>fork와 clone, 언제 무엇을</h1>
+<div class="row">
+<div class="c hot"><div class="h">fork</div><div class="l"><b>GitHub 서버 → GitHub 서버</b><br>남의 저장소를 내 계정에 복사<br>GitHub의 기능<br>원본에 push 권한이 없을 때</div></div>
+<div class="c hot"><div class="h">clone</div><div class="l"><b>GitHub 서버 → 내 PC</b><br>저장소를 작업 폴더로 내려받음<br>Git의 명령<br>코드를 PC에서 다루는 모든 때</div></div>
+</div>
+<div class="foot">내 저장소를 다른 PC로 가져올 때는<br><b>clone만</b> 하면 된다. 이미 내 것이라 fork할 이유가 없다.</div>
+</div></body></html>

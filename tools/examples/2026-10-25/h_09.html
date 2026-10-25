@@ -1,0 +1,12 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.a{color:#9cdcfe}.s{color:#ce9178}.k{color:#569cd6}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; %USERPROFILE%\.claude\settings.json</div>
+<div class="body">{
+  <span class="a">"env"</span>: {
+    <span class="a">"CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC"</span>: <span class="s">"1"</span>,
+    <span class="a">"CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL"</span>: <span class="s">"1"</span>
+  },
+  <span class="a">"skipWebFetchPreflight"</span>: <span class="k">true</span>
+}
+
+<span class="g"># env 안의 값은 세션과 하위 프로세스의 환경변수가 된다</span>
+<span class="g"># skipWebFetchPreflight는 env가 아니라 설정 항목이므로 바깥에 둔다</span></div></div></body></html>

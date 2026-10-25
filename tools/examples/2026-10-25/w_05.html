@@ -1,0 +1,42 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>
+#card{background:#1a0808;border-radius:0;padding:40px 36px}
+.two{display:flex;gap:22px}
+.pane{flex:1;background:#1e1e1e;border-radius:14px;overflow:hidden}
+.body{font-size:16px;line-height:1.5;padding:18px 16px}
+.h{font-family:'Noto Sans CJK KR';font-size:30px;font-weight:900;color:#fff1f0;margin-bottom:18px}
+.h span{color:#ff6b6b}
+.foot{font-family:'Noto Sans CJK KR';font-size:22px;color:#ffd6d6;margin-top:20px;line-height:1.6}
+.foot b{color:#ff6b6b}
+.k2{color:#569cd6}.a{color:#9cdcfe}.s{color:#ce9178}.t{color:#d4d4d4}
+.x{background:#5a1a1a;border-radius:4px;color:#ff9b9b}
+.m{color:#ff6b6b;font-family:'Noto Sans CJK KR';font-weight:700}
+</style></head><body><div id="card">
+<div class="h">신착 도서 페이지: <span>HTML에는 있는데 스냅샷에는 없는 것</span></div>
+<div class="two">
+<div class="pane"><div class="bar">HTML (DOM)</div><div class="body"><span class="k2">&lt;tr</span> <span class="x">data-book-id="1001" data-isbn="…01"</span><span class="k2">&gt;</span>
+  <span class="k2">&lt;td&gt;</span>습관의 힘<span class="k2">&lt;/td&gt;&lt;td&gt;</span>찰스 두히그<span class="k2">&lt;/td&gt;</span>
+  <span class="k2">&lt;td&gt;&lt;span</span> <span class="x">class="badge-green"</span><span class="k2">&gt;</span>대출 가능<span class="k2">&lt;/span&gt;&lt;/td&gt;</span>
+<span class="k2">&lt;/tr&gt;</span>
+<span class="k2">&lt;details&gt;&lt;summary&gt;</span>도서관 이용 안내<span class="k2">&lt;/summary&gt;</span>
+  <span class="k2">&lt;p&gt;</span><span class="x">평일 09:00~18:00, 토요일 09:00~13:00</span><span class="k2">&lt;/p&gt;</span>
+<span class="k2">&lt;/details&gt;</span>
+<span class="k2">&lt;div</span> <span class="a">class</span>=<span class="s">"tab-panel"</span> <span class="x">style="display:none"</span><span class="k2">&gt;</span>
+  <span class="x">숨겨진 탭: 예약 대기 3명</span><span class="k2">&lt;/div&gt;</span>
+<span class="k2">&lt;button&gt;&lt;img</span> <span class="x">src="star.png"</span><span class="k2">&gt;&lt;/button&gt;</span>
+<span class="k2">&lt;a</span> <span class="a">href</span>=<span class="s">"/book/1001"</span><span class="k2">&gt;</span>상세 보기<span class="k2">&lt;/a&gt;</span></div></div>
+<div class="pane"><div class="bar">aria_snapshot() 결과</div><div class="body"><span class="t">- table:
+  - rowgroup:
+    - row "습관의 힘 찰스 두히그 대출 가능":
+      - cell "습관의 힘"
+      - cell "찰스 두히그"
+      - cell "대출 가능"   <span class="m">← 색(class) 없음</span>
+      <span class="m">(data-book-id, isbn 없음)</span>
+- group: 도서관 이용 안내   <span class="m">← 접힌 내용 없음</span>
+      <span class="m">(display:none 탭 없음)</span>
+- button:
+  - img                 <span class="m">← 이름 없는 버튼</span>
+- link "상세 보기":
+  - /url: /book/1001</span></div></div>
+</div>
+<div class="foot">샌드박스에서 Playwright로 실제 실행. 붉게 표시한 부분이 스냅샷에서 <b>빠진 것</b>이다.<br>글자는 남았지만 <b>속성값 · 접힌 내용 · 숨겨진 요소 · 아이콘 버튼의 의미</b>가 사라졌다.</div>
+</div></body></html>

@@ -1,0 +1,30 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0f0a1e;--fg:#f3f0ff;--ac:#9775fa}
+.wrap{position:relative;height:620px}
+.box{position:absolute;border-radius:22px;padding:22px 18px;text-align:center;font-weight:900}
+.srv{width:320px;height:190px;background:#1c1238;border:3px solid #4b3a86}
+.srv .t{font-size:24px;color:#b8a8e8;margin-bottom:8px}.srv .n{font-size:30px;color:#fff}
+.hot{border-color:var(--ac);box-shadow:0 0 44px rgba(151,117,250,.35)}
+.pc{width:300px;height:170px;background:#1c1238;border:3px solid var(--ac);box-shadow:0 0 44px rgba(151,117,250,.35)}
+.cloud{position:absolute;left:0;top:0;width:960px;height:280px;border:3px dashed #4b3a86;border-radius:40px}
+.cl{position:absolute;left:30px;top:-20px;background:var(--bg);padding:0 14px;font-size:26px;font-weight:900;color:#b8a8e8}
+.lab{position:absolute;font-size:34px;font-weight:900;color:var(--ac)}
+.sub{position:absolute;font-size:22px;color:#b8a8e8}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">fork vs clone</div><h1>"어디서 어디로"가 다르다</h1>
+<div class="wrap">
+<div class="cloud"><div class="cl">GitHub 서버</div></div>
+<div class="box srv" style="left:60px;top:50px"><div class="t">남의 계정</div><div class="n">octocat/<br>Spoon-Knife</div></div>
+<div class="box srv hot" style="left:600px;top:50px;width:340px"><div class="t">내 계정</div><div class="n" style="font-size:26px">YOUR-USERNAME/<br>Spoon-Knife</div></div>
+<svg width="960" height="620">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="30" markerHeight="30" refX="24" refY="15" orient="auto"><path d="M0,0 L30,15 L0,30 z" fill="#9775fa"/></marker></defs>
+<path d="M385 145 L585 145" stroke="#9775fa" stroke-width="8" marker-end="url(#a)"/>
+<path d="M770 250 L770 420" stroke="#9775fa" stroke-width="8" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:440px;top:70px">fork</div>
+<div class="sub" style="left:400px;top:175px">원격 → 원격<br>저장소가 하나 더 생김</div>
+<div class="lab" style="left:780px;top:300px">clone</div>
+<div class="sub" style="left:780px;top:350px">원격 → 로컬<br>파일이 내 PC로 옴</div>
+<div class="box pc" style="left:620px;top:430px"><div class="t" style="font-size:24px;color:#b8a8e8;margin-bottom:8px">내 PC</div><div class="n" style="font-size:30px;color:#fff">작업 폴더<br>Spoon-Knife/</div></div>
+<div class="sub" style="left:60px;top:450px;font-size:24px;line-height:1.6">둘 다 커밋 이력을<br>통째로 복사한다.<br>다른 건 <span style="color:var(--ac);font-weight:900">도착지</span>뿐.</div>
+</div></div></body></html>

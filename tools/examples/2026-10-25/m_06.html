@@ -1,0 +1,27 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0f0a1e;--fg:#f3f0ff;--ac:#9775fa}
+.row{display:flex;align-items:center;gap:10px;margin-bottom:40px}
+.box{flex:1;border-radius:22px;padding:20px 14px;text-align:center;background:#1c1238;border:3px solid #4b3a86}
+.box .t{font-size:30px;font-weight:900;color:var(--ac);font-family:'DejaVu Sans Mono'}
+.box .w{font-size:21px;color:#b8a8e8;margin-top:6px}.box .n{font-size:21px;color:#fff;margin-top:8px}
+.hot{border-color:var(--ac);box-shadow:0 0 40px rgba(151,117,250,.3)}
+.ar{width:96px;text-align:center;color:var(--ac);font-size:20px;font-weight:700;line-height:1.3}
+.ar span{display:block;font-size:40px;line-height:1}
+.cmd{display:flex;align-items:center;gap:20px;background:#1c1238;border:2px solid #4b3a86;border-radius:16px;padding:16px 22px;margin-bottom:16px}
+.cmd .no{font-size:32px;font-weight:900;color:var(--ac);width:44px}
+.cmd .m{font-family:'DejaVu Sans Mono';font-size:24px;font-weight:700;color:#fff;flex:1}
+.cmd .d{font-size:22px;color:#b8a8e8;width:300px;text-align:right}
+.cmd .d b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">fork한 뒤의 저장소 세 개</div><h1>upstream · origin · 내 PC</h1>
+<div class="row">
+<div class="box"><div class="t">upstream</div><div class="w">GitHub · 남의 계정</div><div class="n">octocat/Spoon-Knife<br>(원본)</div></div>
+<div class="ar">① Fork<span>▶</span></div>
+<div class="box hot"><div class="t">origin</div><div class="w">GitHub · 내 계정</div><div class="n">YOUR-USERNAME/<br>Spoon-Knife (내 fork)</div></div>
+<div class="ar">② clone<span>▶</span></div>
+<div class="box hot"><div class="t">로컬</div><div class="w">내 PC</div><div class="n">Spoon-Knife/<br>(작업 폴더)</div></div>
+</div>
+<div class="cmd"><div class="no">③</div><div class="m">git remote add upstream &lt;원본 주소&gt;</div><div class="d">로컬에 <b>원본 주소를 등록</b></div></div>
+<div class="cmd"><div class="no">④</div><div class="m">git fetch upstream<br>git merge upstream/main</div><div class="d"><b>원본 → 로컬</b><br>원본의 새 커밋을 가져와 합침</div></div>
+<div class="cmd"><div class="no">⑤</div><div class="m">git push origin main</div><div class="d"><b>로컬 → 내 fork</b><br>합친 결과를 GitHub에 반영</div></div>
+<div style="margin-top:24px;font-size:24px;color:#b8a8e8;text-align:center">원본의 변경은 <span style="color:var(--ac);font-weight:900">자동으로 오지 않는다</span>. ④와 ⑤를 직접 한다.</div>
+</div></body></html>

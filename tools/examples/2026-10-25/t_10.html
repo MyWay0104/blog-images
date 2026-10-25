@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#061a0d;--fg:#eafbef;--ac:#51cf66}
+.row{display:flex;gap:22px;margin-bottom:26px}
+.c{flex:1;background:#0d2a17;border:3px solid #1f5a33;border-radius:24px;padding:26px 24px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(81,207,102,.22)}
+.h{font-size:34px;font-weight:900;margin-bottom:12px}.c.hot .h{color:var(--ac)}
+.l{font-size:22px;line-height:1.7;color:#cfeeda}.l b{color:#fff}
+.foot{background:#13331f;border-radius:18px;padding:20px 26px;font-size:26px;line-height:1.6;text-align:center}
+.foot b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">"결국 DOM을 읽는다는 건가?"</div><h1>반쯤 맞다</h1>
+<div class="row">
+<div class="c"><div class="h">맞는 부분</div><div class="l"><b>출발점은 DOM이다.</b><br>브라우저가 HTML을 파싱해 DOM을 만들고<br>그 DOM을 바탕으로 접근성 트리를 만든다.<br>화면 픽셀을 보는 게 아니다.</div></div>
+<div class="c hot"><div class="h">틀린 부분</div><div class="l"><b>DOM 자체를 읽는 게 아니다.</b><br>레이아웃용 div·span, class·id는 빠지고<br>역할·이름·상태만 남은 <b>파생본</b>을 읽는다.<br>그래서 DOM 덤프보다 훨씬 작다.</div></div>
+</div>
+<div class="foot">LLM이 받는 것 = <b>DOM의 의미 요약본 + ref 번호</b><br>조작에는 충분하고, 원본 전체가 필요한 일에는 부족하다.</div>
+</div></body></html>

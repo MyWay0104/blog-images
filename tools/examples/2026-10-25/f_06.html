@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0d02;--fg:#fff4e6;--ac:#ff922b}
+.row{display:flex;gap:22px}
+.c{flex:1;background:#2a1a0a;border:3px solid #5a3a1a;border-radius:24px;padding:26px 24px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(255,146,43,.22)}
+.h{font-size:24px;color:var(--ac);font-weight:900}.t{font-size:32px;font-weight:900;margin:6px 0 12px;color:#fff}
+.l{font-size:22px;line-height:1.65;color:#f3d9bd}.l b{color:#fff}
+.q{background:#3a2410;border-radius:16px;padding:16px 22px;font-size:25px;text-align:center;margin-bottom:26px;color:#fff}
+.q b{color:var(--ac)}
+.foot{margin-top:24px;text-align:center;font-size:24px;color:#f3d9bd}.foot b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">애매한 동사 하나</div><h1>"테이블을 가져왔다"는 두 층이다</h1>
+<div class="q">"이 시스템이 테이블을 <b>어떻게 가져왔는지</b> 알려줘"</div>
+<div class="row">
+<div class="c"><div class="h">A. 데이터 적재</div><div class="t">원본 → 분석용 DB</div><div class="l">표의 <b>내용물</b>이 어떻게 복사됐나<br>Airflow DAG, Spark job, SQL 스크립트<br><b>보통 다른 저장소에 있다</b></div></div>
+<div class="c hot"><div class="h">B. 스키마 수집</div><div class="t">앱이 테이블 목록을 읽기</div><div class="l">앱이 어떤 테이블·컬럼이 있는지<br><b>어떻게 알아내나</b><br>이 저장소의 앱 코드에 있다</div></div>
+</div>
+<div class="foot">0단계로 "이 저장소에 A가 있는가"부터 확인. 없으면 <b>"출처 불명"</b>으로 적게 한다.</div>
+</div></body></html>

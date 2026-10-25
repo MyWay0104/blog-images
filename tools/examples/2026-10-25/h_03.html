@@ -1,0 +1,29 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#041a1f;--fg:#e6fbff;--ac:#22b8cf}
+.wrap{position:relative;height:660px}
+.box{position:absolute;border-radius:20px;padding:18px 16px;text-align:center;background:#0a2a33;border:3px solid #175a68}
+.box .t{font-size:28px;font-weight:900;color:#fff}.box .d{font-size:20px;color:#9fe3ee;margin-top:6px;line-height:1.4}
+.hot{border-color:var(--ac);box-shadow:0 0 34px rgba(34,184,207,.25)}
+.lab{position:absolute;font-size:22px;font-weight:700;color:#9fe3ee}
+.lab b{color:var(--ac)}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">모델을 자체 서버로 연결해도</div><h1>통신 경로는 하나가 아니다</h1>
+<div class="wrap">
+<div class="box hot" style="left:0;top:200px;width:250px"><div class="t">Claude Code</div><div class="d">내 PC</div></div>
+<div class="box" style="left:400px;top:30px;width:270px"><div class="t">자체 모델 서버</div><div class="d">ANTHROPIC_BASE_URL<br>프롬프트 · 코드가 가는 곳</div></div>
+<div class="box hot" style="left:720px;top:200px;width:240px"><div class="t" style="font-size:24px">api.anthropic.com</div><div class="d">지표 수신,<br>WebFetch 호스트명<br>검사</div></div>
+<div class="box hot" style="left:400px;top:215px;width:270px"><div class="t" style="font-size:25px">지표·설문·오류 보고</div><div class="d">사용 패턴, 평점<br>코드·프롬프트 불포함</div></div>
+<div class="box hot" style="left:400px;top:440px;width:270px"><div class="t">도구가 만드는 통신</div><div class="d">Bash의 curl·npx, WebFetch,<br>MCP 서버, 플러그인 설치</div></div>
+<svg width="960" height="600">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#22b8cf"/></marker>
+<marker id="b" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#5a8a93"/></marker></defs>
+<path d="M255 250 L390 95" stroke="#5a8a93" stroke-width="6" marker-end="url(#b)" fill="none"/>
+<path d="M255 275 L390 275" stroke="#22b8cf" stroke-width="6" marker-end="url(#a)"/>
+<path d="M255 300 L390 490" stroke="#22b8cf" stroke-width="6" marker-end="url(#a)" fill="none"/>
+<path d="M675 275 L710 275" stroke="#22b8cf" stroke-width="6" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:240px;top:120px"><b>①</b> 모델 호출</div>
+<div class="lab" style="left:270px;top:240px"><b>②</b> 비모델</div>
+<div class="lab" style="left:250px;top:420px"><b>③</b> 도구 실행</div>
+<div class="lab" style="left:0;top:500px;line-height:1.6;width:380px">①을 자체 서버로 돌린 것이<br>"모델이 안에 있다"는 뜻이고,<br>②③은 <b>설정과 네트워크</b>로<br>따로 확인해야 한다.</div>
+</div></div></body></html>

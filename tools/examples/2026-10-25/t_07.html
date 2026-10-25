@@ -1,0 +1,25 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#061a0d;--fg:#eafbef;--ac:#51cf66}
+.row{display:flex;align-items:stretch;gap:10px}
+.s{flex:1 1 0;min-width:0;background:#0d2a17;border:3px solid #1f5a33;border-radius:22px;padding:22px 12px;text-align:center}
+.s.hot{border-color:var(--ac);box-shadow:0 0 36px rgba(81,207,102,.25)}
+.n{font-size:21px;color:#8fd9a0;font-weight:700}.t{font-size:30px;font-weight:900;margin:8px 0 12px}
+.d{font-size:20px;line-height:1.55;color:#cfeeda}
+.ar{display:flex;align-items:center;color:var(--ac);font-size:40px;font-weight:900}
+.who{display:flex;gap:10px;margin-top:14px}
+.who div{flex:1;text-align:center;font-size:21px;color:#8fd9a0}
+.who .ar{visibility:hidden}
+.mono{font-family:'DejaVu Sans Mono';font-size:17px;color:var(--ac);margin-top:10px}
+.w{font-size:19px;color:#8fd9a0;margin-top:14px;border-top:1px solid #1f5a33;padding-top:10px}
+</style></head><body><div id="card">
+<div class="k">Playwright MCP가 읽는 것</div><h1>HTML → DOM → 접근성 트리 → 스냅샷</h1>
+<div class="row">
+<div class="s"><div class="n">① 파일</div><div class="t">HTML</div><div class="d">서버가 보내 준<br>글자 그대로</div><div class="mono">&lt;input id="q"&gt;</div><div class="w">브라우저가 만든다</div></div>
+<div class="ar">▶</div>
+<div class="s"><div class="n">② 메모리</div><div class="t">DOM</div><div class="d">파싱해서 만든<br>트리 전체</div><div class="mono">div·label·input</div><div class="w">브라우저가 만든다</div></div>
+<div class="ar">▶</div>
+<div class="s hot"><div class="n">③ 파생본</div><div class="t">접근성 트리</div><div class="d">의미만 남긴 요약<br>role·name·state</div><div class="mono">textbox "검색"</div><div class="w">브라우저가 만든다</div></div>
+<div class="ar">▶</div>
+<div class="s hot"><div class="n">④ LLM에 전달</div><div class="t">스냅샷</div><div class="d">트리를 텍스트로<br>+ ref 번호</div><div class="mono">[ref=e5]</div><div class="w">MCP가 만든다</div></div>
+</div>
+<div style="margin-top:34px;text-align:center;font-size:27px;font-weight:700;color:#cfeeda">LLM이 받는 것은 ④뿐이다. <span style="color:var(--ac)">DOM(②)을 직접 읽는 게 아니라 파생본을 읽는다.</span></div>
+</div></body></html>

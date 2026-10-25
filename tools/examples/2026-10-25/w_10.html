@@ -1,0 +1,14 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0808;--fg:#fff1f0;--ac:#ff6b6b}
+.st{display:flex;align-items:center;gap:16px;background:#2a1010;border:3px solid #5a2222;border-radius:18px;padding:18px 24px;margin-bottom:14px}
+.st.hot{border-color:var(--ac);box-shadow:0 0 28px rgba(255,107,107,.22)}
+.no{font-size:38px;font-weight:900;color:var(--ac);width:60px}
+.tx{flex:1;font-size:25px;line-height:1.45;color:#fff}.tx small{display:block;font-size:20px;color:#ffd6d6;margin-top:4px}
+.mono{font-family:'DejaVu Sans Mono';color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">/crawl 규칙 — 페이지 1개를 노트로 저장할 때</div><h1>요약본만 남기지 말고 raw를 같이 남긴다</h1>
+<div class="st"><div class="no">1</div><div class="tx">탭·아코디언·"더보기"를 모두 펼치고 끝까지 스크롤한 뒤 로딩을 기다린다<small>스냅샷은 보이는 것만 담기므로, 보이게 만든 다음 찍는다</small></div></div>
+<div class="st hot"><div class="no">2</div><div class="tx"><span class="mono">browser_evaluate</span>로 <span class="mono">document.body.innerText</span>와 <span class="mono">a[href]</span> 목록을 뽑아 <b>페이지당 raw 파일 1개</b>로 저장<small>요약되기 전의 원본을 파일로 확보한다</small></div></div>
+<div class="st hot"><div class="no">3</div><div class="tx">노트는 스냅샷이 아니라 <b>2번의 raw 파일을 읽고</b> 작성<small>LLM이 요약한 것이 아니라 원본을 근거로 쓴다</small></div></div>
+<div class="st"><div class="no">4</div><div class="tx">저장 후 raw의 표 행 수·링크 수와 노트를 대조, 불일치는 "요약하며 뺀 항목"으로 적는다<small>빠졌는지 확인할 수 있는 숫자를 남긴다</small></div></div>
+<div class="st"><div class="no">5</div><div class="tx">raw에 없는 값은 "미확인"으로 적고 채우지 않는다<small>LLM이 빈 데이터를 그럴듯하게 메우는 것을 막는다</small></div></div>
+</div></body></html>

@@ -50,3 +50,14 @@
 - base64 `data:` 이미지는 PNG·JPEG·WebP·GIF 모두 "허용되지 않는 형식의 이미지"로 거부된다.
 - 발행 후에도 이미지 주소는 이 저장소 주소 그대로다. 파일을 지우거나 옮기면 글이 깨진다.
 - `raw.githubusercontent.com`은 비인증 요청 속도 제한 대상이라 쓰지 않는다. Pages 주소(`myway0104.github.io/blog-images/...`)를 쓴다.
+
+## 2026-10-25 추가
+
+| 파일 | 역할 |
+|---|---|
+| `crop.py` | PC 브라우저 캡처(jpg)를 잘라 PNG로 저장. `python3 crop.py <원본> <출력> <top> <bottom> [left right]`. 오른쪽 스크롤바 15px는 기본으로 잘라 낸다 |
+| `term.css` | 터미널·코드 화면 재구성용 공통 CSS (`#card` 1080px, `.bar` 제목줄, `.body` 본문, 색 클래스 `.p .c .g .y .v`) |
+| `pushday.sh` | 하루치 이미지를 `<게시일>_<요일>/<요일>_<번호>.png`로 복사해 커밋·푸시하고, `IMG_URL_BASE`를 넣어 `_이미지주소포함.html`을 만든다. `bash pushday.sh 월 mon 2026-10-26 build_mon.py` |
+
+- 이번 주 빌드 스크립트는 `build_<요일>.py` 하나로 두고, 출력 파일명은 환경변수 `OUT`으로 바꾼다(`_url.py` 사본을 만들지 않는다).
+- 실제 실행 가능한 명령(git, Playwright `aria_snapshot()`, `page.evaluate`)은 샌드박스에서 돌려 그 출력을 `term.css`로 그렸다. 원고의 출처 줄에 "실제 실행" 또는 "재구성"을 구분해 적는다.

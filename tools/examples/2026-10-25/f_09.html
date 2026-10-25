@@ -1,0 +1,13 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.ok{color:#4ec9b0}.no{color:#ff922b}.f{color:#9cdcfe}</style></body><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; Claude Code — 답변 형식 (예시)</div>
+<div class="body"><span class="ok">## 확인된 사실</span>
+1. 진입점: <span class="f">app/main.py:ask()</span> — 질문 문자열을 받는다
+2. 스키마 수집: <span class="f">app/schema.py:load_tables()</span> — information_schema를 조회
+3. 후보 선택: <span class="f">app/select.py:pick_tables()</span> — 질문과 테이블 설명을 비교
+4. 프롬프트 주입: <span class="f">app/prompt.py:build()</span> — 고른 스키마를 템플릿에 삽입
+5. SQL 생성·실행: <span class="f">app/run.py:execute()</span> — 결과를 표로 반환
+
+<span class="no">## 코드에 없어서 모르는 것</span>
+- 분석용 DB에 테이블이 <span class="no">어떻게 적재됐는지</span> (이 저장소에 적재 코드 없음 → 출처 불명)
+- 테이블 설명문을 <span class="no">누가 작성했는지</span> (파일만 있고 생성 과정 없음)
+- 후보 선택의 유사도 임계값이 <span class="no">어디서 정해지는지</span> (상수 없음, 설정 파일 미발견)</div></div></body></html>
