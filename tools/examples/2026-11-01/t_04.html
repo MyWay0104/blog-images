@@ -1,0 +1,22 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#121a05;--fg:#f4ffe0;--ac:#a9e34b}
+.lane{display:flex;align-items:center;gap:10px;margin-bottom:30px}
+.tag{width:130px;font-size:24px;font-weight:900;color:var(--ac)}
+.b{flex:1 1 0;min-width:0;background:#1e2a0c;border:3px solid #3f5a1a;border-radius:18px;padding:14px 8px;text-align:center;font-size:19px;line-height:1.4;color:#dcebc0}
+.b b{display:block;font-size:20px;color:#fff;margin-bottom:4px}
+.b.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(169,227,75,.22)}
+.b.x{border-style:dashed;color:#8aa36a}
+.ar{color:var(--ac);font-size:28px;font-weight:900}
+.note{font-size:24px;text-align:center;color:#dcebc0;line-height:1.6}.note b{color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">글꼴 파일이 어디서 오는가</div><h1>CDN 경로 vs 직접 호스팅</h1>
+<div class="lane"><div class="tag">CDN<br><span style="font-size:18px;color:#8aa36a">(Google Fonts API)</span></div>
+<div class="b"><b>내 페이지</b>&lt;link&gt;로<br>CSS 주소 참조</div><div class="ar">▶</div>
+<div class="b"><b>googleapis.com</b>@font-face가<br>적힌 CSS</div><div class="ar">▶</div>
+<div class="b"><b>gstatic.com</b>.woff2<br>글꼴 파일</div><div class="ar">▶</div>
+<div class="b x"><b style="color:#8aa36a">외부 연결이<br>막히면</b>글꼴이 안 옴</div></div>
+<div class="lane"><div class="tag">직접<br>호스팅</div>
+<div class="b"><b>내 페이지</b>내 CSS 안의 @font-face</div><div class="ar">▶</div>
+<div class="b hot"><b>내 서버 ./fonts/</b>.woff2 · .ttf<br>글꼴 파일</div><div class="ar">▶</div>
+<div class="b hot"><b>브라우저</b>같은 서버에서<br>받음</div><div class="ar" style="visibility:hidden">▶</div><div class="b" style="visibility:hidden"></div></div>
+<div class="note">CSS는 사실상 같다. 다른 건 <b>src의 주소</b>뿐이다 — 절대 주소(gstatic) → 상대 경로(./fonts/)</div>
+</div></body></html>

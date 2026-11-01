@@ -1,0 +1,25 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#04101c;--fg:#eaf4ff;--ac:#339af0}
+.wrap{position:relative;height:560px}
+.box{position:absolute;border-radius:20px;padding:18px 16px;text-align:center;background:#0b2238;border:3px solid #1d4a73}
+.box .t{font-size:27px;font-weight:900;color:#fff}.box .d{font-size:20px;color:#9ccdf5;margin-top:6px;line-height:1.4}
+.hot{border-color:var(--ac);box-shadow:0 0 34px rgba(51,154,240,.25)}
+.lab{position:absolute;font-size:22px;font-weight:700;color:#9ccdf5}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">"프로젝트 안에 있다"와 "대화를 읽을 수 있다"는 다른 조건</div><h1>예약 세션에는 한 가지가 빠져 있었다</h1>
+<div class="wrap">
+<div class="box" style="left:0;top:40px;width:260px"><div class="t">사람이 연 대화</div><div class="d">프로젝트 안</div></div>
+<div class="box" style="left:0;top:330px;width:260px"><div class="t">예약작업 세션</div><div class="d">프로젝트 안</div></div>
+<div class="box hot" style="left:560px;top:20px;width:400px"><div class="t">프로젝트 지식</div><div class="d">지침 · 문서 · 메모리<br>(project_search)</div></div>
+<div class="box hot" style="left:560px;top:230px;width:400px"><div class="t">대화 이력</div><div class="d">같은 프로젝트의 지난 채팅 본문<br>(대화 검색 도구가 있어야 읽음)</div></div>
+<div class="box" style="left:560px;top:440px;width:400px;border-style:dashed"><div class="t" style="color:#9ccdf5">다른 프로젝트의 대화</div><div class="d">어느 세션도 못 읽음 (지원 문서)</div></div>
+<svg width="960" height="560">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#339af0"/></marker>
+<marker id="x" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#5a7a95"/></marker></defs>
+<path d="M265 90 L545 75" stroke="#339af0" stroke-width="6" marker-end="url(#a)"/>
+<path d="M265 110 L545 285" stroke="#339af0" stroke-width="6" marker-end="url(#a)"/>
+<path d="M265 370 C 400 370, 400 90, 545 85" stroke="#339af0" stroke-width="6" fill="none" marker-end="url(#a)"/>
+<path d="M265 395 L545 300" stroke="#5a7a95" stroke-width="6" stroke-dasharray="14 10" marker-end="url(#x)"/>
+</svg>
+<div class="lab" style="left:410px;top:385px;color:#ff8787">도구 없음 ✕</div>
+</div></div></body></html>

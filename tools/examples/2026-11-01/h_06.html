@@ -1,0 +1,12 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.h{color:#4ec9b0}.m{color:#9cdcfe}.y{color:#ce9178}.g{color:#808080}.w{color:#dcdcaa}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; Trace 1건의 모양 — 독서 노트 앱 "이 책 핵심 세 줄" 질문 (설명용 재구성, 실제 캡처 아님)</div>
+<div class="body"><span class="g">trace_id: 5b8a…9df2   session.id: 7c1e…   project: reading-notes</span>
+
+<span class="h">agent</span>  <span class="w">"이 책 핵심 세 줄 알려줘"</span>                 <span class="g">parent_id: null   ← root span</span>   4.9s
+├─ <span class="m">retrieve</span>                                   <span class="g">parent_id: agent</span>              1.1s
+│  └─ <span class="m">vector_search</span>  <span class="g">top_k=4</span>                   <span class="g">parent_id: retrieve</span>           0.8s
+├─ <span class="m">ChatOpenAI</span>     <span class="g">tokens: in 1,240 / out 96</span>   <span class="g">parent_id: agent</span>              3.6s
+└─ <span class="m">format_answer</span>                              <span class="g">parent_id: agent</span>              0.1s
+
+<span class="g">같은 trace_id · 다른 span_id · parent_id로 연결 → 나무 모양</span>
+<span class="g">다음 질문 "그중 두 번째를 더 설명해줘"는 새 trace_id, 같은 session.id</span></div></div></body></html>

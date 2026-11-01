@@ -1,0 +1,24 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#041a16;--fg:#e6fcf5;--ac:#20c997}
+.lv{border-radius:22px;padding:18px 22px;border:3px solid}
+.lv .t{font-size:26px;font-weight:900;display:flex;justify-content:space-between;align-items:baseline}
+.lv .t small{font-size:18px;font-weight:500;color:#96f2d7}
+.p{border-color:#2f6b5e;background:#07251f}
+.s{border-color:#3f8f7c;background:#0a332b;margin-top:14px}
+.tr{border-color:#20c997;background:#0e4237;margin-top:14px}
+.sp{display:inline-block;border-radius:14px;padding:10px 16px;background:#20c997;color:#031a14;font-weight:900;font-size:21px;margin:10px 8px 0 0}
+.sp.c{background:#63e6be;margin-left:36px}
+.sp.cc{background:#c3fae8;margin-left:72px}
+</style></head><body><div id="card">
+<div class="k">관측 도구가 기록을 묶는 네 단위</div><h1>Span이 모여 Trace, Trace가 모여 Session, 전부 Project</h1>
+<div class="lv p"><div class="t">Project <small>앱 하나의 기록 전체 (Phoenix: register(project_name=...))</small></div>
+ <div class="lv s"><div class="t">Session <small>대화방 하나 = Trace의 연속 (session.id)</small></div>
+  <div class="lv tr"><div class="t">Trace <small>질문 하나 → 답 하나 (trace_id 공유)</small></div>
+   <div><span class="sp">root span: agent</span></div>
+   <div><span class="sp c">span: retrieve</span><span class="sp cc">span: vector search</span></div>
+   <div><span class="sp c">span: ChatOpenAI</span></div>
+   <div style="font-size:18px;color:#96f2d7;margin-top:12px">Span = 작업 하나. parent_id로 나무 모양이 된다</div>
+  </div>
+  <div class="lv tr" style="padding:12px 22px"><div class="t">Trace <small>다음 질문</small></div></div>
+ </div>
+</div>
+</div></body></html>

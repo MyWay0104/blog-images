@@ -1,0 +1,27 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a1200;--fg:#fff8e1;--ac:#fab005}
+.wrap{position:relative;height:520px}
+.box{position:absolute;border-radius:20px;padding:16px 14px;text-align:center;background:#2a1f00;border:3px solid #6b5200}
+.box .t{font-size:25px;font-weight:900;color:#fff}.box .d{font-size:18px;color:#ffe8a3;margin-top:6px;line-height:1.4;word-break:keep-all}
+.hot{border-color:var(--ac);box-shadow:0 0 34px rgba(250,176,5,.22)}
+.lab{position:absolute;font-size:18px;font-weight:700;color:#ffd43b;text-align:center}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">주간 블로그 프로젝트의 실제 흐름</div><h1>지침은 가리키고, 문서가 규칙을 가진다</h1>
+<div class="wrap">
+<div class="box" style="left:0;top:40px;width:220px"><div class="t">"지금 실행"</div><div class="d">일요일에 한 줄</div></div>
+<div class="box hot" style="left:290px;top:20px;width:300px"><div class="t">지침 (짧게)</div><div class="d">문서 두 개를 먼저 읽어라<br>순서: 출처 검토 → 선정 → 글 5건<br>충돌하면 문서가 이긴다</div></div>
+<div class="box hot" style="left:660px;top:0;width:300px"><div class="t">운영 지침.md</div><div class="d">출처 규칙 · 제목 규칙 · 말투<br>이미지 규칙 · 붙여넣기 형식<br>(약 200줄)</div></div>
+<div class="box hot" style="left:660px;top:190px;width:300px"><div class="t">중복 제외 목록.md</div><div class="d">이미 쓴 주제 50여 건<br>이월 후보 · 실행 메모</div></div>
+<div class="box" style="left:660px;top:360px;width:300px;border-style:dashed"><div class="t" style="color:#ffe8a3">성과 정리.md</div><div class="d">조회수 질문이 올 때만 읽음</div></div>
+<div class="box" style="left:290px;top:330px;width:300px"><div class="t">실행 후</div><div class="d">중복 제외 목록.md 갱신<br>→ 다음 주 채팅이 이어받음</div></div>
+<svg width="960" height="520">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#fab005"/></marker></defs>
+<path d="M225 95 L285 95" stroke="#fab005" stroke-width="6" marker-end="url(#a)"/>
+<path d="M595 70 L655 60" stroke="#fab005" stroke-width="6" marker-end="url(#a)"/>
+<path d="M595 110 L655 240" stroke="#fab005" stroke-width="6" marker-end="url(#a)"/>
+<path d="M440 165 L440 325" stroke="#fab005" stroke-width="6" stroke-dasharray="12 8" marker-end="url(#a)"/>
+<path d="M595 390 C 630 390, 640 300, 655 285" stroke="#fab005" stroke-width="6" fill="none" stroke-dasharray="12 8" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:560px;top:-4px;width:100px">읽는다</div><div class="lab" style="left:460px;top:240px;width:120px">실행</div>
+<div class="lab" style="left:560px;top:420px;width:120px">갱신</div>
+</div></div></body></html>

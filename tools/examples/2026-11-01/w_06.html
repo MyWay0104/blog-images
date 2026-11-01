@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.h{color:#4ec9b0}.m{color:#9cdcfe}.y{color:#ce9178}.k{color:#c586c0}.g{color:#6a9955}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; gateway_client.py — 게이트웨이를 거쳐 부르기 (LiteLLM 공식 문서 예제를 바탕으로 재구성)</div>
+<div class="body"><span class="k">import</span> openai
+
+<span class="g"># 앱은 제공사 키를 모른다. 게이트웨이가 준 "가상 키"와 주소만 안다</span>
+client = openai.OpenAI(
+    api_key=<span class="y">"sk-your-virtual-key"</span>,
+    base_url=<span class="y">"http://localhost:4000"</span>,   <span class="g"># LiteLLM 게이트웨이</span>
+)
+
+<span class="g"># 호출 코드는 평범한 OpenAI SDK 그대로. 어느 제공사로 갈지는 게이트웨이 설정이 정한다</span>
+r = client.chat.completions.create(
+    model=<span class="y">"reading-notes-summary"</span>,         <span class="g"># 게이트웨이에 등록한 별칭</span>
+    messages=[{<span class="y">"role"</span>: <span class="y">"user"</span>, <span class="y">"content"</span>: <span class="y">"이 독서 노트를 세 줄로 요약해 줘: ..."</span>}],
+)
+<span class="m">print</span>(r.choices[<span class="y">0</span>].message.content)</div></div></body></html>

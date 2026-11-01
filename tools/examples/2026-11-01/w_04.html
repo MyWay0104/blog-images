@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.h{color:#4ec9b0}.m{color:#9cdcfe}.y{color:#ce9178}.k{color:#c586c0}.g{color:#6a9955}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; litellm_demo.py — LiteLLM Python SDK (공식 문서의 예제를 바탕으로 재구성)</div>
+<div class="body"><span class="k">from</span> litellm <span class="k">import</span> completion
+
+<span class="g"># 제공사가 달라도 같은 함수, 같은 OpenAI 형식 메시지</span>
+messages = [{<span class="y">"role"</span>: <span class="y">"user"</span>,
+             <span class="y">"content"</span>: <span class="y">"이 독서 노트를 세 줄로 요약해 줘: ..."</span>}]
+
+r1 = completion(model=<span class="y">"openai/gpt-5.4-nano"</span>, messages=messages)
+r2 = completion(model=<span class="y">"anthropic/&lt;모델명&gt;"</span>, messages=messages)
+
+<span class="g"># 응답 형태도 제공사와 무관하게 OpenAI 형식으로 통일</span>
+<span class="m">print</span>(r1.choices[<span class="y">0</span>].message.content)
+<span class="m">print</span>(r2.choices[<span class="y">0</span>].message.content)
+
+<span class="g"># 모델 이름 규칙: "제공사/모델"  (슬래시). 모델명은 각 제공사 문서의 이름을 그대로 넣는다</span></div></div></body></html>

@@ -1,0 +1,29 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0612;--fg:#fff0f6;--ac:#e64980}
+.wrap{position:relative;height:650px}
+.box{position:absolute;border-radius:20px;padding:16px 14px;text-align:center;background:#2b0d1c;border:3px solid #6b2a46}
+.box .t{font-size:26px;font-weight:900;color:#fff}.box .d{font-size:19px;color:#f3b5cc;margin-top:6px;line-height:1.4}
+.hot{border-color:var(--ac);box-shadow:0 0 34px rgba(230,73,128,.25)}
+.zone{position:absolute;border:3px dashed #7a3a58;border-radius:26px}
+.zl{position:absolute;font-size:22px;font-weight:700;color:#f3b5cc}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">둘 다 "여러 모델 앞"에 있지만 서 있는 자리가 다르다</div><h1>LangChain은 앱 안, 게이트웨이는 앱 밖</h1>
+<div class="wrap">
+<div class="zone" style="left:0;top:0;width:440px;height:600px"></div><div class="zl" style="left:24px;top:14px">내 앱 (Python 프로세스)</div>
+<div class="zone" style="left:490px;top:0;width:470px;height:600px"></div><div class="zl" style="left:514px;top:14px">앱 밖 (별도 서버 / 제공사)</div>
+<div class="box" style="left:24px;top:60px;width:392px"><div class="t">내 코드</div><div class="d">독서 노트 요약 로직</div></div>
+<div class="box hot" style="left:24px;top:200px;width:392px"><div class="t">LangChain</div><div class="d">표준 모델 인터페이스 (라이브러리)<br>init_chat_model("provider:model")</div></div>
+<div class="box hot" style="left:24px;top:360px;width:392px"><div class="t">LiteLLM Python SDK</div><div class="d">앱 하나에서 쓸 때 (라이브러리)<br>completion(model="provider/model")</div></div>
+<div class="box hot" style="left:514px;top:200px;width:420px"><div class="t">LiteLLM 게이트웨이</div><div class="d">self-hosted 서버 · OpenAI 호환 엔드포인트<br>여러 앱·여러 사람이 함께 쓸 때</div></div>
+<div class="box" style="left:514px;top:380px;width:420px;border-style:dashed"><div class="t" style="color:#f3b5cc">모델 제공사 API</div><div class="d">OpenAI · Anthropic · Gemini · …</div></div>
+<svg width="960" height="600">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#e64980"/></marker></defs>
+<path d="M220 150 L220 195" stroke="#e64980" stroke-width="6" marker-end="url(#a)"/>
+<path d="M420 292 L510 292" stroke="#e64980" stroke-width="6" marker-end="url(#a)"/>
+<path d="M724 300 L724 375" stroke="#e64980" stroke-width="6" marker-end="url(#a)"/>
+<path d="M420 430 C 470 430, 480 450, 510 450" stroke="#e64980" stroke-width="6" fill="none" marker-end="url(#a)"/>
+<path d="M420 325 C 470 325, 470 470, 510 470" stroke="#e64980" stroke-width="6" fill="none" marker-end="url(#a)"/>
+</svg>
+<div class="zl" style="left:424px;top:250px;font-size:16px;color:#ffd6e4">base_url</div>
+<div class="zl" style="left:0;top:612px;width:960px;text-align:center;font-size:19px;color:#c98ba8">LangChain은 제공사를 직접 부를 수도, 게이트웨이를 거칠 수도 있음</div>
+</div></div></body></html>

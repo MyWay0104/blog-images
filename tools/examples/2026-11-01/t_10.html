@@ -1,0 +1,14 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#121a05;--fg:#f4ffe0;--ac:#a9e34b}
+.st{display:flex;align-items:center;gap:18px;background:#1e2a0c;border:3px solid #3f5a1a;border-radius:18px;padding:16px 24px;margin-bottom:14px}
+.st.hot{border-color:var(--ac);box-shadow:0 0 28px rgba(169,227,75,.2)}
+.no{font-size:38px;font-weight:900;color:var(--ac);width:56px}
+.tx{flex:1;font-size:25px;line-height:1.45;color:#fff}.tx small{display:block;font-size:20px;color:#dcebc0;margin-top:4px}
+.mono{font-family:'DejaVu Sans Mono';color:var(--ac)}
+</style></head><body><div id="card">
+<div class="k">직접 호스팅 5단계</div><h1>내려받고, 넣고, 선언하고, 쓰고, 확인한다</h1>
+<div class="st"><div class="no">1</div><div class="tx">Google Fonts에서 글꼴 파일을 내려받는다<small>라이선스(SIL OFL 등) 조건에 동의하는 것. GitHub google/fonts에서도 받을 수 있다</small></div></div>
+<div class="st"><div class="no">2</div><div class="tx">프로젝트의 <span class="mono">fonts/</span> 폴더에 넣는다<small>CSS 파일 기준 상대 경로를 적어 둔다</small></div></div>
+<div class="st hot"><div class="no">3</div><div class="tx">CSS에 <span class="mono">@font-face</span>를 선언한다<small>font-family 이름, src: url("./fonts/파일") format(…), font-weight, font-display</small></div></div>
+<div class="st hot"><div class="no">4</div><div class="tx"><span class="mono">font-family: "이름", sans-serif;</span> 로 쓴다<small>맨 뒤에 일반 글꼴 이름을 두어 못 받았을 때의 대체를 정한다</small></div></div>
+<div class="st"><div class="no">5</div><div class="tx">개발자 도구 Network에서 글꼴 요청이 내 서버로 가는지 본다<small>googleapis / gstatic 으로 나가는 요청이 없어야 한다</small></div></div>
+</div></body></html>

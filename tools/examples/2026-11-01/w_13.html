@@ -1,0 +1,27 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0612;--fg:#fff0f6;--ac:#e64980}
+.wrap{position:relative;height:420px}
+.box{position:absolute;border-radius:20px;padding:16px 14px;text-align:center;background:#2b0d1c;border:3px solid #6b2a46}
+.box .t{font-size:25px;font-weight:900;color:#fff}.box .d{font-size:18px;color:#f3b5cc;margin-top:6px;line-height:1.4}
+.hot{border-color:var(--ac);box-shadow:0 0 34px rgba(230,73,128,.25)}
+.lab{position:absolute;font-size:19px;font-weight:700;color:#f3b5cc;text-align:center}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">둘을 같이 쓰는 모양</div><h1>앱 안은 LangChain, 앱 밖은 게이트웨이</h1>
+<div class="wrap">
+<div class="box hot" style="left:0;top:40px;width:300px"><div class="t">독서 노트 앱</div><div class="d">LangChain<br>init_chat_model / ChatLiteLLM</div></div>
+<div class="box" style="left:0;top:230px;width:300px;border-style:dashed"><div class="t" style="color:#f3b5cc">다른 앱 · 동료</div><div class="d">같은 게이트웨이를 씀</div></div>
+<div class="box hot" style="left:370px;top:120px;width:280px"><div class="t">LiteLLM 게이트웨이</div><div class="d">localhost:4000<br>가상 키 · 모델 라우팅</div></div>
+<div class="box" style="left:720px;top:20px;width:240px"><div class="t">OpenAI</div></div>
+<div class="box" style="left:720px;top:150px;width:240px"><div class="t">Anthropic</div></div>
+<div class="box" style="left:720px;top:280px;width:240px"><div class="t">Gemini · …</div></div>
+<svg width="960" height="420">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto"><path d="M0,0 L22,11 L0,22 z" fill="#e64980"/></marker></defs>
+<path d="M305 120 L365 170" stroke="#e64980" stroke-width="6" marker-end="url(#a)"/>
+<path d="M305 290 L365 230" stroke="#e64980" stroke-width="6" stroke-dasharray="12 8" marker-end="url(#a)"/>
+<path d="M655 170 L715 80" stroke="#e64980" stroke-width="6" marker-end="url(#a)"/>
+<path d="M655 200 L715 200" stroke="#e64980" stroke-width="6" marker-end="url(#a)"/>
+<path d="M655 230 L715 320" stroke="#e64980" stroke-width="6" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:300px;top:60px;width:120px">base_url<br>+ 가상 키</div>
+<div class="lab" style="left:360px;top:330px;width:300px">제공사 키는 게이트웨이만 가짐</div>
+</div></div></body></html>

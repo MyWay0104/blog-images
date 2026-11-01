@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c0612;--fg:#fff0f6;--ac:#e64980}
+table{border-collapse:collapse;width:100%;font-size:23px}
+th{color:var(--ac);font-size:22px;padding:10px 12px;text-align:left;border-bottom:3px solid #6b2a46}
+td{padding:16px 12px;border-bottom:2px solid #3d1528;vertical-align:top;line-height:1.45;color:#fff0f6}
+td:first-child{font-weight:900;color:#f3b5cc;width:150px}
+td{word-break:keep-all}
+.m{font-family:'DejaVu Sans Mono',monospace;font-size:20px;color:#ffd6e4}
+</style></head><body><div id="card">
+<div class="k">공식 문서 기준 비교</div><h1>"여러 모델 앞"이라도 하는 일이 다르다</h1>
+<table><tr><th>항목</th><th>LiteLLM</th><th>LangChain</th></tr>
+<tr><td>자기 소개</td><td>100+ LLM을 OpenAI 형식 하나로 부르는<br>통합 인터페이스</td><td>에이전트·앱을 만드는 프레임워크 (모델은 그 중 한 부품)</td></tr>
+<tr><td>모델 지정</td><td><span class="m">"openai/gpt-…"</span><br>제공사/모델</td><td><span class="m">"openai:gpt-…"</span><br>제공사:모델</td></tr>
+<tr><td>출력 형태</td><td>제공사와 무관하게<br>OpenAI 형식으로 통일</td><td>LangChain 메시지 객체 (AIMessage 등)</td></tr>
+<tr><td>앱 밖 서버</td><td>있음 — 게이트웨이 (self-hosted, OpenAI 호환 엔드포인트, 가상 키)</td><td>없음 — 라이브러리로<br>앱 안에서 실행</td></tr>
+<tr><td>그 위 레이어</td><td>없음 (호출 자체가 역할)</td><td>도구 호출 · 에이전트 · 체인<br>구조화 출력</td></tr>
+<tr><td>둘의 관계</td><td colspan="2">LangChain이 LiteLLM을 "하나의 제공사"처럼 쓸 수 있음 (langchain-litellm, 또는 게이트웨이에 base_url)</td></tr>
+</table></div></body></html>
