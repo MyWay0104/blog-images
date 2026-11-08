@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: Reading Notes API
+  version: 1.0.0
+  description: 독서 노트를 저장하고 조회하는 API (설명용 예시)
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /notes:
+    get:
+      summary: 노트 목록 조회
+      parameters:
+        - name: tag
+          in: query
+          required: false
+          schema:
+            type: string
+          description: 태그로 거른다 (예. 역사)
+      responses:
+        '200':
+          description: 노트 목록
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Note'
+    post:
+      summary: 노트 추가
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteCreate'
+      responses:
+        '201':
+          description: 만들어진 노트
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+  /notes/{note_id}:
+    get:
+      summary: 노트 하나 조회
+      parameters:
+        - name: note_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 노트
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+        '404':
+          description: 없는 노트
+components:
+  schemas:
+    NoteCreate:
+      type: object
+      required: [title, body]
+      properties:
+        title:
+          type: string
+          example: 총, 균, 쇠
+        body:
+          type: string
+          example: 지리가 문명의 차이를 만들었다는 주장
+        tags:
+          type: array
+          items:
+            type: string
+          example: [역사, 문명]
+    Note:
+      allOf:
+        - $ref: '#/components/schemas/NoteCreate'
+        - type: object
+          properties:
+            id:
+              type: integer
+              example: 12
+            created_at:
+              type: string
+              format: date-time
