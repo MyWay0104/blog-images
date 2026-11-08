@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.h{color:#4ec9b0}.m{color:#9cdcfe}.y{color:#ce9178}.g{color:#808080}.w{color:#dcdcaa}.o{color:#ffa94d}.body{font-size:20px}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; reading-notes — 외부 npm 도구를 처음 쓰기 전에 치는 명령 (공식 문서의 명령 형식을 바탕으로 재구성)</div>
+<div class="body"><span class="g"># 1) 명령 형태부터 확인: 첫 단어가 패키지 이름이다 (정확한 형태는 도구의 README에서)</span>
+<span class="g">#    npx install &lt;도구&gt;  (X)   →   npx &lt;도구&gt; install  (O)</span>
+
+<span class="g"># 2) 그 이름의 패키지가 무엇인지, 몇 버전인지 — 읽기만 한다, 설치하지 않는다</span>
+<span class="o">&gt;</span> npm view <span class="y">&lt;도구&gt;</span> name description version
+<span class="o">&gt;</span> npm view <span class="y">&lt;도구&gt;</span> versions          <span class="g"># 지금까지 나온 버전 목록</span>
+
+<span class="g"># 3) 설치할 때 자동으로 도는 스크립트가 있는지, npx가 실행할 파일은 무엇인지</span>
+<span class="o">&gt;</span> npm view <span class="y">&lt;도구&gt;</span> scripts           <span class="g"># preinstall·install·postinstall 이 보이면 멈춘다</span>
+<span class="o">&gt;</span> npm view <span class="y">&lt;도구&gt;</span> bin
+
+<span class="g"># 4) 검토한 버전으로 고정해서 실행한다 (버전을 안 적으면 그때그때 latest)</span>
+<span class="o">&gt;</span> npx <span class="y">&lt;도구&gt;@&lt;검토한 버전&gt;</span> install
+<span class="o">&gt;</span> npx --ignore-scripts <span class="y">&lt;도구&gt;@&lt;검토한 버전&gt;</span> install
+<span class="g">#   ↑ 설치 스크립트를 돌리지 않고 시험할 때. 옵션은 패키지 이름 앞에 쓴다 (npx 규칙)</span></div></div></body></html>

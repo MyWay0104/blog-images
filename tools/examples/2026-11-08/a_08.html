@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0f0a1f;--fg:#f3f0ff;--ac:#845ef7}
+table{border-collapse:collapse;width:100%;font-size:22px}
+th{color:var(--ac);font-size:22px;padding:10px 12px;text-align:left;border-bottom:3px solid #3b2d6b}
+td{padding:14px 12px;border-bottom:2px solid #241a45;vertical-align:top;line-height:1.45;color:#f3f0ff;word-break:keep-all}
+td:first-child{font-weight:900;color:#d0bfff;width:170px}
+.s{font-size:18px;color:#9b8ccf}
+</style></head><body><div id="card">
+<div class="k">공식 문서의 비교표를 한국어로 옮기고, 새 세션이 들고 가는 것을 덧붙임</div><h1>일곱 줄로 보는 둘의 차이</h1>
+<table><tr><th>항목</th><th>서브에이전트</th><th>Agent Teams</th></tr>
+<tr><td>컨텍스트</td><td>자기 컨텍스트 창. 결과는 호출한 쪽으로 돌아감</td><td>자기 컨텍스트 창. 완전히 독립</td></tr>
+<tr><td>소통</td><td>호출한 쪽에 결과 반환<br><span class="s">(Claude가 이름을 붙여 만든 서브에이전트끼리는 메시지 가능)</span></td><td>팀원끼리 직접 메시지</td></tr>
+<tr><td>조율</td><td>메인 에이전트가 모든 일을 관리</td><td>메시지로 스스로 조율 + 공유 작업 목록</td></tr>
+<tr><td>잘 맞는 일</td><td>결과만 중요한 집중 작업</td><td>토론과 협업이 필요한 복잡한 작업</td></tr>
+<tr><td>토큰 비용</td><td>낮음. 결과가 요약되어 메인으로 돌아옴</td><td>높음. 팀원 하나가 별도 Claude 인스턴스</td></tr>
+<tr><td>시작할 때<br>들고 가는 것</td><td>시스템 프롬프트, 위임 메시지, CLAUDE.md, git 상태, <b>skills 필드에 적은 스킬</b>만</td><td>CLAUDE.md, MCP 서버, 스킬 (새 세션과 같음) + 리드가 준 스폰 프롬프트</td></tr>
+<tr><td>대화 기록</td><td colspan="2">둘 다 <b>넘어가지 않는다</b>. 메인(리드)의 대화 이력 대신, 위임 메시지(스폰 프롬프트)만 받는다</td></tr>
+</table></div></body></html>

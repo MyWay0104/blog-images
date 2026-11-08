@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1f0808;--fg:#fff5f5;--ac:#ff6b6b}
+table{border-collapse:collapse;width:100%;font-size:21px}
+th{color:var(--ac);font-size:21px;padding:10px 10px;text-align:left;border-bottom:3px solid #6e2020}
+td{padding:13px 10px;border-bottom:2px solid #3d1212;vertical-align:top;line-height:1.45;color:#fff5f5;word-break:keep-all}
+td:first-child{font-weight:900;color:#ffc9c9;width:165px}
+</style></head><body><div id="card">
+<div class="k">공식 문서(modelcontextprotocol.io · a2a-protocol.org) 기준</div><h1>상대가 누구냐로 가르는 비교표</h1>
+<table><tr><th>항목</th><th>MCP (도구를 붙인다)</th><th>앱 안 서브에이전트 (내 것을 나눈다)</th><th>A2A (남의 에이전트를 부른다)</th></tr>
+<tr><td>상대</td><td>도구·자료·프롬프트 템플릿을 내주는 서버</td><td>내가 만든 또 하나의 에이전트</td><td>다른 팀·조직이 운영하는 에이전트</td></tr>
+<tr><td>상대의 속</td><td>입력 스키마·설명을 공개 (tools/list)</td><td>전부 내 것</td><td>안 보임. 선언된 능력(Agent Card)만</td></tr>
+<tr><td>상태</td><td>대개 상태 없는 함수 호출</td><td>내 앱의 컨텍스트 안</td><td>긴 작업·여러 턴 대화를 상대가 유지</td></tr>
+<tr><td>모델·프롬프트·권한</td><td>내 에이전트가 판단, 도구는 실행만</td><td>내가 정한다</td><td>그쪽이 정한다. 나는 바꿀 수 없다</td></tr>
+<tr><td>장애가 나면</td><td>도구 호출 실패를 내 에이전트가 처리</td><td>내 코드 문제</td><td>상대 에이전트의 문제. 나는 재시도·대체만</td></tr>
+<tr><td>규격</td><td>JSON-RPC 2.0, stdio / Streamable HTTP</td><td>규격 아님. LangGraph·ADK 같은 프레임워크 기능</td><td>HTTP · JSON-RPC · SSE 위의 프로토콜</td></tr>
+<tr><td>문서의 한 줄</td><td>"MCP connects each agent to its own tools"</td><td>(A2A 문서의 agent stack: 프레임워크는 에이전트를 만드는 도구 모음)</td><td>"A2A connects the agents to each other"</td></tr>
+</table></div></body></html>

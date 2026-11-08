@@ -1,0 +1,15 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06180c;--fg:#ebfbee;--ac:#51cf66}
+table{border-collapse:collapse;width:100%;font-size:22px}
+th{color:var(--ac);font-size:21px;padding:10px 12px;text-align:left;border-bottom:3px solid #2b6b3a;word-break:keep-all}
+td{padding:14px 12px;border-bottom:2px solid #163a22;vertical-align:top;line-height:1.45;color:#ebfbee;word-break:keep-all}
+td:first-child{font-weight:900;color:#b2f2bb;width:170px}
+</style></head><body><div id="card">
+<div class="k">공식 문서(swagger.io · openapis.org · fastapi.tiangolo.com) 기준</div><h1>명세, 화면, 도구 모음을 한 표로</h1>
+<table><tr><th>항목</th><th>OpenAPI 명세 (OAS)</th><th>Swagger UI</th><th>Swagger 도구 모음</th></tr>
+<tr><td>무엇인가</td><td>HTTP API를 기술하는 <b>표준 문서 형식</b></td><td>명세를 읽어 <b>대화형 문서 화면</b>으로 그리는 도구</td><td>명세를 쓰고·그리고·코드로 만드는 <b>오픈소스 도구들</b></td></tr>
+<tr><td>실체</td><td>openapi.json / openapi.yaml 파일</td><td>브라우저 화면 (FastAPI의 /docs)</td><td>Swagger Editor · UI · Codegen</td></tr>
+<tr><td>누가 관리</td><td>OpenAPI Initiative (Linux Foundation)</td><td colspan="2">SmartBear (swagger.io)</td></tr>
+<tr><td>독서 노트 API에서</td><td>/notes, /notes/{note_id}와 Note 스키마를 적은 문서</td><td>그 문서를 읽어 GET·POST 상자와 Try it out을 그린 화면</td><td>같은 문서로 클라이언트 코드도 뽑을 수 있음</td></tr>
+<tr><td>없으면</td><td>UI가 그릴 재료가 없다</td><td>명세는 있지만 사람이 JSON을 읽어야 한다</td><td>다른 도구(ReDoc 등)로 대체 가능</td></tr>
+<tr><td>역사</td><td>Swagger Specification을 SmartBear가 기증 → 2016년 별도 프로젝트</td><td colspan="2">이름은 그대로 Swagger로 남음</td></tr>
+</table></div></body></html>

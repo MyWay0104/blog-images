@@ -1,0 +1,28 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06180c;--fg:#ebfbee;--ac:#51cf66}
+.wrap{position:relative;height:470px}
+.box{position:absolute;border-radius:20px;padding:16px 14px;text-align:center;background:#0d2a16;border:3px solid #2b6b3a}
+.box .t{font-size:25px;font-weight:900;color:#fff}.box .d{font-size:17px;color:#b2f2bb;margin-top:6px;line-height:1.4;word-break:keep-all}
+.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(81,207,102,.22)}
+.lab{position:absolute;font-size:17px;font-weight:700;color:#b2f2bb;text-align:center}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">독서 노트 API 하나를 둘러싼 네 가지</div><h1>명세는 문서, Swagger UI는 화면</h1>
+<div class="wrap">
+<div class="box" style="left:0;top:40px;width:250px"><div class="t">내 FastAPI 코드</div><div class="d">@app.get("/notes")<br>def list_notes(...)</div></div>
+<div class="box hot" style="left:355px;top:20px;width:250px"><div class="t">OpenAPI 명세</div><div class="d">openapi.json / .yaml<br><b style="color:#fff">표준 형식의 문서</b><br>경로·파라미터·응답 스키마</div></div>
+<div class="box hot" style="left:710px;top:20px;width:250px"><div class="t">Swagger UI</div><div class="d">명세를 읽어 그리는 <b style="color:#fff">화면</b><br>Try it out로 시험 호출</div></div>
+<div class="lab" style="left:700px;top:175px;width:260px;font-size:15px;color:#6fbf7f;font-weight:500;text-align:right;word-break:keep-all">ReDoc · 코드 생성기 · 테스트 도구도<br>같은 명세를 읽는다</div>
+<div class="box" style="left:355px;top:300px;width:250px"><div class="t">실제 서버</div><div class="d">127.0.0.1:8000/notes<br>요청을 받고 응답하는 곳</div></div>
+<svg width="960" height="470">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#51cf66"/></marker>
+<marker id="b" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#b2f2bb"/></marker></defs>
+<path d="M255 100 L350 100" stroke="#51cf66" stroke-width="5" marker-end="url(#a)"/>
+<path d="M610 100 L705 100" stroke="#51cf66" stroke-width="5" marker-end="url(#a)"/>
+<path d="M740 150 C 700 230, 660 300, 612 340" stroke="#b2f2bb" stroke-width="4" stroke-dasharray="8 7" fill="none" marker-end="url(#b)"/>
+<path d="M125 145 C 125 330, 250 365, 350 365" stroke="#2b6b3a" stroke-width="4" fill="none"/>
+</svg>
+<div class="lab" style="left:235px;top:60px;width:140px">자동 생성</div>
+<div class="lab" style="left:590px;top:60px;width:140px">읽어서 그림</div>
+<div class="lab" style="left:690px;top:260px;width:270px;text-align:left">Try it out = 실제 HTTP 요청</div>
+<div class="lab" style="left:110px;top:280px;width:200px;color:#6fbf7f">코드가 곧 서버</div>
+</div></div></body></html>

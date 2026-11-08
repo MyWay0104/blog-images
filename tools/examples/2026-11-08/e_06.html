@@ -1,0 +1,27 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#061a1f;--fg:#e3fafc;--ac:#22b8cf}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.c{border-radius:20px;padding:20px 24px;background:#0b2b33;border:3px solid #15606d}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:12px}
+.kv{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:19px;line-height:1.75;color:#c5f6fa}
+.kv b{color:#fff;font-weight:700}.kv .n{color:#66d9e8}.kv .x{color:#99e9f2;font-family:'Noto Sans CJK KR'}
+.steps{margin-top:6px}
+.st{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.st i{flex:none;width:34px;height:34px;border-radius:50%;background:#22b8cf;color:#06252b;font-style:normal;font-weight:900;font-size:19px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.st div{font-size:19px;line-height:1.4;color:#c5f6fa;word-break:keep-all}.st b{color:#fff}
+.st.q i{background:#15606d;color:#e3fafc}
+</style></head><body><div id="card">
+<div class="k">registry.npmjs.org/install/latest 에서 발췌 (2026-11-08)</div><h1>"install"이라는 패키지는 실제로 있다</h1>
+<div class="g">
+<div class="c hot"><div class="t">레지스트리에 등록된 install 패키지</div>
+<div class="kv"><span class="n">name</span>: <b>install</b><br><span class="n">version</span>: <b>0.13.0</b> <span class="x">(7년 전 게시)</span><br><span class="n">description</span>: Minimal JavaScript module loader<br><span class="n">bin</span>: <span class="x">없음 (실행 파일 항목이 없다)</span><br><span class="n">scripts</span>: docs, test, prepublish<br><span class="x">→ preinstall · install · postinstall 없음</span><br><span class="n">dependents</span>: 2,081 <span class="x">(npmjs.com 표기)</span></div></div>
+<div class="c"><div class="t">npx install &lt;도구&gt; 를 치면 (공식 문서 기준 예상)</div>
+<div class="steps">
+<div class="st"><i>1</i><div>첫 단어 <b>install</b>을 패키지 이름으로 읽는다</div></div>
+<div class="st"><i>2</i><div>로컬 프로젝트에 없으면 <b>설치할지 묻는다</b> (비대화형·CI면 묻지 않고 yes)</div></div>
+<div class="st"><i>3</i><div>bin 항목이 없으므로 <b>에러로 끝난다</b></div></div>
+<div class="st q"><i>?</i><div>에러 전에 캐시 설치까지 진행되는지는 문서만으로 알 수 없어 <b>확인 필요</b></div></div>
+</div></div>
+</div>
+<div style="margin-top:20px;font-size:19px;color:#66d9e8;text-align:center;word-break:keep-all">이번엔 bin도 설치 스크립트도 없는 패키지라 다행이었을 뿐이다. 오타가 가리킨 이름의 주인이 누구인지 나는 모른다</div>
+</div></body></html>

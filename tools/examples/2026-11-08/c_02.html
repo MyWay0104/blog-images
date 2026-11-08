@@ -1,0 +1,29 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1f0808;--fg:#fff5f5;--ac:#ff6b6b}
+.wrap{position:relative;height:600px}
+.box{position:absolute;border-radius:20px;padding:14px 12px;text-align:center;background:#2f0d0d;border:3px solid #6e2020}
+.box .t{font-size:24px;font-weight:900;color:#fff}.box .d{font-size:17px;color:#ffc9c9;margin-top:5px;line-height:1.35;word-break:keep-all}
+.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(255,107,107,.25)}
+.mine{position:absolute;border:3px dashed #a33a3a;border-radius:26px}
+.zl{position:absolute;font-size:20px;font-weight:700;color:#ffc9c9}
+.lab{position:absolute;font-size:18px;font-weight:700;color:var(--ac);text-align:center;background:#1f0808;padding:0 6px}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">독서 노트 에이전트에 세 가지를 붙이는 그림</div><h1>붙이는 상대가 셋이면 방식도 셋</h1>
+<div class="wrap">
+<div class="mine" style="left:0;top:0;width:600px;height:600px"></div><div class="zl" style="left:20px;top:14px">내 울타리 (모델·프롬프트·권한을 내가 정한다)</div>
+<div class="box hot" style="left:170px;top:70px;width:260px"><div class="t">독서 노트 에이전트</div><div class="d">내 앱 · 내 모델 · 내 프롬프트</div></div>
+<div class="box" style="left:20px;top:330px;width:250px"><div class="t">도서관 소장 조회</div><div class="d">MCP 서버 (도구)<br>입력·출력이 정해진 함수</div></div>
+<div class="box" style="left:320px;top:330px;width:250px"><div class="t">요약 서브에이전트</div><div class="d">내 앱 안의 에이전트<br>프레임워크 기능으로 나눔</div></div>
+<div class="box hot" style="left:680px;top:300px;width:280px;border-style:solid"><div class="t">서점 주문 에이전트</div><div class="d">다른 회사가 운영<br>속은 안 보임 (opaque)<br>Agent Card로 능력만 선언</div></div>
+<div class="box" style="left:680px;top:470px;width:280px;border-style:dashed"><div class="t" style="font-size:19px;color:#ffc9c9">그쪽 모델 · 프롬프트 · 도구</div><div class="d">내가 바꿀 수 없다</div></div>
+<svg width="960" height="600">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#ff6b6b"/></marker></defs>
+<path d="M230 165 L160 325" stroke="#ff6b6b" stroke-width="5" marker-end="url(#a)"/>
+<path d="M370 165 L430 325" stroke="#ff6b6b" stroke-width="5" marker-end="url(#a)"/>
+<path d="M432 118 L675 340" stroke="#ff6b6b" stroke-width="5" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:120px;top:230px">MCP</div>
+<div class="lab" style="left:395px;top:230px">앱 안</div>
+<div class="lab" style="left:520px;top:200px">A2A</div>
+<div class="zl" style="left:0;top:540px;width:600px;text-align:center;font-size:17px;color:#d98f8f">MCP = 세로(내 에이전트를 깊게) &nbsp;·&nbsp; A2A = 가로(울타리 밖의 에이전트와)</div>
+</div></div></body></html>

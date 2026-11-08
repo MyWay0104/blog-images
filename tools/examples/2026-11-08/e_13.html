@@ -1,0 +1,21 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#061a1f;--fg:#e3fafc;--ac:#22b8cf}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:20px 22px;background:#0b2b33;border:3px solid #15606d;position:relative}
+.c.hot{border-color:var(--ac)}
+.n{position:absolute;right:18px;top:14px;font-size:44px;font-weight:900;color:#15606d}
+.c.hot .n{color:#22b8cf}
+.c .t{font-size:25px;font-weight:900;color:#fff;margin-bottom:8px;padding-right:50px}
+.c .q{font-size:18px;color:#99e9f2;margin-bottom:10px;word-break:keep-all}
+.c .d{font-size:18px;color:#c5f6fa;line-height:1.45;word-break:keep-all}
+.c .d b{color:#fff}
+.mono{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;background:#061a1f;padding:1px 6px;border-radius:6px;color:#e3fafc}
+</style></head><body><div id="card">
+<div class="k">외부 npm 도구를 처음 쓰기 전에 — 공식 문서 기준</div><h1>설치 전 확인 4가지</h1>
+<div class="g">
+<div class="c hot"><div class="n">1</div><div class="t">명령 형태</div><div class="q">내가 치려는 첫 단어가 정말 그 도구의 이름인가?</div><div class="d">npx는 <b>첫 위치 인자를 패키지 이름</b>으로 읽는다. 순서가 바뀌면 다른 패키지를 찾는다. 옵션은 패키지 이름 <b>앞</b>에 쓴다.</div></div>
+<div class="c"><div class="n">2</div><div class="t">이름과 버전</div><div class="q">그 이름의 패키지는 무엇이고 몇 버전까지 있나?</div><div class="d"><span class="mono">npm view &lt;도구&gt; description version versions</span> — 레지스트리 정보를 <b>읽기만</b> 한다. 설명이 내가 아는 도구와 다르면 멈춘다.</div></div>
+<div class="c"><div class="n">3</div><div class="t">설치 스크립트</div><div class="q">설치하는 순간 자동으로 도는 명령이 있나?</div><div class="d"><span class="mono">npm view &lt;도구&gt; scripts</span> 에 <b>preinstall · install · postinstall</b>이 있으면 내용을 읽는다. npm 문서도 "거의 필요 없는 스크립트"라고 적는다.</div></div>
+<div class="c hot"><div class="n">4</div><div class="t">버전 고정</div><div class="q">다음에 실행할 때도 같은 코드가 도는가?</div><div class="d"><span class="mono">npx &lt;도구&gt;@&lt;버전&gt;</span> 처럼 <b>검토한 버전을 적는다</b>. 버전이 없으면 매번 latest를 받고, 프로젝트에 저장할 때 기본은 <span class="mono">^</span> 범위다.</div></div>
+</div>
+<div style="margin-top:18px;font-size:19px;color:#66d9e8;text-align:center;word-break:keep-all">넷 다 "설치하기 전에, 읽기만 하는" 확인이다 — 프록시가 대신 해 주지 않는 부분</div>
+</div></body></html>

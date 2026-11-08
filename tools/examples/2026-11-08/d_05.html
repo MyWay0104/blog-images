@@ -1,0 +1,31 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.m{color:#9cdcfe}.y{color:#ce9178}.g{color:#808080}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; reading-notes.yaml — OpenAPI 명세 파일 (앞부분 발췌, 실제 파일)</div>
+<div class="body"><span class="m">openapi</span>:<span class="y"> 3.0.3</span>
+<span class="m">info</span>:<span class="y"></span>
+  <span class="m">title</span>:<span class="y"> Reading Notes API</span>
+  <span class="m">version</span>:<span class="y"> 1.0.0</span>
+  <span class="m">description</span>:<span class="y"> 독서 노트를 저장하고 조회하는 API (설명용 예시)</span>
+<span class="m">servers</span>:<span class="y"></span>
+  <span class="m">- url</span>:<span class="y"> http://127.0.0.1:8000</span>
+<span class="m">paths</span>:<span class="y"></span>
+  <span class="m">/notes</span>:<span class="y"></span>
+    <span class="m">get</span>:<span class="y"></span>
+      <span class="m">summary</span>:<span class="y"> 노트 목록 조회</span>
+      <span class="m">parameters</span>:<span class="y"></span>
+        <span class="m">- name</span>:<span class="y"> tag</span>
+          <span class="m">in</span>:<span class="y"> query</span>
+          <span class="m">required</span>:<span class="y"> false</span>
+          <span class="m">schema</span>:<span class="y"></span>
+            <span class="m">type</span>:<span class="y"> string</span>
+          <span class="m">description</span>:<span class="y"> 태그로 거른다 (예. 역사)</span>
+      <span class="m">responses</span>:<span class="y"></span>
+        <span class="m">&#x27;200&#x27;</span>:<span class="y"></span>
+          <span class="m">description</span>:<span class="y"> 노트 목록</span>
+          <span class="m">content</span>:<span class="y"></span>
+            <span class="m">application/json</span>:<span class="y"></span>
+              <span class="m">schema</span>:<span class="y"></span>
+                <span class="m">type</span>:<span class="y"> array</span>
+                <span class="m">items</span>:<span class="y"></span>
+                  <span class="m">$ref</span>:<span class="y"> &#x27;#/components/schemas/Note&#x27;</span>
+    <span class="m">post</span>:<span class="y"></span>
+<span class="g">... (POST /notes, GET /notes/{note_id}, components.schemas 생략. 전체 89줄)</span></div></div></body></html>

@@ -1,0 +1,26 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c1006;--fg:#fff4e6;--ac:#ff922b}
+.row{display:flex;gap:26px;align-items:flex-start}
+.col{flex:1;text-align:center}
+.bar{display:flex;flex-direction:column-reverse;border-radius:18px;border:3px solid #6b4310;background:#2b1a08;height:440px;padding:8px;gap:6px;justify-content:flex-start}
+.seg{border-radius:10px;font-size:18px;font-weight:700;color:#1c1006;display:flex;align-items:center;justify-content:center;word-break:keep-all;line-height:1.2}
+.s1{background:#ffd8a8;height:38px}.s2{background:#ffc078;height:48px}.s3{background:#ff922b;flex:1;color:#1c1006}.s4{background:#fd7e14;height:90px}.s5{background:#e8590c;height:70px;color:#fff}
+.sum{background:#ffa94d;height:80px}
+.cap{font-size:25px;font-weight:900;color:#fff;margin:14px 0 4px}.sub{font-size:17px;color:#ffd8a8;line-height:1.4;word-break:keep-all}
+.arrow{font-size:40px;color:var(--ac);font-weight:900;padding-top:200px}
+.ghost{border-style:dashed;opacity:.35;background:transparent}
+</style></head><body><div id="card">
+<div class="k">컨텍스트 창 하나를 세 시점으로 본 그림 (크기는 설명용 비율)</div><h1>비우기와 압축하기는 남는 것이 다르다</h1>
+<div class="row">
+<div class="col"><div class="bar">
+<div class="seg s1">시스템 지시</div><div class="seg s2">CLAUDE.md · 메모리 · 스킬 설명</div><div class="seg s3">대화 이력<br>(검색 버그 수정 과정)</div><div class="seg s4">읽은 파일 내용</div><div class="seg s5">명령 출력 · 도구 결과</div>
+</div><div class="cap">꽉 찬 상태</div><div class="sub">독서 노트 앱 검색 버그를 고치며<br>파일과 출력이 쌓였다</div></div>
+<div class="arrow">→</div>
+<div class="col"><div class="bar">
+<div class="seg s1">시스템 지시</div><div class="seg s2">CLAUDE.md · 메모리 · 스킬 설명</div><div class="seg s3 ghost"></div>
+</div><div class="cap">/clear 뒤</div><div class="sub">대화는 <b style="color:#fff">새로 시작</b>.<br>디스크의 CLAUDE.md 등은 다시 로드</div></div>
+<div class="arrow">→</div>
+<div class="col"><div class="bar">
+<div class="seg s1">시스템 지시</div><div class="seg s2">CLAUDE.md · 메모리 · 스킬 설명</div><div class="seg sum">대화 요약<br>(요청·핵심 코드)</div><div class="seg s4" style="height:60px">최근 수정 파일 최대 5개</div><div class="seg s3 ghost"></div>
+</div><div class="cap">/compact 뒤</div><div class="sub">대화가 <b style="color:#fff">요약으로 바뀜</b>.<br>같은 일을 이어서 할 수 있다</div></div>
+</div>
+</div></body></html>

@@ -1,0 +1,47 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0f0a1f;--fg:#f3f0ff;--ac:#845ef7}
+.wrap{position:relative;height:560px}
+.zone{position:absolute;border:3px dashed #3b2d6b;border-radius:26px}
+.zl{position:absolute;font-size:24px;font-weight:900;color:#d0bfff}
+.box{position:absolute;border-radius:18px;padding:12px 10px;text-align:center;background:#1a1233;border:3px solid #3b2d6b}
+.box .t{font-size:22px;font-weight:900;color:#fff}.box .d{font-size:16px;color:#d0bfff;margin-top:4px;line-height:1.35}
+.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(132,94,247,.25)}
+.lab{position:absolute;font-size:16px;color:#d0bfff;text-align:center}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">독서 노트 앱 PR 리뷰를 셋이 나눠 맡는 두 가지 모양</div><h1>보고받는 구조 vs 같이 일하는 구조</h1>
+<div class="wrap">
+<div class="zone" style="left:0;top:0;width:450px;height:560px"></div><div class="zl" style="left:20px;top:14px">서브에이전트</div>
+<div class="zone" style="left:510px;top:0;width:450px;height:560px"></div><div class="zl" style="left:530px;top:14px">Agent Teams</div>
+<!-- left -->
+<div class="box hot" style="left:95px;top:70px;width:260px"><div class="t">메인 세션</div><div class="d">일을 나누고, 결과를 모은다</div></div>
+<div class="box" style="left:14px;top:260px;width:130px"><div class="t">보안</div><div class="d">자기 컨텍스트</div></div>
+<div class="box" style="left:160px;top:260px;width:130px"><div class="t">성능</div><div class="d">자기 컨텍스트</div></div>
+<div class="box" style="left:306px;top:260px;width:130px"><div class="t">테스트</div><div class="d">자기 컨텍스트</div></div>
+<div class="lab" style="left:0;top:420px;width:450px;font-size:18px">각자 메인에게 <b style="color:#fff">결과 요약</b>을 돌려준다<br>기본은 "호출한 쪽에 결과 반환"</div>
+<!-- right -->
+<div class="box hot" style="left:605px;top:70px;width:260px"><div class="t">리드 세션</div><div class="d">팀을 만들고 작업을 나눈다</div></div>
+<div class="box" style="left:560px;top:190px;width:350px;border-style:dashed;border-color:#845ef7"><div class="t" style="font-size:19px">공유 작업 목록</div></div>
+<div class="box" style="left:520px;top:320px;width:126px"><div class="t">보안</div><div class="d">독립 세션</div></div>
+<div class="box" style="left:672px;top:320px;width:126px"><div class="t">성능</div><div class="d">독립 세션</div></div>
+<div class="box" style="left:824px;top:320px;width:126px"><div class="t">테스트</div><div class="d">독립 세션</div></div>
+<div class="lab" style="left:510px;top:470px;width:450px;font-size:18px">팀원끼리 <b style="color:#fff">직접 메시지</b>를 주고받고<br>작업 목록에서 다음 일을 스스로 가져간다</div>
+<svg width="960" height="560">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,0 L18,9 L0,18 z" fill="#845ef7"/></marker>
+<marker id="b" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0,0 L18,9 L0,18 z" fill="#d0bfff"/></marker></defs>
+<!-- left arrows: down solid(지시) / up dashed(보고) -->
+<path d="M140 150 L75 255" stroke="#845ef7" stroke-width="5" marker-end="url(#a)"/>
+<path d="M100 255 L165 150" stroke="#d0bfff" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#b)"/>
+<path d="M215 150 L215 255" stroke="#845ef7" stroke-width="5" marker-end="url(#a)"/>
+<path d="M237 255 L237 150" stroke="#d0bfff" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#b)"/>
+<path d="M290 150 L355 255" stroke="#845ef7" stroke-width="5" marker-end="url(#a)"/>
+<path d="M378 255 L313 150" stroke="#d0bfff" stroke-width="4" stroke-dasharray="8 7" marker-end="url(#b)"/>
+<!-- right arrows -->
+<path d="M735 150 L735 185" stroke="#845ef7" stroke-width="5" marker-end="url(#a)"/>
+<path d="M620 262 L600 315" stroke="#845ef7" stroke-width="5" marker-end="url(#a)"/>
+<path d="M735 262 L735 315" stroke="#845ef7" stroke-width="5" marker-end="url(#a)"/>
+<path d="M850 262 L870 315" stroke="#845ef7" stroke-width="5" marker-end="url(#a)"/>
+<path d="M652 400 L672 400" stroke="#d0bfff" stroke-width="4" marker-end="url(#b)"/><path d="M672 372 L652 372" stroke="#d0bfff" stroke-width="4" marker-end="url(#b)"/>
+<path d="M798 400 L818 400" stroke="#d0bfff" stroke-width="4" marker-end="url(#b)"/><path d="M818 372 L798 372" stroke="#d0bfff" stroke-width="4" marker-end="url(#b)"/>
+</svg>
+<div class="lab" style="left:0;top:505px;width:450px;font-size:15px;color:#9b8ccf">실선 = 지시 &nbsp;·&nbsp; 점선 = 결과 보고</div>
+</div></div></body></html>

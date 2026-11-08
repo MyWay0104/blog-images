@@ -1,0 +1,33 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#061a1f;--fg:#e3fafc;--ac:#22b8cf}
+.row{position:relative;height:200px;margin-bottom:26px}
+.cmd{position:absolute;left:0;top:0;width:960px;height:64px;border-radius:14px;background:#0b2b33;border:3px solid #15606d;display:flex;align-items:center;padding:0 22px;font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:30px;color:#e3fafc}
+.cmd .w{padding:2px 10px;border-radius:8px;margin:0 4px}
+.pk{background:#22b8cf;color:#06252b;font-weight:700}
+.ar{background:#15606d;color:#e3fafc}
+.box{position:absolute;top:104px;border-radius:14px;padding:12px 14px;text-align:center;background:#0b2b33;border:3px solid #15606d}
+.box .t{font-size:17px;color:#99e9f2;font-weight:700}.box .d{font-size:22px;font-weight:900;color:#fff;margin-top:4px;font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace}
+.box.hot{border-color:var(--ac)}
+.res{position:absolute;top:104px;left:560px;width:400px;height:96px;border-radius:14px;padding:12px 16px;background:#0b2b33;border:3px solid #15606d;font-size:19px;line-height:1.4;color:#c5f6fa;word-break:keep-all;display:flex;align-items:center}
+.res b{color:#fff}
+.tag{position:absolute;right:0;top:-34px;font-size:18px;font-weight:700;color:#99e9f2}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">npx &lt;패키지&gt; [인자...] — 공식 문서(npm exec)의 규칙</div><h1>npx는 첫 단어를 패키지 이름으로 읽는다</h1>
+<div class="row">
+<div class="tag">오타로 친 명령</div>
+<div class="cmd">npx <span class="w pk">install</span><span class="w ar">&lt;도구&gt;</span></div>
+<div class="box hot" style="left:0;width:250px"><div class="t">패키지(첫 단어)</div><div class="d">install</div></div>
+<div class="box" style="left:290px;width:230px"><div class="t">인자</div><div class="d">&lt;도구&gt;</div></div>
+<div class="res"><span><b>install</b>이라는 이름의 npm 패키지를 찾아 그 실행 파일을 돌리려 한다 (내가 쓰려던 도구가 아님)</span></div>
+<svg width="960" height="200"><path d="M215 66 L125 102" stroke="#22b8cf" stroke-width="4"/><path d="M352 66 L405 102" stroke="#15606d" stroke-width="4"/></svg>
+</div>
+<div class="row">
+<div class="tag">의도한 명령</div>
+<div class="cmd">npx <span class="w pk">&lt;도구&gt;</span><span class="w ar">install</span></div>
+<div class="box hot" style="left:0;width:250px"><div class="t">패키지(첫 단어)</div><div class="d">&lt;도구&gt;</div></div>
+<div class="box" style="left:290px;width:230px"><div class="t">인자</div><div class="d">install</div></div>
+<div class="res"><span><b>&lt;도구&gt;</b> 패키지의 실행 파일에 <b>install</b>이라는 하위 명령을 넘긴다</span></div>
+<svg width="960" height="200"><path d="M198 66 L125 102" stroke="#22b8cf" stroke-width="4"/><path d="M335 66 L405 102" stroke="#15606d" stroke-width="4"/></svg>
+</div>
+<div style="font-size:19px;color:#66d9e8;text-align:center;margin-top:6px">단어 순서가 바뀌면 "무엇을 설치하고 실행할지"가 통째로 바뀐다</div>
+</div></body></html>

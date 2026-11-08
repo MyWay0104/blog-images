@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c1006;--fg:#fff4e6;--ac:#ff922b}
+table{border-collapse:collapse;width:100%;font-size:22px}
+th{color:var(--ac);font-size:22px;padding:10px 12px;text-align:left;border-bottom:3px solid #6b4310}
+td{padding:14px 12px;border-bottom:2px solid #3d2608;vertical-align:top;line-height:1.45;color:#fff4e6;word-break:keep-all}
+td:first-child{font-weight:900;color:#ffd8a8;width:190px}
+.m{font-family:'DejaVu Sans Mono',monospace;font-size:19px;color:#ffe8cc}
+</style></head><body><div id="card">
+<div class="k">공식 문서(commands · context-window · costs) 기준</div><h1>/clear와 /compact, 일곱 줄 비교</h1>
+<table><tr><th>항목</th><th>/clear</th><th>/compact</th></tr>
+<tr><td>문서의 정의</td><td>빈 컨텍스트로 <b>새 대화</b>를 시작</td><td>지금까지의 대화를 <b>요약</b>해 자리를 비움</td></tr>
+<tr><td>대화가 이어지나</td><td>아니요. 이전 대화는 /resume으로 돌아감</td><td>예. 요약 위에서 같은 일을 계속</td></tr>
+<tr><td>남는 것</td><td>디스크에서 다시 로드되는 것 (CLAUDE.md, 메모리 등)</td><td>요약 + 재주입되는 것 (CLAUDE.md, 최근 파일 최대 5개, 스킬 본문 일부…)</td></tr>
+<tr><td>사라질 수 있는 것</td><td>대화 전부 (의도된 것)</td><td>초반의 세부 지시. 문서: "detailed instructions … may be lost"</td></tr>
+<tr><td>비용</td><td><b>없음</b> ("/clear costs nothing")</td><td>대화를 읽어 요약하므로 <b>그 자체가 큰 요청</b></td></tr>
+<tr><td>쓰는 때</td><td>관련 없는 다른 일로 넘어갈 때</td><td>같은 일이 길어져 창이 찰 때, 또는 긴 새 작업 직전</td></tr>
+<tr><td>같이 쓰는 것</td><td><span class="m">/rename</span> 먼저, 나중에 <span class="m">/resume</span></td><td><span class="m">/compact focus on …</span>, CLAUDE.md의 Compact instructions, <span class="m">/autocompact</span></td></tr>
+</table></div></body></html>

@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06180c;--fg:#ebfbee;--ac:#51cf66}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:20px 22px;background:#0d2a16;border:3px solid #2b6b3a}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:26px;font-weight:900;color:#fff;margin-bottom:8px}
+.c .d{font-size:19px;color:#b2f2bb;line-height:1.45;word-break:keep-all}
+.c .d b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">같은 말처럼 들리지만 가리키는 것이 다른 네 단어</div><h1>"Swagger 문서"는 어느 것을 말하나</h1>
+<div class="g">
+<div class="c hot"><div class="t">"Swagger 문서"</div><div class="d">대개 <b>Swagger UI 화면</b>을 가리킴. 정확히는 OpenAPI 명세를 UI가 그린 것. FastAPI라면 /docs</div></div>
+<div class="c"><div class="t">"Swagger 2.0"</div><div class="d">기증 전 <b>옛 명세 버전</b>의 이름. 파일 첫 줄이 swagger: "2.0". Petstore 데모(v2)가 이 형식</div></div>
+<div class="c"><div class="t">"OpenAPI 3.x"</div><div class="d">기증 후의 <b>명세 이름과 버전</b>. 파일 첫 줄이 openapi: 3.x.x. FastAPI가 만드는 것</div></div>
+<div class="c hot"><div class="t">"Swagger UI"</div><div class="d">명세를 읽어 그리는 <b>도구 하나</b>. Swagger Editor·Codegen과 함께 Swagger 도구 모음에 속함</div></div>
+</div>
+<div style="margin-top:18px;font-size:19px;color:#6fbf7f;text-align:center">헷갈리면 파일 첫 줄을 본다: swagger: "2.0" 인가, openapi: "3.x" 인가</div>
+</div></body></html>
