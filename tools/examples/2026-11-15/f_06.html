@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.r{color:#ff6b6b}.g{color:#8ce99a}.y{color:#ffd43b}.m{color:#9cdcfe}.c{color:#808080}.w{color:#e9ecef}.body{font-size:19px}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; notion-blog — 개발 서버 콘솔 (하이드레이션 경고)</div>
+<div class="body"><span class="r">⨯ Console Error</span>
+
+<span class="w">Hydration failed because the server rendered HTML didn't match the client.
+As a result this tree will be regenerated on the client. This can happen if a
+SSR-ed Client Component used:</span>
+<span class="c">- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time
+  it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+It can also happen if the client has a browser extension installed which messes
+with the HTML before React loaded.</span>
+<span class="m">https://react.dev/link/hydration-mismatch</span>
+
+  <span class="w">&lt;PostPagination page=&#123;1&#125; totalPages=&#123;7&#125;&gt;</span>
+    <span class="w">&lt;nav aria-label="pagination"&gt;</span>
+      <span class="w">&lt;a aria-label="Go to previous page" href="/posts?page=1"</span>
+<span class="r">-       tabIndex="0"</span>        <span class="c">← 서버가 만든 HTML</span>
+<span class="g">+       tabIndex="-1"</span>       <span class="c">← 브라우저 React가 계산한 값</span>
+      <span class="w">...</span></div></div></body></html>

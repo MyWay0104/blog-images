@@ -1,0 +1,23 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0b0f2a;--fg:#e5e9ff;--ac:#5c7cfa}
+table{border-collapse:collapse;width:100%}
+th{font-size:18px;color:#fff;background:#1f2a66;padding:12px 10px;text-align:center;border:2px solid #0b0f2a}
+th:first-child{background:transparent;color:#91a7ff;text-align:left}
+td{font-size:16px;color:#dbe4ff;background:#141a3d;padding:11px 10px;border:2px solid #0b0f2a;vertical-align:top;line-height:1.4;word-break:keep-all;text-align:center}
+td:first-child{color:#91a7ff;font-weight:700;text-align:left;background:#101538;white-space:nowrap}
+td.m{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:14px}
+td b{color:#fff}
+tr.hi td{background:#1a2250}
+</style></head><body><div id="card">
+<div class="k">api-sdk-lab에서 세 파일을 나란히 놓고 적은 표</div><h1>편해지는 만큼, 안 보이게 된다</h1>
+<table>
+<tr><th></th><th>1단계 API 직접 호출</th><th>2단계 SDK</th><th>3단계 LangChain</th></tr>
+<tr><td>대표 코드</td><td class="m">requests.post(url, headers=…, json=…)</td><td class="m">client.chat.completions.create(…)</td><td class="m">llm.invoke(prompt)</td></tr>
+<tr><td>URL을 다루는 법</td><td>매번 전체 주소를 직접 쓴다</td><td>base_url로 한 번만</td><td>base_url로 한 번만</td></tr>
+<tr><td>답을 꺼내는 경로</td><td class="m">data["choices"][0]["message"]["content"]</td><td class="m">response.choices[0].message.content</td><td class="m">response.content</td></tr>
+<tr><td>오류 처리</td><td>상태 코드를 <b>내가</b> 확인</td><td>SDK가 예외로 던져 줌</td><td>SDK 예외가 그대로 전달됨</td></tr>
+<tr class="hi"><td>제공자 교체</td><td>코드 전체 재작성</td><td>클라이언트 설정 변경</td><td><b>클래스만 교체</b>, 나머지 유지</td></tr>
+<tr><td>장점</td><td>가장 투명함. 오가는 데이터가 다 보임</td><td>짧고 읽기 쉬움. 오타를 빨리 발견</td><td>여러 LLM을 같은 코드 모양으로</td></tr>
+<tr><td>단점</td><td>번거롭고 API가 바뀌면 직접 수정</td><td>내부 동작이 블랙박스</td><td>추상화가 한 겹 더 늘어 더 안 보임</td></tr>
+</table>
+<div style="margin-top:14px;font-size:18px;color:#91a7ff;text-align:center;word-break:keep-all">어느 단계가 더 좋다기보다, 지금 필요한 게 디버깅을 위한 투명함인지 개발 속도인지에 따라 고른다</div>
+</div></body></html>

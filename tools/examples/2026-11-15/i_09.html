@@ -1,0 +1,12 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.y{color:#ffd43b}.g{color:#8ce99a}.r{color:#ff8787}.c{color:#808080}.w{color:#e9ecef}.m{color:#9cdcfe}.o{color:#ffa94d}.body{font-size:19px}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; reading-notes-eval — 규칙 기반 판정기 실행 (pydantic, LLM 없이 실제 실행)</div>
+<div class="body"><span class="o">&gt;</span> python rule_judge.py
+<span class="w">[출력 1]</span> <span class="g">PASS</span> — 통과
+<span class="w">[출력 2]</span> <span class="r">FAIL</span> — 스키마 위반: tags — List should have at most 4 items after validation, not 6
+<span class="w">[출력 3]</span> <span class="r">FAIL</span> — 금지 표현 포함: '확인 필요'
+<span class="w">[출력 4]</span> <span class="r">FAIL</span> — 스키마 위반: rating — Input should be a valid integer,
+                     unable to parse string as an integer
+
+<span class="c"># 규칙 1 JSON 스키마(요약 120자·태그 4개·별점 1~5) · 규칙 2 책 제목 정확히 일치 · 규칙 3 금지 표현
+# 같은 입력이면 언제 돌려도 같은 결과. 판정 이유도 코드가 그대로 말해 준다
+# 그러나 "출력 1의 요약이 책 내용을 왜곡하지 않았는가"는 이 코드로는 알 수 없다</span></div></div></body></html>

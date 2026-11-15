@@ -1,0 +1,33 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c1403;--fg:#fff3bf;--ac:#fab005}
+.wrap{position:relative;height:470px}
+.zone{position:absolute;border-radius:24px;border:3px dashed #5c4610}
+.zl{position:absolute;font-size:19px;font-weight:700;color:#ffd43b;background:#1c1403;padding:0 8px}
+.v{position:absolute;border-radius:14px;padding:10px 14px;background:#2e2208;border:3px solid #5c4610;font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:18px;color:#fff3bf}
+.v.pub{border-color:var(--ac);color:#fff}
+.v.gone{border-style:dotted;color:#8a7a3a;background:transparent}
+.lab{position:absolute;font-size:16px;color:#ffe066;line-height:1.4;word-break:keep-all;text-align:center}
+.mid{position:absolute;left:400px;top:40px;width:200px;text-align:center}
+.mid .b{display:inline-block;border-radius:14px;padding:10px 14px;background:var(--ac);color:#1c1403;font-weight:900;font-size:20px}
+.mid .d{font-size:15px;color:#ffe066;margin-top:8px;line-height:1.4;word-break:keep-all}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">Next.js 환경변수가 사는 두 세계</div><h1>NEXT_PUBLIC_만 브라우저로 간다</h1>
+<div class="wrap">
+<div class="zone" style="left:0;top:20px;width:380px;height:420px"></div><div class="zl" style="left:18px;top:6px">서버 (Node.js) — process.env 전부 읽힌다</div>
+<div class="zone" style="left:620px;top:20px;width:340px;height:420px;border-color:var(--ac)"></div><div class="zl" style="left:638px;top:6px;color:#fff">브라우저 — 누구나 열어 볼 수 있다</div>
+<div class="v" style="left:24px;top:70px">NOTION_TOKEN</div>
+<div class="v" style="left:24px;top:140px">NOTION_DATA_SOURCE_ID</div>
+<div class="v" style="left:24px;top:210px">REVALIDATE_SECRET</div>
+<div class="v pub" style="left:24px;top:300px">NEXT_PUBLIC_SITE_URL</div>
+<div class="lab" style="left:24px;top:372px;width:340px;text-align:left;font-size:15px">서버 코드(Route Handler, Server Component,<br>Server Action)에서 process.env.이름 으로 읽는다</div>
+<div class="mid" style="top:150px"><div class="b">next build</div><div class="d">빌드 때 NEXT_PUBLIC_ 값을<br>JS 번들에 "인라인"한다<br>(코드의 process.env.X가<br>값 문자열로 바뀐다)</div></div>
+<div class="v pub" style="left:644px;top:300px">"https://블로그주소"</div>
+<div class="v gone" style="left:644px;top:70px">NOTION_TOKEN</div>
+<div class="v gone" style="left:644px;top:140px">REVALIDATE_SECRET</div>
+<div class="lab" style="left:644px;top:200px;width:300px;color:#8a7a3a">접두사가 없으면 번들에 들어가지 않는다<br>(브라우저에서는 undefined)</div>
+<div class="lab" style="left:644px;top:370px;width:300px">빌드가 끝나면 값이 굳는다.<br>환경변수를 바꿔도 다시 빌드해야 반영</div>
+<svg width="960" height="470">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#fab005"/></marker></defs>
+<path d="M300 325 L636 325" stroke="#fab005" stroke-width="5" marker-end="url(#a)"/>
+</svg>
+</div></div></body></html>

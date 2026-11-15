@@ -1,0 +1,36 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0608;--fg:#ffe3e3;--ac:#fa5252}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.c{border-radius:20px;padding:20px 22px;background:#2b0d11;border:3px solid #5c1a22;position:relative}
+.c.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(250,82,82,.18)}
+.c .t{font-size:24px;font-weight:900;color:#fff;margin-bottom:12px}
+.c .s{font-size:16px;color:#ff8787;font-weight:700;margin-bottom:6px}
+.chain{font-size:18px;line-height:1.5;color:#ffe3e3;word-break:keep-all}
+.chain b{color:#fff}
+.code{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:14px;line-height:1.55;background:#120406;border-radius:12px;padding:12px 14px;color:#ffc9c9;margin:10px 0;white-space:pre;overflow:hidden}
+.g>div{min-width:0}
+.code .kw{color:#ff8787}.code .n{color:#8ce99a}
+.res{font-size:17px;color:#ffa8a8;line-height:1.45;word-break:keep-all;margin-top:8px}
+.res b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">공용 부품(components/ui)은 두고, 쓰는 쪽(components/common)만 바꿨다</div><h1>속성을 맞춘 게 아니라 경로를 없앴다</h1>
+<div class="g">
+<div class="c"><div class="t">전: 버튼 안에 링크를 끼워 넣기</div>
+<div class="s">경로</div><div class="chain">PaginationLink → Base UI Button → <b>render=&#123;&lt;a&gt;&#125;</b> → 버튼 속성 + 링크 속성 병합</div>
+<div class="code"><span class="kw">&lt;Button</span> render=&#123;<span class="kw">&lt;a</span> href="/posts?page=1" <span class="kw">/&gt;</span>&#125;
+        nativeButton=&#123;false&#125;<span class="kw">&gt;</span>
+  이전
+<span class="kw">&lt;/Button&gt;</span></div>
+<div class="res">서버와 브라우저가 <b>tabIndex를 다르게 계산</b>했다.<br>비활성 "이전"도 Tab에 잡히는 가짜 링크가 됐다.</div></div>
+<div class="c hot"><div class="t">후: 링크는 링크, 비활성은 span</div>
+<div class="s">경로</div><div class="chain">이동 가능 → <b>Next.js Link</b> + 버튼 스타일(<b>buttonVariants</b>)<br>이동 불가 → <b>&lt;span aria-disabled="true"&gt;</b></div>
+<div class="code"><span class="kw">&lt;Link</span> href="/posts?page=2"
+  className=&#123;buttonVariants(&#123;variant:<span class="n">"ghost"</span>&#125;)&#125;<span class="kw">&gt;</span>
+  다음
+<span class="kw">&lt;/Link&gt;</span>
+
+<span class="kw">&lt;span</span> aria-disabled=<span class="n">"true"</span>
+  className=&#123;...&#125;<span class="kw">&gt;</span>이전<span class="kw">&lt;/span&gt;</span></div>
+<div class="res">병합 경로를 <b>아예 쓰지 않는다</b>. span은 애초에 Tab 대상이<br>아니라 "눌러도 아무 일 없는 링크"가 사라졌다.</div></div>
+</div>
+<div style="margin-top:18px;font-size:18px;color:#ff8787;text-align:center;word-break:keep-all">Base UI 문서도 같은 말을 한다: "링크는 자체 의미가 있으니 render로 버튼처럼 만들지 말고, 버튼처럼 보이게 하려면 &lt;a&gt;에 CSS를 입혀라"</div>
+</div></body></html>

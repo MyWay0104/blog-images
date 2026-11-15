@@ -1,0 +1,22 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06201a;--fg:#c3fae8;--ac:#20c997}
+.g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 18px;background:#0c3328;border:3px solid #1b5e4a;position:relative;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .n{font-size:14px;color:#63e6be;font-weight:700;letter-spacing:1px;margin-bottom:6px}
+.c .t{font-size:21px;font-weight:900;color:#fff;margin-bottom:10px;word-break:keep-all;line-height:1.3}
+.c .f{font-size:17px;font-weight:900;color:#06201a;background:#20c997;border-radius:10px;padding:8px 10px;margin-bottom:10px;font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;word-break:break-all;line-height:1.3}
+.c .f.soft{background:#63e6be}
+.c .d{font-size:15.5px;color:#c3fae8;line-height:1.5;word-break:keep-all}
+.c .d b{color:#fff}
+.c .q{font-size:13.5px;color:#96f2d7;margin-top:10px;line-height:1.4;word-break:keep-all}
+.foot{margin-top:18px;border-radius:16px;background:#0c3328;border:3px solid #1b5e4a;padding:14px 18px;font-size:16px;color:#c3fae8;line-height:1.5;word-break:keep-all}
+.foot b{color:#fff}.foot .m{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;color:#96f2d7}
+</style></head><body><div id="card">
+<div class="k">"어느 함수가 더 좋은가"가 아니라 "무효화 신호가 어디서 오나"</div><h1>신호가 오는 곳이 함수를 정한다</h1>
+<div class="g">
+<div class="c hot"><div class="n">① 관리자 화면에서 저장</div><div class="t">같은 서버 안의 Server Action</div><div class="f">updateTag('posts')</div><div class="d">저장한 사람이 <b>바로 자기 글을 봐야</b> 한다 (read-your-own-writes). 즉시 만료.</div><div class="q">공식 문서: Server Action 안에서만 쓸 수 있다</div></div>
+<div class="c"><div class="n">② 바깥에서 알려 옴</div><div class="t">웹훅·외부 자동화 → Route Handler</div><div class="f soft">revalidateTag('posts', 'max')</div><div class="d">옛 목록을 잠깐 더 보여 줘도 된다면 <b>'max'</b>. 즉시 비워야 하면 <b>{ expire: 0 }</b>. 호출하는 쪽이 비밀번호를 들고 온다.</div><div class="q">공식 문서: Route Handler에서는 updateTag를 쓸 수 없다</div></div>
+<div class="c"><div class="n">③ 아무도 알려 주지 않음</div><div class="t">시간이 지나면 알아서</div><div class="f soft">cacheLife('hours')</div><div class="d">신호가 없으면 <b>프로필의 revalidate 주기</b>가 유일한 갱신 수단. 글이 뜸한 블로그면 'days'나 'max'도 된다.</div><div class="q">공식 문서: default 프로필은 stale 5분 · revalidate 15분 · expire 없음</div></div>
+</div>
+<div class="foot"><b>REVALIDATE_SECRET</b>은 ②의 문지기다 — 아무나 <span class="m">/api/revalidate</span>를 두드려 캐시를 비우지 못하게 하는 <b>비밀번호</b>이지, 새 글을 담아 두는 공간이 아니다. ①처럼 서버 안에서 <span class="m">updateTag</span>를 부르면 바깥에서 비밀값을 넣을 일 자체가 없을 수 있다</div>
+</div></body></html>

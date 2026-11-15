@@ -1,0 +1,28 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.y{color:#ffd43b}.g{color:#8ce99a}.c{color:#808080}.w{color:#e9ecef}.m{color:#9cdcfe}.o{color:#ffa94d}.p{color:#da77f2}.body{font-size:17px}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; notion-blog — 캐시 선언과 두 가지 무효화 (공식 문서 형식에 프로젝트 구조를 맞춘 예시)</div>
+<div class="body"><span class="c">// lib/notion.ts — 읽기: 캐시 대상으로 선언하고, 수명과 태그를 붙인다</span>
+<span class="m">import</span> { cacheLife, cacheTag } <span class="m">from</span> <span class="y">'next/cache'</span>
+
+<span class="m">export async function</span> <span class="g">getPosts</span>() {
+  <span class="y">'use cache'</span>                     <span class="c">// 이 함수의 결과를 캐시한다 (async 필수)</span>
+  <span class="p">cacheLife</span>(<span class="y">'max'</span>)                <span class="c">// 시간으로는 거의 안 바뀐다고 선언 (CMS 글)</span>
+  <span class="p">cacheTag</span>(<span class="y">'posts'</span>)                <span class="c">// 나중에 이 이름표로 골라서 무효화</span>
+  <span class="m">return</span> notion.queryPublishedPosts()
+}
+
+<span class="c">// app/admin/actions.ts — 관리자가 저장했을 때: 쓴 사람이 바로 봐야 한다</span>
+<span class="y">'use server'</span>
+<span class="m">import</span> { updateTag } <span class="m">from</span> <span class="y">'next/cache'</span>
+<span class="m">export async function</span> <span class="g">savePost</span>(formData: FormData) {
+  <span class="m">await</span> notion.createPage(formData)
+  <span class="p">updateTag</span>(<span class="y">'posts'</span>)                <span class="c">// 즉시 만료. Server Action 안에서만 가능</span>
+}
+
+<span class="c">// app/api/revalidate/route.ts — 외부 자동화가 알려 왔을 때: Route Handler</span>
+<span class="m">import</span> { revalidateTag } <span class="m">from</span> <span class="y">'next/cache'</span>
+<span class="m">export async function</span> <span class="g">POST</span>(req: Request) {
+  <span class="m">if</span> (req.headers.get(<span class="y">'x-revalidate-secret'</span>) !== process.env.REVALIDATE_SECRET)
+    <span class="m">return</span> Response.json({ ok: <span class="o">false</span> }, { status: <span class="o">401</span> })   <span class="c">// 비밀번호가 다르면 거부</span>
+  <span class="p">revalidateTag</span>(<span class="y">'posts'</span>, <span class="y">'max'</span>)   <span class="c">// 옛것을 주면서 뒤에서 갱신. 즉시 비우려면 { expire: 0 }</span>
+  <span class="m">return</span> Response.json({ ok: <span class="o">true</span> })
+}</div></div></body></html>

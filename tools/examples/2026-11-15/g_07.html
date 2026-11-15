@@ -1,0 +1,21 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c1403;--fg:#fff3bf;--ac:#fab005}
+table{border-collapse:separate;border-spacing:0 10px;width:100%}
+th{font-size:17px;color:#ffd43b;text-align:left;padding:0 14px 2px;font-weight:700}
+td{background:#2e2208;border-top:3px solid #5c4610;border-bottom:3px solid #5c4610;padding:14px 14px;font-size:17px;color:#fff3bf;vertical-align:top;line-height:1.4;word-break:keep-all}
+td:first-child{border-left:3px solid #5c4610;border-radius:14px 0 0 14px;font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:16px;color:#fff;white-space:nowrap}
+td:last-child{border-right:3px solid #5c4610;border-radius:0 14px 14px 0}
+tr.pub td{border-color:var(--ac)}
+.tag{display:inline-block;border-radius:8px;padding:2px 8px;font-size:14px;font-weight:700;margin-left:6px}
+.t1{background:#5c4610;color:#fff3bf}.t2{background:var(--ac);color:#1c1403}.t3{background:transparent;border:2px solid #5c4610;color:#ffe066}
+</style></head><body><div id="card">
+<div class="k">제 프로젝트의 환경변수 5개 — 기록에 적어 둔 운영 원칙</div><h1>먼저 "브라우저에 보여도 되나"를 적었다</h1>
+<table>
+<tr><th>변수</th><th>역할</th><th>어디에 두나</th></tr>
+<tr><td>NOTION_TOKEN</td><td>Notion Integration 인증. 글을 읽고 쓰는 권한</td><td>서버에만 <span class="tag t1">공개 금지</span> Vercel에는 Secret 타입</td></tr>
+<tr><td>NOTION_DATA_SOURCE_ID</td><td>글이 들어 있는 Data Source를 가리키는 위치 식별자</td><td>서버에만 <span class="tag t1">필수</span> 토큰과 달리 비밀번호는 아니지만 접두사 없이 둔다</td></tr>
+<tr class="pub"><td>NEXT_PUBLIC_SITE_URL</td><td>sitemap · canonical · OG 이미지 주소를 만들 때 쓰는 사이트 절대 주소</td><td>브라우저까지 <span class="tag t2">공개 OK</span> 어차피 주소창에 보이는 값. 끝에 / 없이</td></tr>
+<tr><td>REVALIDATE_SECRET</td><td>외부에서 캐시 갱신 API를 부를 때 "진짜 관리자인가"를 확인하는 비밀번호</td><td>서버에만 <span class="tag t1">공개 금지</span> 기능을 쓸 때만 등록</td></tr>
+<tr><td>NODE_ENV</td><td>개발 / 운영 실행 모드</td><td>직접 적지 않음 <span class="tag t3">Next.js에 맡김</span> next dev → development, 그 외 → production</td></tr>
+</table>
+<div style="margin-top:12px;font-size:18px;color:#ffd43b;text-align:center;word-break:keep-all">기준은 하나다 — 이 값이 브라우저에 보여도 되는가. 되면 NEXT_PUBLIC_, 아니면 접두사를 절대 붙이지 않는다</div>
+</div></body></html>

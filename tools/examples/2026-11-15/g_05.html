@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.y{color:#ffd43b}.g{color:#8ce99a}.c{color:#808080}.w{color:#e9ecef}.m{color:#9cdcfe}.r{color:#ff8787}.body{font-size:19px}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; notion-blog — .env.local (값은 자리 표시)와 빌드 뒤 브라우저 JS에 남는 것</div>
+<div class="body"><span class="c"># .env.local  — 저장소에 올리지 않는다 (.gitignore)</span>
+<span class="w">NOTION_TOKEN</span>=<span class="y">ntn_***************</span>            <span class="c"># 서버 전용. Notion 읽기·쓰기 권한</span>
+<span class="w">NOTION_DATA_SOURCE_ID</span>=<span class="y">********-****-****</span>  <span class="c"># 서버 전용. 글이 들어 있는 Data Source</span>
+<span class="w">REVALIDATE_SECRET</span>=<span class="y">***************</span>       <span class="c"># 서버 전용. 캐시 갱신 API를 부를 때의 비밀번호</span>
+<span class="g">NEXT_PUBLIC_SITE_URL</span>=<span class="y">https://프로젝트이름.vercel.app</span>   <span class="c"># 공개 OK. 끝에 / 없음</span>
+<span class="c"># NODE_ENV 는 적지 않는다 — next dev / next build 가 알아서 정한다</span>
+
+<span class="c"># ── next build 뒤, 브라우저로 가는 JS 안에서는 (공식 문서의 설명 방식대로) ──</span>
+<span class="c">// 빌드 전 코드</span>
+<span class="m">const</span> site = process.env.<span class="g">NEXT_PUBLIC_SITE_URL</span>
+<span class="c">// 빌드 후 번들: 값이 문자열로 박힌다</span>
+<span class="m">const</span> site = <span class="y">"https://프로젝트이름.vercel.app"</span>
+
+<span class="c">// 접두사 없는 값은 번들에 없다</span>
+<span class="m">const</span> token = process.env.<span class="r">NOTION_TOKEN</span>   <span class="c">// 브라우저에서는 undefined</span></div></div></body></html>

@@ -1,0 +1,30 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06201a;--fg:#c3fae8;--ac:#20c997}
+.wrap{position:relative;height:520px}
+.box{position:absolute;border-radius:18px;padding:14px 12px;text-align:center;background:#0c3328;border:3px solid #1b5e4a}
+.box .t{font-size:21px;font-weight:900;color:#fff}.box .d{font-size:15px;color:#96f2d7;margin-top:6px;line-height:1.4;word-break:keep-all}
+.box.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(32,201,151,.2)}
+.lab{position:absolute;font-size:15px;color:#96f2d7;text-align:center;line-height:1.35;word-break:keep-all}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">Notion을 글 저장소로 쓰는 Next.js 16 블로그의 데이터 흐름</div><h1>캐시가 끼면 새 글이 늦게 보인다</h1>
+<div class="wrap">
+<div class="box" style="left:0;top:40px;width:170px"><div class="t">방문자</div><div class="d">/posts 요청</div></div>
+<div class="box" style="left:230px;top:40px;width:220px"><div class="t">Next.js 서버</div><div class="d">getPosts() 호출</div></div>
+<div class="box hot" style="left:510px;top:40px;width:230px"><div class="t">use cache 저장소</div><div class="d">태그 <b style="color:#fff">posts</b><br>있으면 저장된 결과를 즉시</div></div>
+<div class="box" style="left:800px;top:40px;width:160px"><div class="t">Notion API</div><div class="d">없을 때만<br>실제로 읽음</div></div>
+<div class="box" style="left:0;top:330px;width:200px;border-color:#63e6be"><div class="t">새 글 저장</div><div class="d">관리자 화면 / 외부 자동화</div></div>
+<div class="box hot" style="left:250px;top:235px;width:340px"><div class="t" style="font-size:19px">revalidateTag('posts', 'max')</div><div class="d">오래됐다고 <b style="color:#fff">표시</b>만 한다<br>다음 요청에는 옛 결과를 주면서<br>뒤에서 새로 만든다 (stale-while-revalidate)</div></div>
+<div class="box hot" style="left:250px;top:395px;width:340px;border-color:#63e6be"><div class="t" style="font-size:19px">updateTag('posts')</div><div class="d">즉시 <b style="color:#fff">만료</b> — 쓴 사람이 바로 본다<br>Server Action 안에서만</div></div>
+<div class="lab" style="left:700px;top:300px;width:260px">둘 다 저장소의 <b style="color:#fff">posts 태그</b>를<br>겨냥한다. 차이는 "다음 요청이<br>옛것을 받느냐, 새것을<br>기다리느냐"다</div>
+<svg width="960" height="520">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#20c997"/></marker></defs>
+<path d="M172 86 L224 86" stroke="#20c997" stroke-width="5" marker-end="url(#a)"/>
+<path d="M452 86 L504 86" stroke="#20c997" stroke-width="5" marker-end="url(#a)"/>
+<path d="M742 86 L794 86" stroke="#1b5e4a" stroke-width="5" stroke-dasharray="8 6" marker-end="url(#a)"/>
+<path d="M202 360 L244 300" stroke="#63e6be" stroke-width="5" marker-end="url(#a)"/>
+<path d="M202 385 L244 430" stroke="#63e6be" stroke-width="5" marker-end="url(#a)"/>
+<path d="M592 270 C 650 270, 640 200, 630 152" stroke="#20c997" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M592 440 C 700 440, 690 200, 655 152" stroke="#63e6be" stroke-width="5" fill="none" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:0;top:486px;width:960px;color:#63e6be">캐시가 없으면 방문마다 Notion API를 기다린다. 캐시가 있으면 빠르지만, 새 글은 "누군가 만료시켜 줄 때까지" 옛 목록이 보인다</div>
+</div></div></body></html>

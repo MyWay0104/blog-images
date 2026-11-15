@@ -1,0 +1,31 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1f0812;--fg:#ffe3ec;--ac:#f06595}
+.wrap{position:relative;height:560px}
+.q{position:absolute;border-radius:18px;padding:14px 16px;text-align:center;background:#33101d;border:3px solid var(--ac);font-size:21px;font-weight:900;color:#fff;word-break:keep-all}
+.q small{display:block;font-size:14px;color:#ffb3c6;font-weight:400;margin-top:4px}
+.r{position:absolute;border-radius:18px;padding:14px 16px;background:#33101d;border:3px solid #6b2140}
+.r .t{font-size:21px;font-weight:900;color:#fff;margin-bottom:6px}
+.r .d{font-size:15px;color:#ffd6e0;line-height:1.45;word-break:keep-all}
+.r .d b{color:#ff8fab}
+.al{position:absolute;font-size:17px;font-weight:900;color:#ff8fab}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">Arize 공식 문서의 결정 나무를 제 예시에 맞춰 다시 그린 것</div><h1>항목마다 묻는 두 가지 질문</h1>
+<div class="wrap">
+<div class="q" style="left:230px;top:0;width:500px">① 이 항목은 코드로 판정할 수 있는가?<small>형식 · 개수 · 범위 · 정확히 일치 · 금지어 · 정규식</small></div>
+<div class="al" style="left:150px;top:112px">예</div>
+<div class="al" style="left:790px;top:112px">아니오</div>
+<div class="r" style="left:0;top:160px;width:400px;border-color:var(--ac)"><div class="t">규칙 기반 판정기 — 끝</div><div class="d">함수로 쓴다. <b>결정적</b>이고 싸고 빠르다.<br>출력 형식은 Pydantic 같은 스키마 검증이 곧 판정기다.<br>예: 태그 4개 이하, 별점 1~5, 제목 일치, 금지 표현</div></div>
+<div class="q" style="left:520px;top:160px;width:440px;border-color:#ff8fab">② 많은 양을 계속 평가해야 하는가?<small>운영 규모 · 매일 밤 실험 · 수백 건</small></div>
+<div class="al" style="left:560px;top:272px">아니오</div>
+<div class="al" style="left:870px;top:272px">예</div>
+<div class="r" style="left:520px;top:320px;width:210px"><div class="t">사람이 본다</div><div class="d">적은 표본은 사람 평가로 충분. 사람 라벨이 <b>다른 판정기를 보정하는 기준</b>이 된다</div></div>
+<div class="r" style="left:750px;top:320px;width:210px;border-color:#ff8fab"><div class="t">LLM 판정기</div><div class="d">채점 기준을 프롬프트에 적는다. <b>비결정적</b>이니 사람 라벨과 주기적으로 대조한다</div></div>
+<svg width="960" height="560">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#f06595"/></marker></defs>
+<path d="M330 88 C 330 130, 200 120, 200 154" stroke="#f06595" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M630 88 C 630 130, 740 120, 740 154" stroke="#f06595" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M660 248 C 660 290, 620 280, 620 314" stroke="#ff8fab" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M820 248 C 820 290, 855 280, 855 314" stroke="#ff8fab" stroke-width="5" fill="none" marker-end="url(#a)"/>
+</svg>
+<div style="position:absolute;left:0;top:500px;width:960px;text-align:center;font-size:16px;color:#ffb3c6;word-break:keep-all">문서의 결론: 세 종류는 경쟁하지 않고 보완한다 — 싼 결정적 검사는 코드로, 주관적 질문은 LLM으로, 사람은 주기적으로 판정기를 검증한다</div>
+</div></div></body></html>

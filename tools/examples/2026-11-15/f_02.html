@@ -1,0 +1,30 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0608;--fg:#ffe3e3;--ac:#fa5252}
+.wrap{position:relative;height:520px}
+.box{position:absolute;border-radius:18px;padding:14px 12px;text-align:center;background:#2b0d11;border:3px solid #5c1a22}
+.box .t{font-size:22px;font-weight:900;color:#fff}.box .d{font-size:16px;color:#ffa8a8;margin-top:6px;line-height:1.4;word-break:keep-all}
+.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(250,82,82,.22)}
+.zl{position:absolute;font-size:18px;font-weight:700;color:#ff8787}
+.lab{position:absolute;font-size:16px;color:#ffa8a8;text-align:center;line-height:1.35;word-break:keep-all}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">Next.js가 화면을 만들어 보내는 두 단계</div><h1>하이드레이션 = 서버 HTML에 브라우저 React 맞물리기</h1>
+<div class="wrap">
+<div class="zl" style="left:0;top:0">서버</div>
+<div class="box" style="left:0;top:36px;width:280px"><div class="t">React 트리 → HTML</div><div class="d">글 목록·페이지 번호가 들어간<br>완성된 HTML을 만든다</div></div>
+<div class="box" style="left:0;top:170px;width:280px"><div class="t">HTML 전송</div><div class="d">브라우저는 이걸 먼저 그린다<br>(아직 클릭은 안 된다)</div></div>
+<div class="zl" style="left:420px;top:0">브라우저</div>
+<div class="box" style="left:420px;top:36px;width:540px"><div class="t">JS 도착 → React가 같은 트리를 다시 계산</div><div class="d">서버가 만든 HTML을 "자기가 만들었다면 이랬을 것"과 대조하며<br>이벤트 핸들러를 붙인다 = <b style="color:#fff">하이드레이션</b></div></div>
+<div class="box hot" style="left:420px;top:190px;width:260px"><div class="t">같다</div><div class="d">모델하우스에 전기·수도가<br>연결된다. 클릭이 살아난다</div></div>
+<div class="box hot" style="left:700px;top:190px;width:260px;border-color:#ff8787"><div class="t">다르다</div><div class="d">하이드레이션 불일치<br>경고 + 어느 쪽이 맞는지 모름</div></div>
+<div class="box" style="left:420px;top:350px;width:540px;border-style:dashed"><div class="t" style="font-size:19px">불일치의 흔한 원인 (공식 문서)</div><div class="d">잘못된 태그 중첩 · typeof window 분기 · window/localStorage ·<br>Date() · 브라우저 확장 프로그램 · CSS-in-JS 설정 · CDN의 HTML 수정</div></div>
+<svg width="960" height="520">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#ff8787"/></marker></defs>
+<path d="M140 136 L140 164" stroke="#ff8787" stroke-width="5" marker-end="url(#a)"/>
+<path d="M282 220 C 360 220, 360 90, 414 90" stroke="#ff8787" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M560 136 L560 184" stroke="#fa5252" stroke-width="5" marker-end="url(#a)"/>
+<path d="M800 136 L820 184" stroke="#fa5252" stroke-width="5" marker-end="url(#a)"/>
+<path d="M830 290 L830 344" stroke="#ff8787" stroke-width="5" stroke-dasharray="8 6" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:0;top:296px;width:300px">제 경우: 페이지네이션의 tabIndex가<br>서버 <b style="color:#fff">"0"</b>, 브라우저 <b style="color:#fff">"-1"</b>로 달랐다</div>
+<div class="lab" style="left:0;top:372px;width:300px;color:#ff8787">콘솔 경고로 끝나지 않는다:<br>속성이 서버 값으로 남거나<br>클릭·포커스가 어긋날 수 있다</div>
+</div></div></body></html>

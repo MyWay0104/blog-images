@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0b0f2a;--fg:#e5e9ff;--ac:#5c7cfa}
+.g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 18px;background:#141a3d;border:3px solid #2b3670;position:relative;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;word-break:keep-all}
+.c .w{font-size:15px;color:#91a7ff;margin-bottom:10px}
+.c .d{font-size:16px;color:#dbe4ff;line-height:1.5;word-break:keep-all}
+.c .d b{color:#fff}
+.c .q{font-size:14px;color:#91a7ff;margin-top:10px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">"어느 것이 더 좋은가"가 아니라 "지금 무엇이 필요한가"</div><h1>세 단계를 고르는 기준</h1>
+<div class="g">
+<div class="c"><div class="t">직접 호출로</div><div class="w">requests</div><div class="d">무슨 데이터가 오가는지 <b>눈으로 확인</b>해야 할 때. 공부, 디버깅, SDK가 없는 서버. 한 번만 부르는 작업.</div><div class="q">공식 문서: json= 로 보내고 raise_for_status()로 4XX·5XX를 잡는다</div></div>
+<div class="c"><div class="t">SDK로</div><div class="w">openai</div><div class="d">한 제공자(또는 호환 서버)를 <b>안정적으로</b> 쓸 때. 재시도·타임아웃·오류 클래스를 SDK가 맡아 준다.</div><div class="q">공식 문서: 특정 오류는 기본 2회 자동 재시도, 기본 타임아웃 10분, 4xx·5xx는 APIStatusError</div></div>
+<div class="c hot"><div class="t">LangChain으로</div><div class="w">langchain-openai 등</div><div class="d"><b>여러 모델을 같은 코드 모양</b>으로 다루거나, 그 위에 체인·에이전트를 쌓을 때. 단일 호출에는 과할 수 있다.</div><div class="q">공식 문서: base_url은 kwarg → OPENAI_API_BASE → OPENAI_BASE_URL 순서로 읽히고, 마지막은 밑의 openai SDK가 읽는다</div></div>
+</div>
+<div style="margin-top:16px;font-size:18px;color:#91a7ff;text-align:center;word-break:keep-all">위 단계가 막히면 한 단계 아래로 내려가 요청을 직접 본다 — 세 층이 같은 요청을 보낸다는 걸 알면 내려갈 수 있다</div>
+</div></body></html>

@@ -1,0 +1,19 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0608;--fg:#ffe3e3;--ac:#fa5252}
+.g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:20px 20px;background:#2b0d11;border:3px solid #5c1a22;position:relative;min-width:0}
+.c.hot{border-color:var(--ac)}
+.n{position:absolute;right:16px;top:12px;font-size:40px;font-weight:900;color:#5c1a22}
+.c.hot .n{color:#fa5252}
+.c .t{font-size:23px;font-weight:900;color:#fff;margin-bottom:10px;padding-right:44px;word-break:keep-all}
+.c .d{font-size:17px;color:#ffc9c9;line-height:1.5;word-break:keep-all}
+.c .d b{color:#fff}
+.c .q{font-size:15px;color:#ff8787;margin-top:10px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">하이드레이션 경고를 만났을 때 — 이번에 정한 순서</div><h1>경고를 끄기 전에 확인한 세 가지</h1>
+<div class="g">
+<div class="c hot"><div class="n">1</div><div class="t">어디서 갈라졌나</div><div class="d">경고의 <b>속성·값</b>과 <b>컴포넌트 경로</b>를 먼저 적는다. 제 경우 tabIndex, 경로는 Button → render → 병합.</div><div class="q">공식 문서: 불일치는 버그로 보고 고쳐라. 속성 차이는 보정된다는 보장이 없다</div></div>
+<div class="c"><div class="n">2</div><div class="t">끄는 방법이 맞나</div><div class="d"><b>useEffect</b>(두 번 렌더), <b>ssr:false</b>, <b>suppressHydrationWarning</b>은 "서버와 브라우저가 다를 수밖에 없는 값"용이다. 페이지 번호는 그런 값이 아니었다.</div><div class="q">suppress는 한 단계만, 비상구용. 텍스트 차이를 고쳐 주지도 않는다</div></div>
+<div class="c hot"><div class="n">3</div><div class="t">경로를 없앨 수 있나</div><div class="d">링크를 버튼에 끼우는 <b>render 병합 경로</b> 대신 Link + 스타일, 비활성은 span. 공용 부품은 두고 <b>쓰는 쪽</b>에서 고친다.</div><div class="q">콘솔이 조용해진 것보다 Tab 이동이 맞게 된 것이 확인 기준</div></div>
+</div>
+<div style="margin-top:18px;font-size:18px;color:#ff8787;text-align:center;word-break:keep-all">증상을 덮는 것과 원인 경로를 지우는 것은 다른 수정이다</div>
+</div></body></html>

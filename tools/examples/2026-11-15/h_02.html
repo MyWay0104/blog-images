@@ -1,0 +1,49 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0b0f2a;--fg:#e5e9ff;--ac:#5c7cfa}
+.wrap{position:relative;height:520px}
+.col{position:absolute;top:0;width:290px;border-radius:20px;padding:16px 16px;background:#141a3d;border:3px solid #2b3670}
+.col .t{font-size:22px;font-weight:900;color:#fff}
+.col .s{font-size:15px;color:#91a7ff;margin-top:2px}
+.code{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:13px;line-height:1.55;background:#070a1c;border-radius:12px;padding:10px 12px;color:#dbe4ff;margin:10px 0 8px;white-space:pre;overflow:hidden}
+.code .kw{color:#91a7ff}.code .st{color:#8ce99a}
+.col .d{font-size:15px;color:#bac8ff;line-height:1.45;word-break:keep-all}
+.col.hot{border-color:var(--ac)}
+.dest{position:absolute;left:0;top:370px;width:960px;border-radius:20px;padding:14px 18px;text-align:center;background:#141a3d;border:3px solid var(--ac);box-shadow:0 0 30px rgba(92,124,250,.25)}
+.dest .t{font-size:20px;font-weight:900;color:#fff}
+.dest .m{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:22px;color:#91a7ff;margin-top:6px}
+.dest .d{font-size:15px;color:#bac8ff;margin-top:6px}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">api-sdk-lab — 로컬 Ollama의 같은 모델을 세 가지 방식으로 호출</div><h1>셋 다 결국 같은 주소로 간다</h1>
+<div class="wrap">
+<div class="col" style="left:0"><div class="t">1단계 API 직접 호출</div><div class="s">requests</div>
+<div class="code"><span class="kw">requests.post</span>(
+  <span class="st">"http://…:11434/v1/chat/</span>
+<span class="st">   completions"</span>, headers=…,
+  json=payload)
+r.json()[<span class="st">"choices"</span>][0]
+  [<span class="st">"message"</span>][<span class="st">"content"</span>]</div>
+<div class="d">주소·헤더·본문·응답 경로를 <b style="color:#fff">전부 내가</b> 쓴다. 가장 투명하고, 가장 번거롭다</div></div>
+<div class="col" style="left:335px"><div class="t">2단계 SDK</div><div class="s">openai</div>
+<div class="code">client = <span class="kw">OpenAI</span>(
+  base_url=<span class="st">"http://…/v1/"</span>,
+  api_key=<span class="st">"ollama"</span>)
+client.chat.completions
+  .create(model=…, messages=…)
+response.choices[0]
+  .message.content</div>
+<div class="d">주소는 <b style="color:#fff">한 번만</b> 설정. 오류는 SDK가 예외로 던져 준다. 내부는 안 보인다</div></div>
+<div class="col hot" style="left:670px"><div class="t">3단계 LangChain</div><div class="s">langchain-openai</div>
+<div class="code">llm = <span class="kw">ChatOpenAI</span>(
+  model=…,
+  base_url=<span class="st">"http://…/v1/"</span>)
+response = llm.invoke(prompt)
+response.content</div>
+<div class="d">제공자를 바꿀 때 <b style="color:#fff">클래스만 교체</b>. 한 겹 더 쌓여 더 안 보인다</div></div>
+<svg width="960" height="520">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#5c7cfa"/></marker></defs>
+<path d="M145 300 L145 364" stroke="#5c7cfa" stroke-width="5" marker-end="url(#a)"/>
+<path d="M480 320 L480 364" stroke="#5c7cfa" stroke-width="5" marker-end="url(#a)"/>
+<path d="M815 300 L815 364" stroke="#5c7cfa" stroke-width="5" marker-end="url(#a)"/>
+</svg>
+<div class="dest"><div class="t">세 파일의 최종 목적지</div><div class="m">POST http://localhost:11434/v1/chat/completions</div><div class="d">SDK도 LangChain도 마법이 아니라, 내부에서 1단계와 똑같은 HTTP 요청을 만들어 보낼 뿐이다 — 감춰 주는 것은 일의 내용이 아니라 일의 번거로움이다</div></div>
+</div></div></body></html>

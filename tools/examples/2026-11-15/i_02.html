@@ -1,0 +1,24 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1f0812;--fg:#ffe3ec;--ac:#f06595}
+.wrap{position:relative;height:430px}
+.box{position:absolute;border-radius:18px;padding:14px 14px;text-align:center;background:#33101d;border:3px solid #6b2140}
+.box .t{font-size:21px;font-weight:900;color:#fff}.box .d{font-size:15px;color:#ffb3c6;margin-top:6px;line-height:1.4;word-break:keep-all}
+.box.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(240,101,149,.2)}
+.lab{position:absolute;font-size:16px;color:#ffb3c6;text-align:center;line-height:1.35;word-break:keep-all}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">독서 노트 요약 에이전트의 출력 하나를 두 판정기에 넣으면</div><h1>같은 출력, 다른 두 판정기</h1>
+<div class="wrap">
+<div class="box" style="left:0;top:120px;width:240px"><div class="t">에이전트 출력</div><div class="d" style="font-family:'DejaVu Sans Mono',monospace;font-size:13px">{"title": …,<br>"summary": …,<br>"tags": […], "rating": 4}</div></div>
+<div class="box hot" style="left:330px;top:0;width:330px"><div class="t">규칙 기반 판정기 (코드)</div><div class="d">스키마가 맞나 · 태그 ≤ 4 · 별점 1~5<br>제목이 원문과 같나 · 금지 표현 없나<br><b style="color:#fff">함수가 계산한다</b></div></div>
+<div class="box hot" style="left:330px;top:250px;width:330px;border-color:#ff8fab"><div class="t">LLM 판정기 (LLM-as-a-judge)</div><div class="d">요약이 책 내용을 왜곡하지 않았나<br>질문에 맞는 답인가 · 말투가 적절한가<br><b style="color:#fff">채점 기준을 받은 LLM이 판단한다</b></div></div>
+<div class="box" style="left:740px;top:0;width:220px"><div class="t">점수 (bool / 숫자)</div><div class="d">같은 입력이면<br>항상 같은 결과<br>이유 = 어긴 규칙</div></div>
+<div class="box" style="left:740px;top:250px;width:220px"><div class="t">라벨 + 설명</div><div class="d">helpful / not_helpful<br>라벨과 판단 이유<br>돌릴 때마다 다를 수 있음</div></div>
+<svg width="960" height="430">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#f06595"/></marker></defs>
+<path d="M242 170 C 290 170, 290 50, 324 50" stroke="#f06595" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M242 190 C 290 190, 290 310, 324 310" stroke="#f06595" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M662 50 L734 50" stroke="#f06595" stroke-width="5" marker-end="url(#a)"/>
+<path d="M662 310 L734 310" stroke="#f06595" stroke-width="5" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:0;top:330px;width:300px">둘 중 하나를 고르는 게 아니라<br>항목마다 "코드로 판정할 수<br>있는가"로 가른다</div>
+</div></div></body></html>

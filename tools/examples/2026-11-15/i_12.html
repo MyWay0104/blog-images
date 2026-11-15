@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1f0812;--fg:#ffe3ec;--ac:#f06595}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 20px;background:#33101d;border:3px solid #6b2140;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px}
+.c .d{font-size:16px;color:#ffd6e0;line-height:1.5;word-break:keep-all}
+.c .d b{color:#ff8fab}
+.c .q{font-size:14px;color:#ffb3c6;margin-top:8px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">세 공식 문서가 같은 말을 하는 지점</div><h1>규칙은 결정적, LLM 판정은 유연하다</h1>
+<div class="g">
+<div class="c hot"><div class="t">규칙 기반 (코드) 판정기</div><div class="d">"<b>결정적이고 규칙에 기반한 함수</b>" (LangSmith). "프로그램으로 검사할 수 있는 모든 것 — 문자열 포함, JSON 모양, 정규식, 결정적 비교" (Arize). "LLM을 쓰지 않아 <b>결정적</b>이지만, 사람 평가와의 상관은 낮다" (Ragas).</div><div class="q">못 하는 것: 말투·도움이 되는지·사실성 같은 주관적 질문</div></div>
+<div class="c hot" style="border-color:#ff8fab"><div class="t">LLM-as-a-judge</div><div class="d">"<b>LLM이 데이터를 읽고 라벨과 설명을 낸다</b>" (Arize). "채점 규칙과 기준은 보통 프롬프트에 적는다" (LangSmith). "같은 입력에 늘 같은 결과를 내지는 않지만 <b>사람 평가에 더 가깝다</b>" (Ragas).</div><div class="q">못 하는 것: 결정성. 프롬프트 설계가 필요하고 알려진 편향에 취약 (Arize)</div></div>
+<div class="c"><div class="t">사람 평가는 기준점</div><div class="d">"다른 판정기를 보정하는 <b>골든 데이터셋</b>을 정의한다" (Arize). "LLM 판정기는 점수의 <b>세심한 검토와 프롬프트 조정</b>이 필요하고, 입력·출력·기대 점수 예시를 넣은 few-shot이 성능을 자주 높인다" (LangSmith).</div></div>
+<div class="c"><div class="t">고르는 순서</div><div class="d">① 코드로 판정할 수 있나 → 예면 코드로 끝. ② 운영 규모로 계속 평가하나 → 아니오면 사람. ③ 나머지 기본값은 LLM 판정기 (Arize). "<b>객관적 기준이 있는 지표를 우선</b>하고 주관적 판단을 최소화" (Ragas).</div></div>
+</div>
+<div style="margin-top:16px;font-size:18px;color:#ff8fab;text-align:center;word-break:keep-all">출력 형식처럼 코드로 판정할 수 있으면 코드로 — 채점 기준을 잘 정하는 일은 LLM에 맡길 항목에만 쓴다</div>
+</div></body></html>

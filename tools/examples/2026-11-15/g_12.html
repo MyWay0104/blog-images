@@ -1,0 +1,20 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c1403;--fg:#fff3bf;--ac:#fab005}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 20px;background:#2e2208;border:3px solid #5c4610;position:relative;min-width:0}
+.c.hot{border-color:var(--ac)}
+.n{position:absolute;right:16px;top:10px;font-size:40px;font-weight:900;color:#5c4610}
+.c.hot .n{color:#fab005}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px;padding-right:44px;word-break:keep-all}
+.c .d{font-size:16px;color:#fff3bf;line-height:1.5;word-break:keep-all}
+.c .d b{color:#ffd43b}
+.c .q{font-size:14px;color:#ffe066;margin-top:8px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">Next.js 환경변수 — 공식 문서로 확인한 네 가지</div><h1>접두사 하나에 걸린 네 가지 사실</h1>
+<div class="g">
+<div class="c hot"><div class="n">1</div><div class="t">기본은 서버 전용</div><div class="d">"기본적으로 환경변수는 <b>서버에서만</b> 쓸 수 있다." 브라우저로 보내려면 <b>NEXT_PUBLIC_</b>을 붙여야 한다.</div><div class="q">Next.js 문서: Runtime Environment Variables</div></div>
+<div class="c hot"><div class="n">2</div><div class="t">빌드 때 값이 박힌다</div><div class="d">NEXT_PUBLIC_ 값은 <b>next build</b> 때 JS 번들에 인라인된다. 빌드 뒤에는 환경변수를 바꿔도 반응하지 않는다. <b>process.env[변수명]</b>처럼 돌려 읽으면 인라인되지 않는다.</div><div class="q">Next.js 문서: Bundling Environment Variables for the Browser</div></div>
+<div class="c"><div class="n">3</div><div class="t">읽는 순서와 NODE_ENV</div><div class="d">process.env → .env.$(NODE_ENV).local → .env.local → .env.$(NODE_ENV) → .env 순서로 찾고 먼저 찾으면 멈춘다. NODE_ENV는 <b>next dev면 development, 그 외 production</b>으로 자동 지정.</div><div class="q">Next.js 문서: Load Order · Good to know</div></div>
+<div class="c"><div class="n">4</div><div class="t">배포 서비스의 Secret 타입</div><div class="d">Vercel은 <b>Config</b>(저장 뒤에도 읽힘)와 <b>Secret</b>(저장 뒤 쓰기 전용)으로 나눈다. 토큰·API 키는 Secret. 32자 이상 값은 빌드 로그에서도 <b>[REDACTED]</b>로 가린다.</div><div class="q">Vercel 문서: Config and Secret environment variables</div></div>
+</div>
+<div style="margin-top:16px;font-size:18px;color:#ffd43b;text-align:center;word-break:keep-all">환경변수는 값 저장소이자 보안 경계다 — NEXT_PUBLIC_은 "브라우저에 전달될 수 있다"는 선언이다</div>
+</div></body></html>

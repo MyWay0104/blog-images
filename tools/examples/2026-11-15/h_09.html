@@ -1,0 +1,37 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0b0f2a;--fg:#e5e9ff;--ac:#5c7cfa}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.c{border-radius:20px;padding:18px 20px;background:#141a3d;border:3px solid #2b3670;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px}
+.code{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:14px;line-height:1.6;background:#070a1c;border-radius:12px;padding:12px 14px;color:#dbe4ff;white-space:pre;overflow:hidden}
+.code .kw{color:#91a7ff}.code .st{color:#8ce99a}.code .cm{color:#6b7bb8}.code .ch{color:#ffd43b;font-weight:700}
+.c .d{font-size:16px;color:#bac8ff;line-height:1.45;margin-top:10px;word-break:keep-all}
+.c .d b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">LangChain의 이점이 드러나는 지점 — 제공자를 바꿀 때</div><h1>클래스 하나만 바뀌고, 나머지 줄은 그대로</h1>
+<div class="g">
+<div class="c"><div class="t">Ollama (OpenAI 호환 서버)</div>
+<div class="code"><span class="kw">from</span> langchain_openai <span class="kw">import</span> <span class="ch">ChatOpenAI</span>
+
+llm = <span class="ch">ChatOpenAI</span>(
+    model=<span class="st">"llama3.2"</span>,
+    base_url=<span class="st">"http://localhost:11434/v1/"</span>,
+    api_key=<span class="st">"ollama"</span>,   <span class="cm"># 필요하지만 무시됨</span>
+)
+response = llm.invoke(prompt)
+<span class="kw">print</span>(response.content)</div>
+<div class="d">Ollama가 OpenAI와 <b>같은 모양의 엔드포인트</b>를 내주기 때문에 "OpenAI"라는 이름의 클래스로 로컬 모델을 부른다</div></div>
+<div class="c hot"><div class="t">Anthropic Claude로 바꾸면</div>
+<div class="code"><span class="kw">from</span> langchain_anthropic <span class="kw">import</span> <span class="ch">ChatAnthropic</span>
+
+llm = <span class="ch">ChatAnthropic</span>(
+    model=<span class="st">"claude-…"</span>,
+    api_key=<span class="st">"…"</span>,          <span class="cm"># 코드에 넣지 말 것</span>
+)
+
+response = llm.invoke(prompt)
+<span class="kw">print</span>(response.content)</div>
+<div class="d">요청·응답 형식이 OpenAI와 달라 전용 패키지가 필요하지만, <b>invoke와 .content 줄은 그대로</b>다. 1단계였다면 URL·헤더·JSON 구조를 전부 다시 써야 한다</div></div>
+</div>
+<div style="margin-top:16px;font-size:17px;color:#91a7ff;text-align:center;word-break:keep-all">설치 이름은 하이픈(langchain-openai), import 이름은 밑줄(langchain_openai) — 파이썬 식별자에 하이픈을 쓸 수 없어서다</div>
+</div></body></html>

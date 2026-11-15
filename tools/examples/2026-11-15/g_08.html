@@ -1,0 +1,26 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1c1403;--fg:#fff3bf;--ac:#fab005}
+.wrap{position:relative;height:480px}
+.q{position:absolute;left:230px;top:0;width:500px;border-radius:20px;padding:16px 18px;text-align:center;background:#2e2208;border:3px solid var(--ac);font-size:24px;font-weight:900;color:#fff;word-break:keep-all}
+.q small{display:block;font-size:15px;color:#ffe066;font-weight:400;margin-top:6px}
+.box{position:absolute;border-radius:18px;padding:16px 16px;background:#2e2208;border:3px solid #5c4610}
+.box .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px}
+.box .d{font-size:16px;color:#fff3bf;line-height:1.5;word-break:keep-all}
+.box .d b{color:#ffd43b}
+.box.pub{border-color:var(--ac)}
+.al{position:absolute;font-size:18px;font-weight:900;color:#ffd43b}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">새 환경변수를 추가할 때마다 거치는 한 가지 질문</div><h1>접두사를 정하는 기준은 하나다</h1>
+<div class="wrap">
+<div class="q">이 값이 브라우저에 보여도 되는가?<small>브라우저로 간 값은 누구나 개발자 도구에서 꺼내 볼 수 있다</small></div>
+<div class="al" style="left:150px;top:150px">예</div>
+<div class="al" style="left:790px;top:150px">아니오</div>
+<div class="box pub" style="left:0;top:200px;width:440px"><div class="t">NEXT_PUBLIC_ 를 붙인다</div><div class="d">사이트 주소, 공개 분석 ID처럼 <b>어차피 공개된 값</b><br>빌드 때 번들에 박히니, 환경마다 값이 다르면 <b>빌드 시점</b>에 맞게 넣는다<br>코드에서는 <b>process.env.NEXT_PUBLIC_이름</b> 그대로 써야 인라인된다 (변수로 돌려 읽으면 안 됨)</div></div>
+<div class="box" style="left:520px;top:200px;width:440px"><div class="t">접두사 없이 서버에만 둔다</div><div class="d">토큰, API 키, 캐시 갱신 비밀번호처럼 <b>새어 나가면 안 되는 값</b><br>Route Handler · Server Component · Server Action에서만 읽는다<br>Vercel에는 <b>Secret 타입</b>으로 등록 (저장 뒤 값을 다시 볼 수 없음)</div></div>
+<svg width="960" height="480">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#fab005"/></marker></defs>
+<path d="M330 112 C 330 150, 220 150, 220 194" stroke="#fab005" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M630 112 C 630 150, 740 150, 740 194" stroke="#fab005" stroke-width="5" fill="none" marker-end="url(#a)"/>
+</svg>
+<div style="position:absolute;left:0;top:432px;width:960px;text-align:center;font-size:17px;color:#ffe066;word-break:keep-all">헷갈리면 "아니오" 쪽에 둔다. 서버에만 있는 값을 나중에 공개하는 건 쉽지만, 한 번 번들에 실린 값은 되돌릴 수 없다</div>
+</div></div></body></html>

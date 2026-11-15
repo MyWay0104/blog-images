@@ -1,0 +1,28 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0608;--fg:#ffe3e3;--ac:#fa5252}
+.wrap{position:relative;height:430px}
+.box{position:absolute;border-radius:18px;padding:12px 10px;text-align:center;background:#2b0d11;border:3px solid #5c1a22}
+.box .t{font-size:20px;font-weight:900;color:#fff}.box .d{font-size:15px;color:#ffa8a8;margin-top:6px;line-height:1.4;word-break:keep-all}
+.box .m{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:15px;color:#ffc9c9;margin-top:6px}
+.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(250,82,82,.22)}
+.lab{position:absolute;font-size:16px;color:#ffa8a8;text-align:center;line-height:1.35;word-break:keep-all}
+svg{position:absolute;left:0;top:0}
+</style></head><body><div id="card">
+<div class="k">제 프로젝트에서 값이 갈라진 경로 (기록 기준)</div><h1>페이지 번호 하나가 거치던 네 단계</h1>
+<div class="wrap">
+<div class="box" style="left:0;top:20px;width:210px"><div class="t">PaginationLink</div><div class="d">shadcn의 페이지네이션<br>부품 (components/ui)</div></div>
+<div class="box" style="left:250px;top:20px;width:210px"><div class="t">Base UI Button</div><div class="d">버튼 동작·포커스를<br>맡는 기반 컴포넌트</div></div>
+<div class="box" style="left:500px;top:20px;width:210px"><div class="t">render=&#123;&lt;a&gt;&#125;</div><div class="d">버튼 자리에 링크 태그를<br>끼워 넣는 옵션</div></div>
+<div class="box hot" style="left:750px;top:20px;width:210px"><div class="t">속성 병합</div><div class="d">버튼의 속성과 링크의 속성을<br>합쳐 최종 태그를 만든다</div></div>
+<div class="box" style="left:500px;top:200px;width:210px;border-color:#ff8787"><div class="t">서버</div><div class="m">tabIndex="0"</div><div class="d">Tab 순서에 들어간다</div></div>
+<div class="box" style="left:750px;top:200px;width:210px;border-color:#ff8787"><div class="t">브라우저</div><div class="m">tabIndex="-1"</div><div class="d">Tab 순서에서 빠진다</div></div>
+<svg width="960" height="430">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="16" refY="10" orient="auto"><path d="M0,0 L20,10 L0,20 z" fill="#ff8787"/></marker></defs>
+<path d="M212 70 L244 70" stroke="#ff8787" stroke-width="5" marker-end="url(#a)"/>
+<path d="M462 70 L494 70" stroke="#ff8787" stroke-width="5" marker-end="url(#a)"/>
+<path d="M712 70 L744 70" stroke="#ff8787" stroke-width="5" marker-end="url(#a)"/>
+<path d="M820 134 C 820 170, 605 150, 605 194" stroke="#fa5252" stroke-width="5" fill="none" marker-end="url(#a)"/>
+<path d="M870 134 L862 194" stroke="#fa5252" stroke-width="5" marker-end="url(#a)"/>
+</svg>
+<div class="lab" style="left:0;top:210px;width:460px;font-size:17px">첫 페이지의 비활성 "이전" 항목: 눌러도 갈 곳이 없는데<br>서버 값 <b style="color:#fff">0</b>이 남으면 키보드 사용자는 여기서 한 번 멈춘다<br><span style="color:#ff8787">→ 콘솔 잡음이 아니라 접근성 버그</span></div>
+<div class="lab" style="left:0;top:340px;width:960px;color:#ffa8a8">같은 코드인데 서버와 브라우저가 속성을 합친 결과가 달랐다. 콘솔 메시지 원문은 기록에 없고, 값의 차이와 수정 내용만 남아 있다</div>
+</div></div></body></html>

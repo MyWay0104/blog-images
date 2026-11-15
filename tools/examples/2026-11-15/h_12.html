@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#041a16;--fg:#e6fcf5;--ac:#20c997}
+.row{display:flex;gap:22px}
+.c{flex:1;border-radius:22px;padding:24px 22px;background:#07251f;border:3px solid #2f6b5e;min-height:330px}
+.c.hot{border-color:var(--ac);box-shadow:0 0 34px rgba(32,201,151,.2)}
+.c .n{font-size:20px;font-weight:700;color:#96f2d7;margin-bottom:8px}
+.c .t{font-size:30px;font-weight:900;color:#fff;margin-bottom:16px;line-height:1.25}
+.c .d{font-size:20px;color:#c3fae8;line-height:1.5;word-break:keep-all}
+.c .m{display:inline-block;margin-top:14px;font-family:'DejaVu Sans Mono',monospace;font-size:18px;background:#0e4237;border-radius:10px;padding:6px 10px;color:#96f2d7}
+</style></head><body><div id="card">
+<div class="k">같은 단어, 세 가지 뜻</div><h1>"세션"이 어느 세션인지부터 묻는다</h1>
+<div class="row">
+<div class="c"><div class="n">① 코딩 도구</div><div class="t">작업 한 번의<br>맥락 묶음</div><div class="d">도구를 열고 닫을 때까지의 대화와 작업 기록</div><div class="m">/resume, 세션 ID</div></div>
+<div class="c"><div class="n">② 웹 서버</div><div class="t">로그인 상태<br>유지 단위</div><div class="d">Stateless한 HTTP 위에서 쿠키로 "같은 사람"임을 이어 줌</div><div class="m">session cookie</div></div>
+<div class="c hot"><div class="n">③ 관측 도구 (이 글)</div><div class="t">대화방 하나 =<br>Trace의 연속</div><div class="d">질문마다 Trace가 하나씩 생기고, 같은 ID로 묶여 대화 흐름이 됨</div><div class="m">session.id</div></div>
+</div>
+</div></body></html>
