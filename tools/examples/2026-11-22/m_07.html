@@ -1,0 +1,42 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0e1505;--fg:#e9fac8;--ac:#94d82d}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.col{min-width:0;border-radius:22px;border:3px solid #3a5412;background:#141e07;padding:20px 20px 22px}
+.col.hot{border-color:var(--ac)}
+.hd{font-size:24px;font-weight:900;color:#fff;margin-bottom:4px}
+.sb{font-size:15.5px;color:#a9e34b;margin-bottom:16px}
+.b{border-radius:14px;background:#1a2609;border:3px solid #3a5412;padding:12px 16px;font-size:17.5px;color:#e9fac8;line-height:1.45;word-break:keep-all}
+.b b{color:#fff}.b small{display:block;font-size:14.5px;color:#a9e34b;margin-top:3px}
+.b.out{background:#94d82d;border-color:#94d82d;color:#0e1505;font-weight:700}
+.b.out b{color:#0e1505}.b.out small{color:#22330b}
+.ar{text-align:center;color:#94d82d;font-size:20px;line-height:1;margin:7px 0}
+.loop{margin:8px 0 0;border-radius:14px;border:3px dashed #a9e34b;padding:10px 14px;font-size:16.5px;color:#d8f5a2;text-align:center;word-break:keep-all}
+.loop b{color:#fff}
+.cells{display:flex;gap:4px;margin-top:8px;flex-wrap:nowrap}
+.cells i{flex:1;height:16px;border-radius:4px;background:#3a5412;display:block}
+.cells i.on{background:#c0eb75}
+.cells.two i{height:26px}
+.cells.two i:first-child{flex:10;background:#c0eb75}
+.cells.two i:last-child{flex:1;background:#3a5412}
+.cap{margin-top:20px;font-size:18px;color:#d8f5a2;text-align:center;word-break:keep-all;line-height:1.55}
+.cap b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">같은 "확률 계산"인데 무엇이 다른가</div><h1>점수표의 칸이 다르고, 반복이 없다</h1>
+<div class="g">
+<div class="col"><div class="hd">글을 쓰는 방식 (LLM)</div><div class="sb">다음 토큰을 하나씩 이어 붙인다</div>
+<div class="b">모델이 한 번 계산한다<small>결과는 <b>어휘 전체</b>에 대한 점수표 (GPT-2 small은 50,257칸)</small>
+<div class="cells"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="ar">▼</div>
+<div class="b">점수표에서 <b>토큰 하나</b>를 뽑는다</div><div class="ar">▼</div>
+<div class="b">뽑은 토큰을 입력 뒤에 붙인다</div>
+<div class="loop">↻ <b>끝날 때까지 처음부터 다시</b> — 토큰 수만큼 계산한다</div>
+<div class="ar">▼</div>
+<div class="b">나오는 것: <b>글</b><small>무엇이 얼마나 길게 나올지 정해져 있지 않다</small></div></div>
+<div class="col hot"><div class="hd">판정만 하는 방식</div><div class="sb">미리 정해 준 답에 대해서만 답한다</div>
+<div class="b">모델이 한 번 계산한다<small>결과는 <b>정해 준 답</b>에 대한 확률표 (예/아니오면 2칸)</small>
+<div class="cells two"><i></i><i></i></div></div><div class="ar">▼</div>
+<div class="b out">그대로 돌려준다<small>예 0.91 · 아니오 0.09</small></div>
+<div class="loop" style="border-color:#3a5412;color:#a9e34b">뽑아서 붙이는 단계가 없다 — <b>반복 없음</b></div>
+<div class="ar">▼</div>
+<div class="b">나오는 것: <b>숫자</b><small>칸의 종류와 개수를 질문하는 쪽이 정한다</small></div></div>
+</div>
+<div class="cap">파라미터는 <b>점수표를 계산</b>할 뿐이다. "하나 뽑아 붙이고 다시 돌리는 반복"은 그 점수표를 <b>쓰는 절차</b>다.<br>칸을 답으로 정해 두고 반복을 빼면, 글이 아니라 판정이 나온다</div>
+</div></body></html>

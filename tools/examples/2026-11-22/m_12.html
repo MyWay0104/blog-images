@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#0e1505;--fg:#e9fac8;--ac:#94d82d}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 20px;background:#1a2609;border:3px solid #3a5412;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px;word-break:keep-all}
+.c .d{font-size:16px;color:#e9fac8;line-height:1.5;word-break:keep-all}
+.c .d b{color:#c0eb75}
+.c .q{font-size:14px;color:#a9e34b;margin-top:8px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">Jev를 처음 볼 때 잡아 둘 네 가지</div><h1>글이 아니라, 정해 준 칸의 확률</h1>
+<div class="g">
+<div class="c"><div class="t">Jev는 모델 이름이다</div><div class="d"><b>TypeSafe</b>가 만든 모델이 Jev이고, <b>System One</b>은 그 모델이 속한 종류의 이름이다. "LLM"과 같은 자리에 놓이는 말이다.</div><div class="q">TypeSafe 문서: the first System One model</div></div>
+<div class="c hot"><div class="t">돌아오는 것은 글이 아니다</div><div class="d">질문하는 쪽이 <b>답의 칸</b>(선택지 · 수준 · 예/아니오 · 이미지 위치)을 정하고, 모델은 그 칸에 대한 <b>값과 확률</b>만 돌려준다.</div><div class="q">TypeSafe 문서: typed decisions and probabilities rather than generated text</div></div>
+<div class="c hot"><div class="t">예/아니오도 확률로 온다</div><div class="d">Noul의 답은 true/false가 아니라 <b>"예일 확률" 숫자 하나</b>(0~1)다. 불리언은 기준값을 건 <b>내 코드</b>가 만든다.</div><div class="q">TypeSafe 문서: 시작점은 예 0.7 / 아니오 0.3, 그 사이는 사람에게</div></div>
+<div class="c"><div class="t">맡기지 않는 일이 있다</div><div class="d"><b>날짜 비교 · 계산 · 세기</b>는 코드로, <b>글 만들기</b>는 생성 모델로. 판정 모델에는 글의 뜻을 읽는 판단 하나만 묻는다.</div><div class="q">TypeSafe 문서: Model jaggedness의 실패 유형 9가지</div></div>
+</div>
+<div style="margin-top:16px;font-size:18px;color:#a9e34b;text-align:center;word-break:keep-all">내부 구조와 파라미터 수는 공개되지 않았다 — 속도와 가격은 모두 개발사 발표 기준이다</div>
+</div></body></html>

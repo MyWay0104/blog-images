@@ -1,0 +1,32 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0f05;--fg:#ffe8cc;--ac:#ff922b}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.c{border-radius:20px;padding:20px 22px;background:#2b1a0a;border:3px solid #5f3811;min-width:0}
+.c.hot{border-color:var(--ac);box-shadow:0 0 30px rgba(255,146,43,.18)}
+.c .n{font-size:15px;color:#ffa94d;font-weight:700;letter-spacing:1px;margin-bottom:6px}
+.c .t{font-size:24px;font-weight:900;color:#fff;margin-bottom:14px;word-break:keep-all}
+.st{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:17px;line-height:1.45;color:#ffe8cc;word-break:keep-all}
+.st b{color:#fff}.st .d{flex:none;width:26px;height:26px;border-radius:50%;background:#5f3811;color:#ffd8a8;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.hot .st .d{background:var(--ac);color:#1a0f05}
+.m{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:15px;color:#ffd8a8}
+.out{margin-top:22px;border-radius:18px;background:#ff922b;color:#1a0f05;padding:16px 20px;text-align:center;font-size:21px;font-weight:900}
+.out span{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:19px}
+.arr{text-align:center;color:#ffa94d;font-size:26px;line-height:1;margin-top:14px}
+.cap{margin-top:14px;font-size:17px;color:#ffc078;text-align:center;word-break:keep-all;line-height:1.5}
+</style></head><body><div id="card">
+<div class="k">가상환경을 "활성화"하는 것과 "그 파이썬으로 실행"하는 것은 다른 일</div><h1>venv를 쓰는 길은 두 개다</h1>
+<div class="g">
+<div class="c"><div class="n">① 활성화하고 실행</div><div class="t">activate 스크립트를 먼저 돌린다</div>
+<div class="st"><div class="d">1</div><div><span class="m">.venv\Scripts\Activate.ps1</span> 실행</div></div>
+<div class="st"><div class="d">2</div><div><b>PATH 맨 앞</b>에 <span class="m">.venv\Scripts</span>가 끼어든다</div></div>
+<div class="st"><div class="d">3</div><div><span class="m">VIRTUAL_ENV</span>가 채워지고, 프롬프트에 <b>(.venv)</b>가 붙는다</div></div>
+<div class="st"><div class="d">4</div><div>이제 <span class="m">python 01_api_direct.py</span></div></div></div>
+<div class="c hot"><div class="n">② 경로로 직접 실행</div><div class="t">venv 안의 python을 바로 부른다</div>
+<div class="st"><div class="d">1</div><div>활성화 스크립트를 <b>돌리지 않는다</b></div></div>
+<div class="st"><div class="d">2</div><div><span class="m">.venv\Scripts\python.exe</span>를 전체 경로로 지정해 실행</div></div>
+<div class="st"><div class="d">3</div><div>PATH, <span class="m">VIRTUAL_ENV</span>, 프롬프트는 <b>그대로</b></div></div>
+<div class="st"><div class="d">4</div><div>제 기록에서 VS Code의 Ctrl+F5가 쓴 방식</div></div></div>
+</div>
+<div class="arr">▼ &nbsp; ▼</div>
+<div class="out">둘 다 같은 인터프리터 &nbsp;<span>.venv\Scripts\python.exe</span>&nbsp; → 같은 패키지</div>
+<div class="cap">표시(프롬프트의 (.venv), VIRTUAL_ENV)는 ①에서만 생긴다. 그래서 ②는 "활성화가 안 된 것처럼" 보이지만 실행은 venv로 된다</div>
+</div></body></html>

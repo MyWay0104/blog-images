@@ -1,0 +1,22 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#120b24;--fg:#e5dbff;--ac:#9775fa}
+table{border-collapse:collapse;width:100%}
+th{font-size:19px;color:#fff;background:#3d2b7a;padding:13px 14px;text-align:left;border:2px solid #120b24}
+th.a{background:#5f3dc4}th.b{background:#9775fa;color:#120b24}
+td{font-size:17px;color:#e5dbff;background:#1e1440;padding:13px 14px;border:2px solid #120b24;vertical-align:top;line-height:1.45;word-break:keep-all}
+td.h{color:#b197fc;font-weight:700;white-space:nowrap;background:#170f33}
+td b{color:#fff}
+td.b{background:#2a1d5c}
+.m{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:15px;color:#d0bfff}
+</style></head><body><div id="card">
+<div class="k">이름은 같은 "임베딩", 가리키는 것은 다르다</div><h1>토큰 임베딩 vs RAG 임베딩</h1>
+<table>
+<tr><th style="width:17%"></th><th class="a">토큰 임베딩</th><th class="b">RAG 임베딩 (문장 임베딩)</th></tr>
+<tr><td class="h">단위</td><td><b>토큰 1개</b>마다</td><td class="b"><b>문장·문단(청크) 1개</b>마다</td></tr>
+<tr><td class="h">벡터 수</td><td>토큰 수만큼 <span class="m">(토큰 수, 차원)</span></td><td class="b">1개 <span class="m">(차원,)</span></td></tr>
+<tr><td class="h">문맥</td><td>없음. ID로 <b>표에서 꺼낸 값</b>이라 "배"는 어디서나 같다</td><td class="b">반영됨. Transformer 층을 거친 뒤 <b>풀링으로 합친 값</b></td></tr>
+<tr><td class="h">어디에 있나</td><td>모델 안의 첫 단계 (중간값)</td><td class="b">임베딩 모델의 출력 (API 응답으로 받는다)</td></tr>
+<tr><td class="h">무엇에 쓰나</td><td>뒤따르는 계산의 재료</td><td class="b">벡터 DB에 저장하고 가까운 문장을 찾는다</td></tr>
+<tr><td class="h">만드는 것</td><td>임베딩 표 (lookup table)</td><td class="b">임베딩 모델 전체 (표 + Transformer + 풀링)</td></tr>
+</table>
+<div style="margin-top:16px;font-size:17px;color:#d0bfff;text-align:center;word-break:keep-all;line-height:1.5">그리고 토크나이저는 둘 중 어느 것도 만들지 않는다 — 텍스트를 정수 ID로 바꾸는 데까지가 토크나이저의 일이다</div>
+</div></body></html>

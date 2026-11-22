@@ -1,0 +1,34 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#120b24;--fg:#e5dbff;--ac:#9775fa}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.col{min-width:0}
+.hd{font-size:22px;font-weight:900;color:#fff;margin-bottom:4px}
+.sb{font-size:15px;color:#b197fc;margin-bottom:14px}
+.b{border-radius:14px;background:#1e1440;border:3px solid #3d2b7a;padding:12px 16px;font-size:17px;color:#e5dbff;line-height:1.4;word-break:keep-all}
+.b b{color:#fff}.b small{display:block;font-size:14px;color:#b197fc;margin-top:3px}
+.b.tok{border-color:#b197fc;background:#2a1d5c}
+.b.out{background:#9775fa;border-color:#9775fa;color:#120b24;font-weight:700}
+.b.out b{color:#120b24}.b.out small{color:#2a1d5c}
+.b.end{border-style:dashed}
+.ar{text-align:center;color:#9775fa;font-size:20px;line-height:1;margin:6px 0}
+.tag{display:inline-block;font-size:12.5px;font-weight:900;border-radius:8px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.tag.t{background:#b197fc;color:#120b24}.tag.r{background:#120b24;color:#d0bfff}
+.cap{margin-top:18px;font-size:17px;color:#d0bfff;text-align:center;word-break:keep-all;line-height:1.5}
+.cap b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">같은 문장이 두 종류의 모델을 지나가는 길</div><h1>"임베딩"은 두 군데에 있다</h1>
+<div class="g">
+<div class="col"><div class="hd">글을 쓰는 모델 (LLM)</div><div class="sb">다음 토큰을 예측한다</div>
+<div class="b">텍스트 <b>"배가 고프다"</b></div><div class="ar">▼</div>
+<div class="b">토크나이저<small>글자 조각을 정수 ID로. 여기까지 벡터는 없다</small></div><div class="ar">▼</div>
+<div class="b tok">임베딩 표에서 줄 꺼내기 <span class="tag t">토큰 임베딩</span><small>토큰마다 벡터 1개. 문맥은 아직 모른다</small></div><div class="ar">▼</div>
+<div class="b">Transformer 층<small>토큰끼리 정보를 주고받아 문맥이 섞인다</small></div><div class="ar">▼</div>
+<div class="b end">다음 토큰의 확률 → 글자를 이어 쓴다</div></div>
+<div class="col"><div class="hd">임베딩 모델</div><div class="sb">문장의 뜻을 숫자로 요약한다</div>
+<div class="b">텍스트 <b>"배가 고프다"</b></div><div class="ar">▼</div>
+<div class="b">토크나이저<small>이 모델 자신의 토크나이저로 ID를 만든다</small></div><div class="ar">▼</div>
+<div class="b tok">임베딩 표에서 줄 꺼내기<small>여기에도 토큰별 벡터가 있다 (모델 안의 중간값)</small></div><div class="ar">▼</div>
+<div class="b">Transformer 층 → 풀링<small>문맥을 섞은 뒤 하나로 합친다</small></div><div class="ar">▼</div>
+<div class="b out">벡터 1개 <span class="tag r">RAG 임베딩</span><small>벡터 DB에 저장하고 가까운 것을 찾는 데 쓴다</small></div></div>
+</div>
+<div class="cap"><b>토큰 임베딩</b>은 모델 안에서 계산이 시작되는 첫 재료이고, <b>RAG 임베딩</b>은 임베딩 모델이 내놓는 최종 결과물이다.<br>이름만 같고 단위(토큰 / 문장)와 쓰임(계산 재료 / 검색)이 다르다</div>
+</div></body></html>

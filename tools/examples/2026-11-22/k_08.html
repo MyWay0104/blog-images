@@ -1,0 +1,24 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0f05;--fg:#ffe8cc;--ac:#ff922b}
+table{border-collapse:collapse;width:100%}
+th{font-size:17px;color:#fff;background:#5f3811;padding:12px 10px;text-align:center;border:2px solid #1a0f05;word-break:keep-all;line-height:1.35}
+th.l{text-align:left}
+th small{display:block;font-size:13px;font-weight:500;color:#ffc078;margin-top:3px}
+td{font-size:17px;color:#ffe8cc;background:#2b1a0a;padding:13px 10px;border:2px solid #1a0f05;vertical-align:middle;line-height:1.4;word-break:keep-all;text-align:center}
+td.l{text-align:left}
+td.l .m{font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:15px;color:#ffd8a8;display:block;margin-top:3px}
+td.x{color:#8a6a4a}
+td.o{color:#fff;font-weight:900;background:#3d2510}
+td.v{color:#1a0f05;font-weight:900;background:#ff922b}
+td.s{color:#ffc078;font-weight:700}
+tr.hot td.l{box-shadow:inset 5px 0 0 #ff922b}
+</style></head><body><div id="card">
+<div class="k">같은 파일을 네 가지로 실행해 본 결과 (샌드박스 실제 실행을 표로 옮김)</div><h1>표시와 실제는 따로 논다</h1>
+<table>
+<tr><th class="l" style="width:34%">실행 방법</th><th>프롬프트의 (.venv)<small>눈에 보이는 표시</small></th><th>VIRTUAL_ENV<small>눈에 보이는 표시</small></th><th>실제로 돈 파이썬<small>sys.executable</small></th></tr>
+<tr><td class="l">① 그냥 python<span class="m">python3 01_api_direct.py</span></td><td class="x">없음</td><td class="x">비어 있음</td><td class="s">시스템 파이썬</td></tr>
+<tr class="hot"><td class="l">② venv의 python을 경로로 직접<span class="m">.venv/bin/python 01_api_direct.py</span></td><td class="x">없음</td><td class="x">비어 있음</td><td class="v">venv 파이썬</td></tr>
+<tr><td class="l">③ activate 후 python<span class="m">source .venv/bin/activate</span></td><td class="o">있음</td><td class="o">채워짐</td><td class="v">venv 파이썬</td></tr>
+<tr><td class="l">④ uv run<span class="m">uv run python 01_api_direct.py</span></td><td class="x">없음</td><td class="o">채워짐</td><td class="v">venv 파이썬</td></tr>
+</table>
+<div style="margin-top:16px;font-size:17px;color:#ffc078;text-align:center;word-break:keep-all;line-height:1.5">②가 제 VS Code 화면과 같은 상태다 — 표시 두 칸은 ①과 똑같이 비어 있는데, 실제로 돈 파이썬은 ③과 같다.<br>표시만 보고는 ①과 ②를 구별할 수 없다</div>
+</div></body></html>

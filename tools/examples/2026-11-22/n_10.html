@@ -1,0 +1,26 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06111f;--fg:#e7f5ff;--ac:#4dabf7}
+.s{display:grid;grid-template-columns:120px 1fr;gap:0;border-radius:20px;border:3px solid #1c4470;background:#0d2137;margin-bottom:10px;overflow:hidden}
+.s.hot{border-color:var(--ac)}
+.s .n{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#10294a;padding:14px 0}
+.s.hot .n{background:#4dabf7}
+.s .n b{font-size:46px;font-weight:900;color:#74c0fc;line-height:1}
+.s.hot .n b{color:#06111f}
+.s .n span{font-size:14px;font-weight:700;color:#a5d8ff;margin-top:6px}
+.s.hot .n span{color:#0a1a2e}
+.s .x{padding:16px 22px;min-width:0}
+.s .t{font-size:24px;font-weight:900;color:#fff;margin-bottom:6px;word-break:keep-all}
+.s .d{font-size:17px;color:#e7f5ff;line-height:1.5;word-break:keep-all}
+.s .d b{color:#a5d8ff}
+.s .q{font-size:14.5px;color:#74c0fc;margin-top:7px;word-break:keep-all}
+.dn{text-align:center;color:#74c0fc;font-size:16px;font-weight:700;margin:0 0 10px;word-break:keep-all}
+.cap{margin-top:14px;font-size:17.5px;color:#a5d8ff;text-align:center;word-break:keep-all;line-height:1.55}
+.cap b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">버튼이면 되는 일에 모델을 쓰지 않는다</div><h1 style="margin-bottom:30px">싼 것부터, 안 되는 것만 다음으로</h1>
+<div class="s"><div class="n"><b>1</b><span>가장 싸다</span></div><div class="x"><div class="t">코드 · 버튼</div><div class="d">정해진 선택지에서 고르기, <b>날짜와 금액 계산</b>, 규칙으로 적을 수 있는 분기</div><div class="q">TypeSafe 문서의 첫 원칙: Use code when you can</div></div></div>
+<div class="dn">▼ 자유롭게 쓴 글이 들어와 규칙으로 못 가를 때</div>
+<div class="s hot"><div class="n"><b>2</b><span>판정만</span></div><div class="x"><div class="t">판정 모델</div><div class="d">글을 읽고 <b>정해 둔 칸 중 하나</b>를 고르거나 예/아니오를 확률로 답한다. 확률이 높으면 그대로 진행한다</div><div class="q">Choice · Noul, 그리고 confidence로 "되물을지" 가르기</div></div></div>
+<div class="dn">▼ 확률이 낮거나, 글을 써야 하거나, 여러 단계로 따져야 할 때</div>
+<div class="s"><div class="n"><b>3</b><span>가장 비싸다</span></div><div class="x"><div class="t">LLM · 사람</div><div class="d"><b>답변 문장 쓰기</b>, 여러 단계의 추론, 그리고 모델이 가르지 못한 건의 최종 판단</div><div class="q">TypeSafe 문서: 생성은 생성 모델로, 낮은 confidence는 사람이나 추론 모델로</div></div></div>
+<div class="cap">위 단계에서 끝난 건은 아래로 내려가지 않는다 — <b>판정 모델은 LLM을 없애는 것이 아니라 LLM까지 가는 건수를 줄인다</b></div>
+</div></body></html>

@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.y{color:#ffd43b}.g{color:#8ce99a}.c{color:#9a9a9a}.o{color:#ffa94d}.body{font-size:19px;font-family:'Noto Sans Mono CJK KR',monospace}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; explainer-check — 화면의 logit으로 온도별 확률을 직접 계산 (샌드박스 실제 실행)</div>
+<div class="body"><span class="o">$</span> python3 temperature_check.py
+<span class="c">온도        book     copy      few   couple    bunch</span>
+0.2   <span class="y">계산</span>     95.02     4.73     0.25     0.00     0.00
+      <span class="g">화면</span>     95.08     4.68     0.00     0.00     0.00
+<span class="c">      최대 차이 0.25</span>
+0.8   <span class="y">계산</span>     56.28    26.58    12.72     2.77     1.66
+      <span class="g">화면</span>     56.33    26.53    12.70     2.77     1.67
+<span class="c">      최대 차이 0.05</span>
+2.0   <span class="y">계산</span>     35.26    26.12    19.45    10.57     8.61
+      <span class="g">화면</span>     35.27    26.09    19.44    10.58     8.62
+<span class="c">      최대 차이 0.03</span>
+10.0  <span class="y">계산</span>     22.88    21.55    20.32    17.98    17.26
+      <span class="g">화면</span>     22.89    21.55    20.31    17.99    17.27
+<span class="c">      최대 차이 0.01</span></div></div></body></html>

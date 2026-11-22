@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06111f;--fg:#e7f5ff;--ac:#4dabf7}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 20px;background:#0d2137;border:3px solid #1c4470;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px;word-break:keep-all}
+.c .d{font-size:16px;color:#e7f5ff;line-height:1.5;word-break:keep-all}
+.c .d b{color:#a5d8ff}
+.c .q{font-size:14px;color:#74c0fc;margin-top:8px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">Jev와 LLM structured output을 가르는 네 가지</div><h1>배선은 그대로, 부품을 고른다</h1>
+<div class="g">
+<div class="c"><div class="t">층이 다르다</div><div class="d">LangGraph는 <b>보내는 배선</b>이고, Jev는 라우팅 노드 안에서 <b>정하는 부품</b>이다. 비교 상대는 그 자리의 LLM structured output이다.</div><div class="q">LangGraph 문서: Routing 예제의 with_structured_output</div></div>
+<div class="c"><div class="t">형식은 둘 다 지킨다</div><div class="d">LLM의 structured output도 <b>스키마를 따르고 열거형 값이 제한</b>된다. 형식 보장은 Jev만의 장점이 아니다.</div><div class="q">OpenAI 문서: Structured Outputs</div></div>
+<div class="c hot"><div class="t">갈리는 것은 확률이다</div><div class="d">Jev는 고른 값과 함께 <b>선택지마다의 확률</b>을 준다. 애매한 건을 코드가 알아보고 되묻거나 넘길 수 있다.</div><div class="q">TypeSafe 문서의 응답 기록: returns 0.61 / billing 0.35, confidence 0.42</div></div>
+<div class="c hot"><div class="t">싼 것부터 쓴다</div><div class="d"><b>코드 · 버튼 → 판정 모델 → LLM · 사람.</b> 판정 모델은 글을 쓰지 못하므로 LLM을 없애지 않고, LLM까지 가는 건수를 줄인다.</div><div class="q">Browser Use 저장소: 고르는 일은 Jev, 글자 입력만 작은 LLM</div></div>
+</div>
+<div style="margin-top:16px;font-size:18px;color:#74c0fc;text-align:center;word-break:keep-all">속도 · 가격 · 사례의 수치는 모두 발표 기준 — 같은 입력으로 직접 견주어 보지는 못했다</div>
+</div></body></html>

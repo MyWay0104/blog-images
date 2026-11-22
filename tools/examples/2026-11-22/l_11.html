@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#120b24;--fg:#e5dbff;--ac:#9775fa}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 20px;background:#1e1440;border:3px solid #3d2b7a;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px;word-break:keep-all}
+.c .d{font-size:16px;color:#e5dbff;line-height:1.5;word-break:keep-all}
+.c .d b{color:#b197fc}
+.c .q{font-size:14px;color:#b197fc;margin-top:8px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">토크나이저 · 토큰 임베딩 · RAG 임베딩을 한 장으로</div><h1>ID → 토큰마다 벡터 → 문장에 벡터 하나</h1>
+<div class="g">
+<div class="c"><div class="t">토크나이저는 ID까지만</div><div class="d">텍스트를 토큰으로 쪼개고 <b>정수 ID</b>를 붙인다. 벡터는 아직 없다. 같은 토큰은 어느 문장에서나 같은 ID다.</div><div class="q">OpenAI Tokenizer에서 두 문장의 "배"가 모두 27798</div></div>
+<div class="c hot"><div class="t">토큰 임베딩은 표에서 꺼낸 값</div><div class="d">ID로 <b>임베딩 표의 한 줄</b>을 꺼낸 것이 토큰 임베딩이다. 토큰마다 하나씩 있고, 이 시점에는 문맥이 들어 있지 않다.</div><div class="q">Transformer Explainer: 토큰마다 768개 숫자, lookup table</div></div>
+<div class="c hot"><div class="t">RAG 임베딩은 문장에 벡터 하나</div><div class="d">임베딩 모델이 <b>문장·문단 전체를 벡터 1개</b>로 만든다. 뜻이 비슷한 글이 가까이 놓이도록 만든 값이라 검색에 쓴다.</div><div class="q">OpenAI: 임베딩은 문자열 간의 관련성을 측정한다</div></div>
+<div class="c"><div class="t">두 모델을 잇는 것은 글자</div><div class="d">RAG에서 벡터는 <b>찾는 데까지만</b> 쓰인다. LLM에는 찾아낸 원문이 글자로 들어가고, LLM이 처음부터 다시 토큰으로 쪼갠다.</div><div class="q">LangChain: 찾은 내용을 context로 LLM에 준다</div></div>
+</div>
+<div style="margin-top:16px;font-size:18px;color:#b197fc;text-align:center;word-break:keep-all">"임베딩"이라는 말을 들으면 먼저 묻는다 — 토큰 하나의 것인가, 문장 하나의 것인가</div>
+</div></body></html>

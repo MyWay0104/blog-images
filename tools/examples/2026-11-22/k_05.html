@@ -1,0 +1,17 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="term.css"><style>.y{color:#ffd43b}.g{color:#8ce99a}.c{color:#808080}.w{color:#e9ecef}.m{color:#9cdcfe}.o{color:#ffa94d}.r{color:#ff8787}.body{font-size:19px;font-family:'Noto Sans Mono CJK KR',monospace}</style></head><body><div id="card">
+<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>&nbsp; api-sdk-lab — 같은 파일을 두 가지 파이썬으로 실행 (샌드박스 리눅스, 실제 실행)</div>
+<div class="body"><span class="c"># ① 가상환경과 상관없는 시스템 파이썬</span>
+<span class="o">$</span> python3 01_api_direct.py
+실행한 파이썬 : <span class="r">/usr/local/bin/python3</span>
+sys.prefix    : /usr/local
+base_prefix   : /usr/local
+venv 안인가   : <span class="r">False</span>
+VIRTUAL_ENV   : None
+
+<span class="c"># ② 활성화하지 않고, venv 안의 python을 경로로 직접 지정</span>
+<span class="o">$</span> .venv/bin/python 01_api_direct.py
+실행한 파이썬 : <span class="g">/work/api-sdk-lab/.venv/bin/python</span>
+sys.prefix    : /work/api-sdk-lab/.venv
+base_prefix   : /usr/local
+venv 안인가   : <span class="g">True</span>
+VIRTUAL_ENV   : <span class="y">None</span>      <span class="c">← 표시는 비어 있는데 venv로 돌았다</span></div></div></body></html>

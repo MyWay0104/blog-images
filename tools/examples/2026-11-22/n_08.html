@@ -1,0 +1,25 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06111f;--fg:#e7f5ff;--ac:#4dabf7}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:17.5px;line-height:1.5}
+th,td{padding:13px 16px;text-align:left;vertical-align:top;word-break:keep-all;border-bottom:2px solid #1c4470;color:#e7f5ff}
+th{font-size:19px;font-weight:900;color:#fff;background:#10294a}
+th:first-child,td:first-child{width:150px;color:#74c0fc;font-weight:900;font-size:16.5px}
+th.j{background:#4dabf7;color:#06111f}
+td.j{background:#0d2137}
+td b{color:#a5d8ff}
+tr:last-child td{border-bottom:none}
+.w{border:3px solid #1c4470;border-radius:20px;overflow:hidden}
+.cap{margin-top:18px;font-size:17px;color:#a5d8ff;text-align:center;word-break:keep-all;line-height:1.55}
+.cap b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">라우팅 노드에 끼우는 두 부품</div><h1 style="margin-bottom:30px">LLM structured output vs Jev</h1>
+<div class="w"><table>
+<tr><th></th><th>LLM structured output</th><th class="j">Jev (System One)</th></tr>
+<tr><td>형식 보장</td><td>된다. 스키마를 따르고 열거형 값이 제한된다</td><td class="j">된다. 정해 준 선택지 안에서만 답한다</td></tr>
+<tr><td>돌아오는 것</td><td>스키마에 맞춘 <b>값</b></td><td class="j">값 + <b>선택지마다의 확률</b> + confidence</td></tr>
+<tr><td>애매한 입력</td><td>그래도 값 하나를 채운다. 얼마나 갈렸는지는 값에 드러나지 않는다</td><td class="j">확률이 갈려서 온다. 낮으면 되묻거나 사람에게 보내는 규칙을 코드로 건다</td></tr>
+<tr><td>만드는 방식</td><td>토큰을 하나씩 순서대로</td><td class="j">모든 출력을 한 번에 (발표문)</td></tr>
+<tr><td>판정 외의 일</td><td>답변 작성 · 요약 · 여러 단계 추론도 한다</td><td class="j">못 한다. 생성 · 계산 · 날짜 비교는 맡기지 말라고 문서가 적는다</td></tr>
+<tr><td>속도 · 가격</td><td>모델마다 다르다</td><td class="j">70~500ms, 입력 100만 토큰당 $0.042 (발표 기준)</td></tr>
+</table></div>
+<div class="cap"><b>형식은 둘 다 지킨다.</b> 갈리는 곳은 "확률이 같이 오는가"와 "판정 말고 다른 일도 하는가"이다</div>
+</div></body></html>

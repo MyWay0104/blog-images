@@ -1,0 +1,19 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#1a0f05;--fg:#ffe8cc;--ac:#ff922b}
+.s{display:flex;gap:20px;align-items:stretch;margin-bottom:16px}
+.n{flex:none;width:76px;border-radius:18px;background:#ff922b;color:#1a0f05;font-size:38px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.b{flex:1;border-radius:18px;background:#2b1a0a;border:3px solid #5f3811;padding:16px 20px;min-width:0}
+.b .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;word-break:keep-all}
+.b .d{font-size:16.5px;color:#ffe8cc;line-height:1.5;word-break:keep-all}
+.b .d b{color:#ffa94d}
+.code{margin-top:8px;border-radius:10px;background:#120a03;padding:10px 14px;font-family:'DejaVu Sans Mono','Noto Sans Mono CJK KR',monospace;font-size:15.5px;color:#ffd8a8;line-height:1.55;white-space:pre}
+.code .c{color:#8a6a4a}
+.no{margin-top:4px;border-radius:16px;border:3px dashed #5f3811;padding:14px 20px;font-size:16.5px;color:#ffc078;line-height:1.5;word-break:keep-all;text-align:center}
+.no b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">"(.venv)가 안 떠요"에서 멈추지 않고 실제 파이썬을 확인하는 순서</div><h1>불안하면 이 세 가지를 본다</h1>
+<div class="s"><div class="n">1</div><div class="b"><div class="t">VS Code 오른쪽 아래 상태 표시줄</div><div class="d">지금 선택된 인터프리터가 <b>.venv</b>로 표시되는지 본다. 다르면 표시줄을 누르거나 <b>Python: Select Interpreter</b>로 고른다.</div></div></div>
+<div class="s"><div class="n">2</div><div class="b"><div class="t">실행 파일 맨 위에 두 줄</div><div class="d">출력된 경로 안에 <b>.venv</b>가 들어 있으면 그 가상환경의 파이썬으로 돈 것이다.</div><div class="code">import sys
+print(sys.executable)   <span class="c"># ...\api-sdk-lab\.venv\Scripts\python.exe</span></div></div></div>
+<div class="s"><div class="n">3</div><div class="b"><div class="t">더 확실하게는 판별식 한 줄</div><div class="d">공식 문서가 "이것만 확인하면 충분하다"고 적은 식이다. <b>True</b>면 가상환경 안이다.</div><div class="code">print(sys.prefix != sys.base_prefix)   <span class="c"># True</span></div></div></div>
+<div class="no">프롬프트의 <b>(.venv)</b>와 <b>VIRTUAL_ENV</b>는 판별 기준으로 쓰지 않는다 — 비어 있어도 가상환경일 수 있다</div>
+</div></body></html>

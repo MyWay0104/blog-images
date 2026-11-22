@@ -1,0 +1,22 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#120b24;--fg:#e5dbff;--ac:#9775fa}
+.lane{border-radius:20px;padding:16px 18px 18px;margin-bottom:16px;border:3px solid #3d2b7a;background:#170f33}
+.lane.t{border-color:#9775fa}
+.lt{font-size:19px;font-weight:900;color:#fff;margin-bottom:12px}
+.lt small{font-size:15px;font-weight:500;color:#b197fc;margin-left:8px}
+.row{display:flex;align-items:stretch;gap:8px}
+.b{flex:1;border-radius:12px;background:#1e1440;border:2px solid #3d2b7a;padding:10px 10px;font-size:15.5px;color:#e5dbff;line-height:1.35;text-align:center;word-break:keep-all;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.b b{color:#fff}.b small{font-size:13px;color:#b197fc;margin-top:3px}
+.b.v{background:#2a1d5c;border-color:#b197fc}
+.b.x{background:#9775fa;border-color:#9775fa;color:#120b24;font-weight:700}.b.x b{color:#120b24}.b.x small{color:#2a1d5c}
+.a{flex:none;align-self:center;color:#9775fa;font-size:20px}
+.stop{flex:none;align-self:center;font-size:14px;font-weight:900;color:#ff8787;border:2px dashed #ff8787;border-radius:10px;padding:8px 10px;text-align:center;line-height:1.3}
+.cap{margin-top:6px;font-size:17px;color:#d0bfff;text-align:center;word-break:keep-all;line-height:1.5}
+.cap b{color:#fff}
+</style></head><body><div id="card">
+<div class="k">RAG에서 질문 하나가 처리되는 동안</div><h1>벡터는 찾는 데만, LLM에는 글자가 간다</h1>
+<div class="lane"><div class="lt">벡터가 가는 길 <small>임베딩 모델과 벡터 DB 사이에서만 오간다</small></div>
+<div class="row"><div class="b">질문 텍스트<small>"허기가 진다"</small></div><div class="a">▶</div><div class="b v"><b>임베딩 모델</b><small>질문을 벡터 1개로</small></div><div class="a">▶</div><div class="b v">벡터 DB<small>가까운 벡터를 찾는다</small></div><div class="a">▶</div><div class="b"><div>찾은 벡터에 딸린<br><b>원문 조각</b>을 꺼낸다</div></div><div class="stop">벡터는<br>여기까지</div></div></div>
+<div class="lane t"><div class="lt">텍스트가 가는 길 <small>LLM은 글자를 받아 처음부터 다시 처리한다</small></div>
+<div class="row"><div class="b">찾은 원문 조각<small>"배가 고프다 …"</small></div><div class="a">▶</div><div class="b">프롬프트에<br>글자로 붙인다</div><div class="a">▶</div><div class="b x"><b>LLM</b><small>자기 토크나이저 → 자기 임베딩 표 → …</small></div><div class="a">▶</div><div class="b">답변</div></div></div>
+<div class="cap">임베딩 모델의 벡터를 LLM에 그대로 넣는 것이 아니다. <b>두 모델은 보통 서로 다른 임베딩 표와 차원을 쓰는 별개의 모델</b>이고,<br>둘을 잇는 것은 벡터가 아니라 <b>찾아낸 글자</b>다</div>
+</div></body></html>

@@ -1,0 +1,46 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#06111f;--fg:#e7f5ff;--ac:#4dabf7}
+svg text{font-family:'Noto Sans CJK KR',sans-serif}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
+.c{border-radius:20px;padding:18px 22px;background:#0d2137;border:3px solid #1c4470;min-width:0}
+.c.hot{border-color:var(--ac);background:#10294a}
+.c .r{font-size:16px;font-weight:900;color:#06111f;background:#74c0fc;display:inline-block;border-radius:9px;padding:3px 11px;margin-bottom:10px}
+.c .t{font-size:24px;font-weight:900;color:#fff;margin-bottom:8px;word-break:keep-all}
+.c .d{font-size:17px;color:#e7f5ff;line-height:1.55;word-break:keep-all}
+.c .d b{color:#a5d8ff}
+.c .m{margin-top:10px;font-size:15px;color:#74c0fc;line-height:1.45;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">비교 대상부터 바로잡기</div><h1 style="margin-bottom:30px">그래프는 배선, 모델은 부품</h1>
+<svg width="960" height="330" viewBox="0 0 960 330" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto"><path d="M0,0 L16,8 L0,16 z" fill="#74c0fc"/></marker>
+<filter id="gl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<!-- 문의 -->
+<rect x="0" y="125" width="150" height="80" rx="16" fill="#0d2137" stroke="#1c4470" stroke-width="3"/>
+<text x="75" y="160" text-anchor="middle" font-size="21" font-weight="900" fill="#fff">문의</text>
+<text x="75" y="186" text-anchor="middle" font-size="14" fill="#74c0fc">자유롭게 쓴 글</text>
+<line x1="152" y1="165" x2="246" y2="165" stroke="#74c0fc" stroke-width="4" marker-end="url(#a)"/>
+<!-- 라우팅 노드 -->
+<rect x="252" y="60" width="300" height="210" rx="22" fill="#0a1a2e" stroke="#74c0fc" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="402" y="94" text-anchor="middle" font-size="19" font-weight="900" fill="#a5d8ff">라우팅 노드</text>
+<rect x="290" y="116" width="224" height="104" rx="18" fill="#4dabf7" opacity=".35" filter="url(#gl)"/>
+<rect x="290" y="116" width="224" height="104" rx="18" fill="#4dabf7"/>
+<text x="402" y="160" text-anchor="middle" font-size="24" font-weight="900" fill="#06111f">판정 부품</text>
+<text x="402" y="190" text-anchor="middle" font-size="15.5" font-weight="700" fill="#0a1a2e">"어느 쪽인가"를 정한다</text>
+<text x="402" y="250" text-anchor="middle" font-size="14.5" fill="#74c0fc">LLM structured output 또는 Jev</text>
+<!-- 조건부 엣지 -->
+<path d="M554 150 C 640 150, 650 62, 742 62" stroke="#74c0fc" stroke-width="4" fill="none" marker-end="url(#a)"/>
+<line x1="554" y1="165" x2="742" y2="165" stroke="#74c0fc" stroke-width="4" marker-end="url(#a)"/>
+<path d="M554 180 C 640 180, 650 268, 742 268" stroke="#74c0fc" stroke-width="4" fill="none" marker-end="url(#a)"/>
+<text x="648" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="#a5d8ff">조건부 엣지</text>
+<!-- 보낼 곳 -->
+<rect x="748" y="26" width="212" height="72" rx="16" fill="#0d2137" stroke="#1c4470" stroke-width="3"/>
+<text x="854" y="70" text-anchor="middle" font-size="21" font-weight="900" fill="#fff">반품 처리</text>
+<rect x="748" y="129" width="212" height="72" rx="16" fill="#0d2137" stroke="#1c4470" stroke-width="3"/>
+<text x="854" y="173" text-anchor="middle" font-size="21" font-weight="900" fill="#fff">배송 처리</text>
+<rect x="748" y="232" width="212" height="72" rx="16" fill="#0d2137" stroke="#1c4470" stroke-width="3"/>
+<text x="854" y="276" text-anchor="middle" font-size="21" font-weight="900" fill="#fff">결제 처리</text>
+</svg>
+<div class="g">
+<div class="c"><div class="r">배선 · 하네스</div><div class="t">LangGraph의 StateGraph</div><div class="d">노드를 잇고, 정해진 결과에 따라 다음 노드로 <b>보낸다</b>. 무엇으로 판정하든 이 부분은 그대로다.</div><div class="m">add_node · add_conditional_edges · 엣지 함수</div></div>
+<div class="c hot"><div class="r">부품 · 모델 호출</div><div class="t">라우팅 노드 안의 판정</div><div class="d">글을 읽고 어느 쪽인지 <b>정한다</b>. Jev와 비교할 상대는 그래프가 아니라 이 자리의 LLM structured output이다.</div><div class="m">llm.with_structured_output(...) ↔ Jev의 Choice</div></div>
+</div>
+</div></body></html>

@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="dia.css"><style>:root{--bg:#14120a;--fg:#fff9db;--ac:#ffd43b}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c{border-radius:20px;padding:18px 20px;background:#252008;border:3px solid #5c4d0c;min-width:0}
+.c.hot{border-color:var(--ac)}
+.c .t{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px;word-break:keep-all}
+.c .d{font-size:16px;color:#fff9db;line-height:1.5;word-break:keep-all}
+.c .d b{color:#ffe066}
+.c .q{font-size:14px;color:#ffd43b;margin-top:8px;line-height:1.4;word-break:keep-all}
+</style></head><body><div id="card">
+<div class="k">Transformer Explainer를 처음 열 때 기억할 네 가지</div><h1>문장 하나로 GPT-2 속을 본다</h1>
+<div class="g">
+<div class="c"><div class="t">설치 없이 브라우저에서 돈다</div><div class="d"><b>GPT-2 (small)</b>가 브라우저 안에서 실제로 실행된다. 첫 접속 때 모델(약 600MB)을 내려받는 동안에는 예시 문장만 쓸 수 있다.</div><div class="q">도구 안내문: a live GPT-2 (small) model running directly in the browser</div></div>
+<div class="c hot"><div class="t">문장을 넣고 Generate</div><div class="d">영어 문장을 넣으면 <b>다음 토큰 하나</b>가 보라색으로 붙는다. 한 번 더 누르면 그 토큰이 문장에 합쳐지고 그다음 토큰을 예측한다.</div><div class="q">직접 넣은 문장: I went to the library to borrow a → book 56.33%</div></div>
+<div class="c hot"><div class="t">돋보기로 속을 펼친다</div><div class="d"><b>Embedding</b>은 토큰 ID와 위치, <b>Attention</b>은 Dot product → Mask → Softmax, <b>Probabilities</b>는 logit → 온도 → top-k → softmax 순서로 펼쳐진다.</div><div class="q">Temperature를 0.2로 내리면 95.08%, 2로 올리면 35.27%</div></div>
+<div class="c"><div class="t">건너뛰는 선은 Residual이다</div><div class="d"><b>Residual</b> 글자에 마우스를 올리면 점선이 나타난다. Attention 블록 위를 지나 MLP 앞에서 합류하는, 입력을 출력에 그대로 더해 주는 길이다.</div><div class="q">도구 안내문: GPT-2에서는 블록마다 두 번 쓰인다</div></div>
+</div>
+<div style="margin-top:16px;font-size:18px;color:#ffd43b;text-align:center;word-break:keep-all">보여 주는 것은 학습이 끝난 GPT-2가 "다음 토큰 하나"를 정하는 과정 — 학습 과정과 최신 모델은 범위 밖이다</div>
+</div></body></html>

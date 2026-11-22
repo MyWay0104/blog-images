@@ -3,28 +3,35 @@ import html as _h
 E=_h.escape
 def _inline(s):
     # **굵게**, ==형광펜==, `코드` 를 인라인 서식으로 바꾼다
+    # 2026-11-08 수정: 여러 줄(줄바꿈 \n 포함)에 걸친 **굵게**도 처리한다 (re.S). 이전에는 줄마다 따로 처리해 ** 가 글자로 남았다
     import re
     s=E(s,quote=False)
-    s=re.sub(r'\*\*==(.+?)==\*\*',r'<b><span style="background-color:#fff3a3">\1</span></b>',s)
-    s=re.sub(r'\*\*(.+?)\*\*',r'<b>\1</b>',s)
-    s=re.sub(r'==(.+?)==',r'<span style="background-color:#fff3a3">\1</span>',s)
+    s=re.sub(r'\*\*==(.+?)==\*\*',r'<b><span style="background-color:#fff3a3">\1</span></b>',s,flags=re.S)
+    s=re.sub(r'\*\*(.+?)\*\*',r'<b>\1</b>',s,flags=re.S)
+    s=re.sub(r'==(.+?)==',r'<span style="background-color:#fff3a3">\1</span>',s,flags=re.S)
     s=re.sub(r'`(.+?)`',r'<span style="background-color:#e9ecef">\1</span>',s)
     s=re.sub(r'\[\[(.+?)\|(.+?)\]\]',r'<a href="\2">\1</a>',s)
     return s
+def _lines(lines):
+    # 여러 줄을 한 번에 서식 처리한 뒤 <br>로 잇는다 (줄을 건너뛰는 **굵게**를 살리기 위해)
+    return _inline('\n'.join(lines)).replace('\n','<br>')
 FF="font-family:'나눔스퀘어','NanumSquare',nanumsquare,sans-serif;"  # 네이버 에디터가 글꼴 지정을 받아 주는지 확인 필요 (2026-10-18 시험)
 BL='<p><br></p>\n'
-def P(*lines): return '<p style="'+FF+'text-align:center;font-size:16px;line-height:1.9">'+'<br>'.join(_inline(l) for l in lines)+'</p>\n'+BL
+def P(*lines): return '<p style="'+FF+'text-align:center;font-size:16px;line-height:1.9">'+_lines(lines)+'</p>\n'+BL
 def H1(t): return BL+'<p style="'+FF+'text-align:center"><b><span style="'+FF+'font-size:28px">'+_inline(t)+'</span></b></p>\n'+BL
 def H2(t): return '<p style="'+FF+'text-align:center"><b><span style="'+FF+'font-size:19px">'+_inline(t)+'</span></b></p>\n'+BL
-def Q(*lines): return '<blockquote style="'+FF+'">'+'<br>'.join(_inline(l) for l in lines)+'</blockquote>\n'+BL
+def Q(*lines): return '<blockquote style="'+FF+'">'+_lines(lines)+'</blockquote>\n'+BL
 def HR(): return '<hr>\n'+BL
-def BOX(*lines): return '<table style="border-collapse:collapse;width:100%"><tr><td style="background-color:#f1f3f5;border-left:5px solid #868e96;padding:14px 18px;text-align:left;font-size:15px;line-height:1.8;'+FF+'">'+'<br>'.join(_inline(l) for l in lines)+'</td></tr></table>\n'+BL
+def BOX(*lines): return '<table style="border-collapse:collapse;width:100%"><tr><td style="background-color:#f1f3f5;border-left:5px solid #868e96;padding:14px 18px;text-align:left;font-size:15px;line-height:1.8;'+FF+'">'+_lines(lines)+'</td></tr></table>\n'+BL
 def CODE(text,colors=()):
     out=[]
     for ln in text.strip('\n').split('\n'):
         n=len(ln)-len(ln.lstrip(' '))
         s=E(ln.lstrip(' '),quote=False)
         for kw,c in colors: s=s.replace(E(kw,quote=False),f'<span style="color:{c}">{E(kw,quote=False)}</span>')
+        # 2026-11-22: 줄 안쪽의 연속 공백(정렬용)도 &nbsp;로 바꿔 보존한다. 이전에는 HTML이 공백을 하나로 합쳐 코드가 실제와 달라 보였다
+        import re as _re2
+        s=_re2.sub(r' {2,}',lambda m:'&nbsp;'*len(m.group(0)),s)
         out.append('&nbsp;'*n+s)
     return '<table style="border-collapse:collapse;width:100%"><tr><td style="background-color:#212529;color:#f8f9fa;padding:16px 18px;text-align:left;font-size:14px;line-height:1.7"><span style="color:#f8f9fa">'+'<br>'.join(out)+'</span></td></tr></table>\n'+BL
 def TABLE(head,rows):
